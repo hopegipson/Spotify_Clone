@@ -38,8 +38,8 @@ class App extends Component {
   {
     return (
       <div className="App">
-        <h1>APP</h1>
-        <Search/>
+        <br></br>
+       <Search/>
         <AlbumsPlaylistsSongsContainer/>
        <MusicPlayerContainer playingRecordingId="spotify:track:4iV5W9uYEdYUVa79Axb7Rh" />
        <br></br>

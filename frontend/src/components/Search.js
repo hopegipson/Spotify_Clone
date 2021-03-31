@@ -25,13 +25,18 @@ import { fetchSpotifyData } from '../actions/musicPlayerActions';
 
       render() {
         return(
+        
           <div>
-            <form onSubmit={this.handleSubmit}>
+   
+
+            <form onSubmit={this.handleSubmit} class="form-inline my-2 my-lg-0">
                 <label>Search:</label>
-              <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.text}/>
-              <input type="submit" />
+              <input class="form-control mr-sm-2"  type="text" placeholder="Search" onChange={(event) => this.handleChange(event)} value={this.state.text}/>
+              <input  class="btn btn-secondary my-2 my-sm-0" type="submit" />
            </form>
+
          </div>
+  
        );
       }
     };
