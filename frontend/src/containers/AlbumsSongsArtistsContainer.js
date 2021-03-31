@@ -1,11 +1,11 @@
 import React, { Component} from 'react';
 
 
-export default class AlbumsPlaylistsSongsContainer extends Component {
+export default class AlbumsSongsArtistsContainer extends Component {
     render(){
         return(
             <div>
-                "Albums Playlists Songs"
+                "Albums Songs"
             </div>
         )
     }

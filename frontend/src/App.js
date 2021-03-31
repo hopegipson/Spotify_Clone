@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import MusicPlayerContainer from './containers/MusicPlayerContainer';
 import SpotifyAuthButton from './components/SpotifyAuthButton';
 import Search from './components/Search';
-import AlbumsPlaylistsSongsContainer from './containers/AlbumsPlaylistsSongsContainer';
+import AlbumsPlaylistsSongsContainer from './containers/AlbumsSongsArtistsContainer';
 
 //will want to show some sort of login to spotify button unless there is already a token
 class App extends Component {

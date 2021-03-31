@@ -1,4 +1,4 @@
-const musicReducer = (state = { songs: [], albums: [], playingRecordingId: " ",  loading: false, token: " " }, action) => {
+const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecordingId: " ",  loading: false, token: " " }, action) => {
     switch(action.type) {
       case 'LOADING_SONGS':
         return {
@@ -8,10 +8,16 @@ const musicReducer = (state = { songs: [], albums: [], playingRecordingId: " ", 
         }
       case 'ADD_SONGS':
         return {
-         // ...state,
-         // cats: action.cats,
-        //  loading: false
+          ...state,
+          songs: action.songs,
+          loading: false
         }
+      case 'ADD_ARTISTS':
+        return {
+            ...state,
+           artists: action.artists,
+           loading: false
+            }
       case 'SET_TOKEN':
           return{
             ...state,

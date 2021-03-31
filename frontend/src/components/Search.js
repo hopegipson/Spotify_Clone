@@ -22,7 +22,7 @@ import { connect } from 'react-redux'
       }
 
       lookForTerm = (term) => {
-        fetch(`https://api.spotify.com/v1/search?query=${term}&type=album,playlist,artist`, {
+        fetch(`https://api.spotify.com/v1/search?query=${term}&type=album,playlist,artist,track`, {
             method: 'GET', headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -34,7 +34,8 @@ import { connect } from 'react-redux'
                     (data) => {
                          console.log(data)
                         this.props.addALBUMS(data.albums.items)
-
+                        this.props.addSONGS(data.tracks.items)
+                        this.props.addARTISTS(data.artists.items)
                      }
                 ));
             });
@@ -56,10 +57,15 @@ import { connect } from 'react-redux'
     };
 
     const mapStateToProps = state => {
-        return {state}
+        return {state} 
       }
     
     const mapDispatchToProps = dispatch => ({
-      addALBUMS: albumData => dispatch({ type: 'ADD_ALBUMS', albums: albumData })    })
+      addALBUMS: albumData => dispatch({ type: 'ADD_ALBUMS', albums: albumData }),
+      addSONGS: songData => dispatch({ type: 'ADD_SONGS', songs: songData }),
+      addARTISTS: artistData => dispatch({ type: 'ADD_ARTISTS', artists: artistData })
+
+     })
+      
 
     export default connect(mapStateToProps, mapDispatchToProps)(Search);
