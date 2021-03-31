@@ -4,11 +4,9 @@ import { authEndpoint, clientId, redirectUri, scopes } from "./config";
 
 export default class SpotifyAuthButton extends Component {
 
-
+    
 
     render(){
-
-   
 
         const hrefURI = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
             "%20"
