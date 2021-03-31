@@ -1,4 +1,4 @@
-const musicReducer = (state = { songs: [], loading: false }, action) => {
+const musicReducer = (state = { songs: [], playingRecordingId: " ",  loading: false }, action) => {
     switch(action.type) {
       case 'LOADING_SONGS':
         return {
