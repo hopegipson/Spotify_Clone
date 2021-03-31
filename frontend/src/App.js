@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import MusicPlayerContainer from './containers/MusicPlayerContainer';
 import SpotifyAuthButton from './components/SpotifyAuthButton';
+import Search from './components/Search';
+import AlbumsPlaylistsSongsContainer from './containers/AlbumsPlaylistsSongsContainer';
 
 //will want to show some sort of login to spotify button unless there is already a token
 class App extends Component {
@@ -28,18 +30,6 @@ class App extends Component {
     let foundToken = hash.access_token;
     if (foundToken) {
       this.props.setToken(foundToken)
-      fetch('https://api.spotify.com/v1/search?query=neyo&type=album,playlist,artist', {
-            method: 'GET', headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + foundToken
-            }
-        })
-            .then((response) => {
-                console.log(response.json().then(
-                    (data) => { console.log(data) }
-                ));
-            });
   }}
 
 
@@ -49,6 +39,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>APP</h1>
+        <Search/>
+        <AlbumsPlaylistsSongsContainer/>
        <MusicPlayerContainer playingRecordingId="spotify:track:4iV5W9uYEdYUVa79Axb7Rh" />
        <br></br>
       <SpotifyAuthButton/>
