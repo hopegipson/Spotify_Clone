@@ -32,7 +32,6 @@ import { connect } from 'react-redux'
             .then((response) => {
                 console.log(response.json().then(
                     (data) => {
-                         console.log(data)
                         this.props.addALBUMS(data.albums.items)
                         this.props.addSONGS(data.tracks.items)
                         this.props.addARTISTS(data.artists.items)
