@@ -17,6 +17,11 @@ const musicReducer = (state = { songs: [], albums: [], playingRecordingId: " ", 
             ...state,
             token: action.payload
           }
+      case 'ADD_ALBUMS':
+            return{
+              ...state,
+              albums: action.albums
+            }
       default:
         return state;
     }

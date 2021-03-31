@@ -31,7 +31,11 @@ import { connect } from 'react-redux'
         })
             .then((response) => {
                 console.log(response.json().then(
-                    (data) => { console.log(data) }
+                    (data) => {
+                         console.log(data)
+                        this.props.addALBUMS(data.albums.items)
+
+                     }
                 ));
             });
       }
@@ -42,7 +46,7 @@ import { connect } from 'react-redux'
         return(
           <div>
             <form onSubmit={this.handleSubmit}>
-                <label>add todo</label>
+                <label>Search:</label>
               <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.text}/>
               <input type="submit" />
            </form>
@@ -56,7 +60,6 @@ import { connect } from 'react-redux'
       }
     
     const mapDispatchToProps = dispatch => ({
-      addTodo: formData => dispatch({ type: 'ADD_TODO', payload: formData })
-    })
+      addALBUMS: albumData => dispatch({ type: 'ADD_ALBUMS', albums: albumData })    })
 
     export default connect(mapStateToProps, mapDispatchToProps)(Search);
