@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux'
+import { fetchSpotifyData } from '../actions/musicPlayerActions';
 
  class Search extends Component {
     constructor() {
@@ -11,7 +12,8 @@ import { connect } from 'react-redux'
 
       handleSubmit = event => {
         event.preventDefault();
-       this.lookForTerm(this.state.text)
+        console.log(this.props.token)
+        this.props.fetchSpotifyData(this.state.text, this.props.state.token)
         this.setState({text: ''})
       }
 
@@ -20,27 +22,6 @@ import { connect } from 'react-redux'
           text: event.target.value
         });
       }
-
-      lookForTerm = (term) => {
-        fetch(`https://api.spotify.com/v1/search?query=${term}&type=album,playlist,artist,track`, {
-            method: 'GET', headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + this.props.state.token
-            }
-        })
-            .then((response) => {
-                console.log(response.json().then(
-                    (data) => {
-                        this.props.addALBUMS(data.albums.items)
-                        this.props.addSONGS(data.tracks.items)
-                        this.props.addARTISTS(data.artists.items)
-                     }
-                ));
-            });
-      }
-
-
 
       render() {
         return(
@@ -60,9 +41,7 @@ import { connect } from 'react-redux'
       }
     
     const mapDispatchToProps = dispatch => ({
-      addALBUMS: albumData => dispatch({ type: 'ADD_ALBUMS', albums: albumData }),
-      addSONGS: songData => dispatch({ type: 'ADD_SONGS', songs: songData }),
-      addARTISTS: artistData => dispatch({ type: 'ADD_ARTISTS', artists: artistData })
+    fetchSpotifyData: (term, token) => dispatch(fetchSpotifyData(term, token))
 
      })
       
