@@ -141,6 +141,7 @@ body {
 }
 
 .InsideArtistResult{
+ 
   position: absolute;
   background-color:  #0e0c0c;
   width: 1300px;
@@ -239,4 +240,16 @@ body {
   margin-left: 60px;
   margin-top: 30px;
 
+}
+
+.ArtistDivWrapper{
+  padding: 10px;
+  width: 267px;
+  height: 300px;
+
+}
+
+.ArtistDiv{
+  width: 260px;
+  height: 250px;
 }

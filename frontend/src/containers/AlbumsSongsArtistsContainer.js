@@ -11,7 +11,7 @@ import AlbumResult from '../components/AlbumResult'
             <div>
             <TopResult artist={this.props.state.artists[0]}/>
             <SongResult songs={this.props.state.songs.slice(0,4)}/>
-            <ArtistResult/>
+            <ArtistResult artists={this.props.state.artists.slice(0,6)}/>
             <AlbumResult/>
             </div>
         )
