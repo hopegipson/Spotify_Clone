@@ -1,14 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import MusicPlayerContainer from './containers/MusicPlayerContainer';
-import SpotifyAuthButton from './components/SpotifyAuthButton';
-import AlbumsPlaylistsSongsContainer from './containers/AlbumsSongsArtistsContainer';
+
 import NavBar from './components/NavBar'
 import SearchPage from './containers/SearchPage'
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
 
 
 
@@ -25,11 +22,12 @@ class Dashboard extends Component {
   {
     return (
       <div className="Dashboard">
+          "Dashboard"
           <Router>
             <NavBar />
-              <Route path='/search' render={routerProps => <SearchPage /> } />
+            <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
+
           </Router>        
-        <AlbumsPlaylistsSongsContainer/>
        <MusicPlayerContainer playingRecordingId="spotify:track:4iV5W9uYEdYUVa79Axb7Rh" />
        <br></br>
       </div>  

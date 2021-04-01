@@ -1,4 +1,4 @@
-const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecordingId: " ",  loading: false, token: null }, action) => {
+const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecordingId: " ",  loading: true, token: null }, action) => {
     switch(action.type) {
       case 'LOADING_SPOTIFY_DATA':
         return {
@@ -26,8 +26,10 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
       case 'ADD_ALBUMS':
             return{
               ...state,
-              albums: action.albums
+              albums: action.albums,
+              loading: false
             }
+    
       default:
         return state;
     }

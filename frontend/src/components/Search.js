@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux'
 import { fetchSpotifyData } from '../actions/musicPlayerActions';
 
+
  class Search extends Component {
     constructor() {
         super();
@@ -10,11 +11,17 @@ import { fetchSpotifyData } from '../actions/musicPlayerActions';
         };
       }
 
+    
+    
+    
+
+
       handleSubmit = event => {
         event.preventDefault();
-        console.log(this.props.token)
-        this.props.fetchSpotifyData(this.state.text, this.props.state.token)
-        this.setState({text: ''})
+       this.props.fetchSpotifyData(this.state.text, this.props.state.token).then((response) => {
+       this.props.history.push( `/search/${this.state.text}`)
+       this.setState({text: ''})
+     }) 
       }
 
       handleChange(event) {
@@ -24,6 +31,7 @@ import { fetchSpotifyData } from '../actions/musicPlayerActions';
       }
 
       render() {
+        
         return(
         
           <div>
@@ -31,8 +39,8 @@ import { fetchSpotifyData } from '../actions/musicPlayerActions';
 
             <form onSubmit={this.handleSubmit} class="form-inline my-2 my-lg-0">
                 <label>Search:</label>
-              <input class="form-control mr-sm-2"  type="text" placeholder="Search" onChange={(event) => this.handleChange(event)} value={this.state.text}/>
-              <input  class="btn btn-secondary my-2 my-sm-0" type="submit" />
+              <input className="form-control mr-sm-2"  type="text" placeholder="Search" onChange={(event) => this.handleChange(event)} value={this.state.text}/>
+              <input  className="btn btn-secondary my-2 my-sm-0" type="submit" />
            </form>
 
          </div>
@@ -46,7 +54,7 @@ import { fetchSpotifyData } from '../actions/musicPlayerActions';
       }
     
     const mapDispatchToProps = dispatch => ({
-    fetchSpotifyData: (term, token) => dispatch(fetchSpotifyData(term, token))
+        fetchSpotifyData: (term, token) => dispatch(fetchSpotifyData(term, token))
 
      })
       
