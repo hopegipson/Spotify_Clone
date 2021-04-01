@@ -1,18 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
-import MusicPlayerContainer from './containers/MusicPlayerContainer';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import Dashboard from './Dashboard'
 import SpotifyAuthButton from './components/SpotifyAuthButton';
-import Search from './components/Search';
-import AlbumsPlaylistsSongsContainer from './containers/AlbumsSongsArtistsContainer';
+
+
 
 //will want to show some sort of login to spotify button unless there is already a token
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {}
-    }
   
 
   componentDidMount() {
@@ -30,7 +27,15 @@ class App extends Component {
     let foundToken = hash.access_token;
     if (foundToken) {
       this.props.setToken(foundToken)
+      
   }}
+
+  isValidToken = () => {
+    if (this.props.state.token){
+      return true
+    }
+  }
+
 
 
   render() 
@@ -38,13 +43,14 @@ class App extends Component {
   {
     return (
       <div className="App">
-        <br></br>
-       <Search/>
-        <AlbumsPlaylistsSongsContainer/>
-       <MusicPlayerContainer playingRecordingId="spotify:track:4iV5W9uYEdYUVa79Axb7Rh" />
-       <br></br>
-      <SpotifyAuthButton/>
-      </div>
+      {this.isValidToken() ? ( 
+        <Router>
+        <Redirect to="/dashboard" />
+        <Route path='/dashboard' render={routerProps => <Dashboard/> } />
+        </Router>
+      ) : ( <SpotifyAuthButton/>)}
+           
+      </div>  
     );
   }
 }
