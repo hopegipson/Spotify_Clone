@@ -8,6 +8,7 @@ export default class SongResult extends Component {
 
         return(<div className="SongResult">
             <h2 className="TitleSection">Songs</h2>
+            <a className="SeeMore" href="http://google.com">SEE ALL</a>
            {console.log(this.props.songs)}
             <div className="InsideSongResult">
             {this.props.songs.map(song =>(

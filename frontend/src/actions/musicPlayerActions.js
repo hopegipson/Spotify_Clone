@@ -12,9 +12,9 @@
             }
         })
         .then((response) => {
-               //   console.log(response.json().then(
              return response.json().then(
                        (data) => {
+                         console.log(data)
                         dispatch({type: 'ADD_ALBUMS', albums: data.albums.items})
                         dispatch({type: 'ADD_SONGS', songs: data.tracks.items})
                         dispatch({type: 'ADD_ARTISTS', artists: data.artists.items})

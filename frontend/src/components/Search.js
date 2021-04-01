@@ -11,17 +11,17 @@ import { fetchSpotifyData } from '../actions/musicPlayerActions';
         };
       }
 
-    
-    
-    
-
-
       handleSubmit = event => {
         event.preventDefault();
+        if(this.state.text){
        this.props.fetchSpotifyData(this.state.text, this.props.state.token).then((response) => {
        this.props.history.push( `/search/${this.state.text}`)
        this.setState({text: ''})
-     }) 
+      }) 
+      }
+      else{
+        console.log("Cannot submit nothing")
+      }
       }
 
       handleChange(event) {
@@ -38,9 +38,8 @@ import { fetchSpotifyData } from '../actions/musicPlayerActions';
    
 
             <form onSubmit={this.handleSubmit} class="form-inline my-2 my-lg-0">
-                <label>Search:</label>
-              <input className="form-control mr-sm-2"  type="text" placeholder="Search" onChange={(event) => this.handleChange(event)} value={this.state.text}/>
-              <input  className="btn btn-secondary my-2 my-sm-0" type="submit" />
+              <input className="SearchBar"  type="text" placeholder="Search" onChange={(event) => this.handleChange(event)} value={this.state.text}/>
+              <input  className="btn2 " type="submit" value="X" />
            </form>
 
          </div>

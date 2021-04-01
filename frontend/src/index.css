@@ -25,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   flex: 0.2;
+  top: 0px;
   padding-left: 10px;
   padding-right: 10px;
   min-width: 230px;
@@ -242,14 +243,183 @@ body {
 
 }
 
-.ArtistDivWrapper{
-  padding: 10px;
-  width: 267px;
-  height: 300px;
+
+
+.Row {
+  display: table;
+  width: 100%; 
+  table-layout: fixed; 
+  border-spacing: 10px; 
+  display: flex;
+  align-items: center
+}
+.Column {
+  display: table-cell;
+  background-color: red; 
+  width: 210px;
+  padding: 0 5px 0 5px;
+}
+
+.ArtistImage{
+  position: relative;
+  top: 20px;
+  height: 175px;
+  width: 175px;
+  border-radius: 50%;
+}
+
+.AlbumImage{
+  position: relative;
+  top: 20px;
+  height: 175px;
+  width: 175px;
+  border-radius: 5px;
 
 }
 
-.ArtistDiv{
-  width: 260px;
-  height: 250px;
+.ArtistName{
+  position: absolute;
+  top: 220px;
+  color: white;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  left: 10px;
+  font-family: 'RubikRegular';
+
+
 }
+
+.Inner{
+  border-radius: 15px;
+  position: absolute;
+  top: 10px;
+  height: 280px;
+  width: 200px;
+  background-color: rgb(27, 24, 24); 
+}
+
+.ArtistTag{
+  position: absolute;
+  top: 240px;
+  left: 20px;
+  color: rgb(99, 83, 83);
+  font-size: 14px;
+}
+.SeeMore{
+  font-family: "RubikRegular";
+  position: absolute;
+  left: 800px;
+  margin-top: 50px;
+  font-size: 12px;
+  text-decoration: none;
+  color:rgb(102, 101, 101)
+}
+
+.SeeMoreArtistsAlbums{
+  font-family: "RubikRegular";
+  position: absolute;
+  left: 1250px;
+  margin-top: 50px;
+  font-size: 12px;
+  text-decoration: none;
+  color:rgb(102, 101, 101)
+}
+
+.SearchBar{
+  height: 30px;
+  width: 250px;
+    border-radius: 15px;
+    border: 1px #000 solid;
+    padding: 2px 2px 2px 30px;
+    top: 10;
+    position: absolute;
+    left: 400px;
+}
+
+
+.btn-outline-info {
+  color: #93c;
+  border-color: #93c;
+}
+
+.btn-outline-info:hover {
+  color: #fff;
+  background-color: #93c;
+  border-color: #93c;
+}
+
+.btn-outline-info:focus, .btn-outline-info.focus {
+  box-shadow: 0 0 0 0.2rem rgba(153, 51, 204, 0.5);
+}
+
+.btn-outline-info.disabled, .btn-outline-info:disabled {
+  color: #93c;
+  background-color: transparent;
+}
+
+.btn-outline-info:not(:disabled):not(.disabled):active, .btn-outline-info:not(:disabled):not(.disabled).active,
+.show > .btn-outline-info.dropdown-toggle {
+  color: #fff;
+  background-color: #93c;
+  border-color: #93c;
+}
+
+.btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-info.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(153, 51, 204, 0.5);
+}
+
+.btn {
+  font-family: "RubikRegular";
+
+  margin-left: auto;
+  margin-right: auto;
+      display: inline-block;
+  font-weight: 400;
+  color: #adafae;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: rgb(5, 5, 5);
+  width: 200px;
+  height: 50px;
+  border: 1px solid transparent;
+  padding: 0.375rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn2 {
+  font-family: "RubikRegular";
+  position: absolute;
+  left: 650px;
+
+      display: inline-block;
+  font-weight: 400;
+  color: #adafae;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color:transparent;
+  width: 30px;
+  height: 30px;
+  top: 27px;
+  border: 1px solid transparent;
+  padding: 5px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+

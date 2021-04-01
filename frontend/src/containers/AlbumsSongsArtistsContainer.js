@@ -12,7 +12,7 @@ import AlbumResult from '../components/AlbumResult'
             <TopResult artist={this.props.state.artists[0]}/>
             <SongResult songs={this.props.state.songs.slice(0,4)}/>
             <ArtistResult artists={this.props.state.artists.slice(0,6)}/>
-            <AlbumResult/>
+            <AlbumResult albums ={this.props.state.albums.slice(0,6)}/>
             </div>
         )
     }
