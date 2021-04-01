@@ -91,22 +91,81 @@ body {
   font-size: 14px;
 }
 
+
+
+.SongResult {
+  position: absolute;
+  top: 100px; 
+  left: 750px;
+  width: 850px;
+  height: 310px;
+  background-color: #121212;
+}
+
+.InsideSongResult{
+  position: absolute;
+  background-color:  #0e0c0c;
+  width: 850px;
+  height: 240px;
+  top: 70px; 
+  left: 15px;
+
+}
+
 .TopResult {
   position: absolute;
   top: 100px; 
   left: 300px;
   width: 400px;
   height: 300px;
-  background-color: #8b2828;
+  background-color: #121212;
 }
 
 .InsideTopResult{
   position: absolute;
-  background-color: #0c0606;
-  width: 350px;
-  height: 200px;
-  top: 75px; 
-  left: 25px;
+  background-color:  #0e0c0c;
+  width: 450px;
+  height: 240px;
+  top: 70px; 
+  left: 15px;
+
+}
+
+.ArtistResult {
+  position: absolute;
+  top: 420px; 
+  left: 300px;
+  width: 1300px;
+  height: 300px;
+  background-color: #121212;
+}
+
+.InsideArtistResult{
+  position: absolute;
+  background-color:  #0e0c0c;
+  width: 1300px;
+  height: 300px;
+  top: 70px; 
+  left: 15px;
+
+}
+
+.AlbumResult {
+  position: absolute;
+  top: 800px; 
+  left: 300px;
+  width: 1300px;
+  height: 500px;
+  background-color: #121212;
+}
+
+.InsideAlbumResult{
+  position: absolute;
+  background-color:  #0e0c0c;
+  width: 1300px;
+  height: 300px;
+  top: 70px; 
+  left: 15px;
 
 }
 
@@ -114,9 +173,70 @@ body {
   font-family: 'RubikRegular';
   position: absolute;
   margin-left: 20px;
+  color: white;
+
 }
 
 .TopArtistImage{
+  position: absolute;
+  top: 20px; 
+  left: 25px;
+    height: 100px;
+  width: 100px;
   border-radius: 50%;
 }
 
+.TopArtistName{
+  position: absolute;
+  top: 110px;
+  left: 30px;
+  color: white;
+}
+
+.TopArtistTag{
+  position: absolute;
+  top: 160px;
+  left: 50px;
+  color: white;
+}
+
+.SongDiv{
+  width: 850px;
+  height: 30px;
+}
+
+.SongAlbumImage{
+  position: absolute;
+  margin-top: 10px;
+  left: 10px;
+    height: 40px;
+  width: 40px;
+}
+
+.SongName{
+  color: white;
+  position: absolute;
+  left: 60px;
+  margin-top: 10px;
+
+
+}
+
+.SongDivWrapper{
+  width: 850px;
+  height: 60px;
+
+}
+
+.SongDivWrapper:hover {
+  color: white;
+  background-color: #2b2424;
+}
+
+.SongArtist{
+  font-size: 12px;
+  position: absolute;
+  margin-left: 60px;
+  margin-top: 30px;
+
+}
