@@ -1,7 +1,13 @@
 import React, { Component} from 'react';
 import {loadSpotifyScript} from '../actions/musicPlayerActions'
+import { connect } from 'react-redux';
+import { addPlayer } from '../actions/musicPlayerActions';
+import { addDevice } from '../actions/musicPlayerActions';
+import {startPlayback} from '../actions/musicPlayerActions'
+import {turnOnMusic} from '../actions/musicPlayerActions'
+import {turnOffPause} from '../actions/musicPlayerActions'
 
-export default class MusicPlayerContainer extends Component {
+class MusicPlayerContainer extends Component {
     constructor(props){
         super(props);
     this.state = {
@@ -12,8 +18,8 @@ export default class MusicPlayerContainer extends Component {
         spotifyPlayerReady: false,
         spotifySDKLoaded: false,
         spotifyPlayer: undefined,
-        playbackOn: false,
-        playbackPaused: false
+      //  playbackOn: false,
+      //  playbackPaused: false
     };
     }
 
@@ -63,41 +69,68 @@ export default class MusicPlayerContainer extends Component {
             }
         }
 
-        startPlayback = (spotify_uri) => {
-            fetch("https://api.spotify.com/v1/me/player/play?" +
-                "device_id=" + this.state.spotifyDeviceId, {
-                method: 'PUT',
-                body: JSON.stringify({uris: [spotify_uri]}),
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.state.spotifyAccessToken}`
-                }
-            }).then(() => {
-                    this.setState({
-                        loadingState: "Playback started",
-                        playbackOn: true, playbackPaused: false
-                    });
-                    console.log("Playback started", this.state);
-            })
-        };
+        changeStates = () => {
+            this.props.turnOnMusic()
+            this.props.turnOffPause()
+            console.log("worked")
+        }
+
+        // startPlayback = (spotify_uri) => {
+        //     fetch("https://api.spotify.com/v1/me/player/play?" +
+        //         "device_id=" + this.state.spotifyDeviceId, {
+        //         method: 'PUT',
+        //         body: JSON.stringify({uris: [spotify_uri]}),
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //             'Authorization': `Bearer ${this.state.spotifyAccessToken}`
+        //         }
+        //     }).then(() => {
+        //             this.setState({
+        //                 loadingState: "Playback started",
+        //                 playbackOn: true, playbackPaused: false
+        //             });
+        //             console.log("Playback started", this.state);
+        //     })
+        // };
 
         notifyConnected = () => {
+            this.props.addPlayer(this.state.spotifyPlayer)
+            this.props.addDeviceID(this.state.spotifyDeviceId)
             console.log(this.state)
             console.log(this.props)
+
         }
+
+        // <button onClick={() => {
+        //     if (!this.state.playbackOn) {
+        //         this.startPlayback(this.props.playingRecordingId);
+        //     } else {
+        //         if (this.state.playbackPaused) {
+        //             this.resumePlayback();
+        //         }
+        //     }
+        // }}>Try out</button>
     
     render(
     ){
         return(<div>
             <button onClick={() => {
-                        if (!this.state.playbackOn) {
-                            this.startPlayback(this.props.playingRecordingId);
-                        } else {
-                            if (this.state.playbackPaused) {
-                                this.resumePlayback();
-                            }
-                        }
+                            console.log(this.props.state.player)
+                            startPlayback(this.props.playingRecordingId, this.props.state.deviceID, this.props.state.token).then(this.changeStates());
                     }}>Try out</button>
-        </div> )
+     </div>  )
     }
 }
+
+const mapStateToProps = state => {
+    return {state} 
+  }
+
+const mapDispatchToProps = dispatch => ({
+    addPlayer: (player) => dispatch(addPlayer(player)),
+    addDeviceID: (deviceid) => dispatch(addDevice(deviceid)),
+    turnOnMusic: () => dispatch(turnOnMusic(true)),
+    turnOffPause: () => dispatch(turnOffPause(false))
+ })
+  
+ export default connect(mapStateToProps, mapDispatchToProps)(MusicPlayerContainer)

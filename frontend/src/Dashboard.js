@@ -1,12 +1,11 @@
 import './App.css';
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
-import MusicPlayerContainer from './containers/MusicPlayerContainer';
+import Footer from './containers/Footer';
 
 import NavBar from './components/NavBar'
 import SearchPage from './containers/SearchPage'
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-
 
 
 //will want to show some sort of login to spotify button unless there is already a token
@@ -28,7 +27,7 @@ class Dashboard extends Component {
             <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
 
           </Router>        
-       <MusicPlayerContainer playingRecordingId="spotify:track:4iV5W9uYEdYUVa79Axb7Rh" token={this.props.state.token}/>
+       <Footer token={this.props.state.token}/>
        <br></br>
       </div>  
     );

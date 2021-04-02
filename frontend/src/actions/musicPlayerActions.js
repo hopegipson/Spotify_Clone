@@ -38,3 +38,51 @@
           }
           if (existingScript && callback) callback();
         };
+
+        export const addPlayer = (player) => {
+          return {
+        
+            type: 'ADD_PLAYER',
+            player
+          };
+        };
+
+        export const addDevice = (deviceID) => {
+          return {
+        
+            type: 'ADD_DEVICE',
+            deviceID
+          };
+        };
+
+
+       export const startPlayback = (spotify_uri, deviceID, token) => {
+        // (dispatch) => {
+         return fetch("https://api.spotify.com/v1/me/player/play?" +
+              "device_id=" + deviceID, {
+              method: 'PUT',
+              body: JSON.stringify({uris: [spotify_uri]}),
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${token}`
+              }
+          // }).then(() => {
+          //      dispatch({type: 'PLAYBACK_ON', playbackOn: true})
+          //      dispatch({type: 'PLAYBACK_PAUSED', playbackPaused: false})
+              
+           })
+      }
+    //  }
+      export const turnOnMusic = (playbackOn) => {
+        return {
+          type: 'PLAYBACK_ON',
+          playbackOn
+        };
+      }
+
+      export const turnOffPause = (playbackPaused) => {
+        return {
+          type: 'TURN_OFF_PAUSE',
+          playbackPaused
+        };
+      }

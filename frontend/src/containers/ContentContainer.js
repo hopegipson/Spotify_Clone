@@ -5,7 +5,7 @@ import SongResult from '../components/SongResult'
 import ArtistResult from '../components/ArtistResult'
 import AlbumResult from '../components/AlbumResult'
 
- class AlbumsSongsArtistsContainer extends Component {
+ class ContentContainer extends Component {
     render(){
         return(
             <div>
@@ -26,4 +26,4 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
 })
-export default connect(mapStateToProps, mapDispatchToProps)(AlbumsSongsArtistsContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ContentContainer)

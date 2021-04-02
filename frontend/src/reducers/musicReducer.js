@@ -1,4 +1,4 @@
-const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecordingId: " ",  loading: true, token: null }, action) => {
+const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecordingId: " ",  loading: true, token: null, playbackOn: false, playbackPaused: false }, action) => {
     switch(action.type) {
       case 'LOADING_SPOTIFY_DATA':
         return {
@@ -30,6 +30,28 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
               loading: false
             }
     
+      case 'ADD_PLAYER':
+            return{
+              ...state,
+              player: action.player
+              }
+
+      case 'ADD_DEVICE':
+            return{
+              ...state,
+            deviceID: action.deviceID
+         }
+      case 'PLAYBACK_ON':
+            return{
+              ...state,
+              playbackOn: action.playbackOn
+            }
+
+      case 'TURN_OFF_PAUSE':
+              return{
+                ...state,
+                playbackPaused: action.playbackPaused
+              }
       default:
         return state;
     }
