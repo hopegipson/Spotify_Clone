@@ -6,7 +6,7 @@ import MusicPlayerContainer from './MusicPlayerContainer'
     render(){
         return(
             <div className="footer">
-            <MusicPlayerContainer token={this.props.token} playingRecordingId="spotify:track:4iV5W9uYEdYUVa79Axb7Rh"/>
+            <MusicPlayerContainer token={this.props.token}/>
 
             </div>)
         }
