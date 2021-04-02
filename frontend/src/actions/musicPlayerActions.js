@@ -80,9 +80,38 @@
         };
       }
 
+      export const turnOffMusic = (playbackOn) => {
+        return {
+          type: 'PLAYBACK_OFF',
+          playbackOn
+        };
+      }
+
       export const turnOffPause = (playbackPaused) => {
         return {
           type: 'TURN_OFF_PAUSE',
           playbackPaused
         };
       }
+
+      
+
+      export const pauseTrack = ( deviceID, token) => {
+       return fetch("https://api.spotify.com/v1/me/player/pause?" +
+            "device_id=" + deviceID, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+         })
+    }
+
+ 
+
+    export const turnOnPause = (playbackPaused) => {
+      return {
+        type: 'TURN_ON_PAUSE',
+        playbackPaused
+      };
+    }

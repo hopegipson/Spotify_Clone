@@ -47,11 +47,23 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
               playbackOn: action.playbackOn
             }
 
+      case 'PLAYBACK_OFF':
+              return{
+                ...state,
+                playbackOn: action.playbackOn
+              }
+
       case 'TURN_OFF_PAUSE':
               return{
                 ...state,
                 playbackPaused: action.playbackPaused
               }
+
+      case 'TURN_ON_PAUSE':
+                return{
+                  ...state,
+                  playbackPaused: action.playbackPaused
+                }
       default:
         return state;
     }

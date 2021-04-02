@@ -17,7 +17,7 @@ class MusicPlayerContainer extends Component {
         spotifyPlayerConnected: false,
         spotifyPlayerReady: false,
         spotifySDKLoaded: false,
-        spotifyPlayer: undefined,
+        spotifyPlayer: undefined
       //  playbackOn: false,
       //  playbackPaused: false
     };
@@ -69,11 +69,11 @@ class MusicPlayerContainer extends Component {
             }
         }
 
-        changeStates = () => {
-            this.props.turnOnMusic()
-            this.props.turnOffPause()
-            console.log("worked")
-        }
+        // changeStates = () => {
+        //     this.props.turnOnMusic()
+        //     this.props.turnOffPause()
+        //     console.log("worked")
+        // }
 
         // startPlayback = (spotify_uri) => {
         //     fetch("https://api.spotify.com/v1/me/player/play?" +
@@ -128,9 +128,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     addPlayer: (player) => dispatch(addPlayer(player)),
-    addDeviceID: (deviceid) => dispatch(addDevice(deviceid)),
-    turnOnMusic: () => dispatch(turnOnMusic(true)),
-    turnOffPause: () => dispatch(turnOffPause(false))
+    addDeviceID: (deviceid) => dispatch(addDevice(deviceid))
+    // turnOnMusic: () => dispatch(turnOnMusic(true)),
+    // turnOffPause: () => dispatch(turnOffPause(false))
  })
   
  export default connect(mapStateToProps, mapDispatchToProps)(MusicPlayerContainer)

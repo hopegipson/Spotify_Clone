@@ -243,6 +243,14 @@ body {
 
 }
 
+.SongTime{
+  font-size: 12px;
+  position: absolute;
+  margin-left: 800px;
+  margin-top: 20px;
+
+}
+
 
 
 .Row {
