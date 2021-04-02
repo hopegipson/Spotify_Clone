@@ -28,7 +28,7 @@ class Dashboard extends Component {
             <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
 
           </Router>        
-       <MusicPlayerContainer playingRecordingId="spotify:track:4iV5W9uYEdYUVa79Axb7Rh" />
+       <MusicPlayerContainer playingRecordingId="spotify:track:4iV5W9uYEdYUVa79Axb7Rh" token={this.props.state.token}/>
        <br></br>
       </div>  
     );

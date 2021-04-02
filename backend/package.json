@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@types/spotify-web-playback-sdk": "^0.1.8"
+  }
+}
