@@ -1,8 +1,7 @@
 import React, { Component} from 'react';
 import Song from './Song'
 import { connect } from 'react-redux'
-import {startPlayback, turnOnMusic, turnOffMusic, turnOffPause, turnOnPause, pauseTrack} from '../actions/musicPlayerActions'
-import SongTracker from './SongTracker'
+import {startPlayback, turnOnMusic, turnOffMusic, turnOffPause, turnOnPause, pauseTrack, changeTrackerSong, eraseTrackerSong} from '../actions/musicPlayerActions'
 
 class SongResult extends Component {
     state = {
@@ -13,19 +12,16 @@ class SongResult extends Component {
 
 
     callPlayback = (event) => {
-        console.log(event.target.id)
-        console.log(event.target.name)
 
        if(!this.props.state.playbackOn){
-        startPlayback(event.target.name, this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay())
-    
-      this.props.songs.forEach(function (song) {
+        let selectedElement = this.props.songs.splice(event.target.id, 1)[0]
+
+        startPlayback(event.target.name, this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay(selectedElement))
+          this.props.songs.forEach(function (song) {
             song.open = false;
           })
-        let selectedElement = this.props.songs.splice(event.target.id, 1)
-        
-        selectedElement[0].open = true;
-       this.props.songs.splice(event.target.id, 0, selectedElement[0])   
+        selectedElement.open = true;
+       this.props.songs.splice(event.target.id, 0, selectedElement)   
        this.setState({songs: this.props.songs, selectedElement: selectedElement})
         }
         else if(!this.props.state.playbackPaused){
@@ -37,29 +33,28 @@ class SongResult extends Component {
       }
    }
 
+   
+
     changeStatesPause = () => {
       this.props.turnOnPause()
       this.props.turnOffMusic()
+      this.props.eraseTrackerSong()
   }
 
-    changeStatesPlay = () => {
+    changeStatesPlay = (songPlaying) => {
       this.props.turnOnMusic()
       this.props.turnOffPause()
-      console.log("worked")
+      this.props.changeTrackerSong(songPlaying)
   }
 
     render(){
-        console.log(this.props)
 
         return(<div className="SongResult">
             <h2 className="TitleSection">Songs</h2>
             <a className="SeeMore" href="http://google.com">SEE ALL</a>
-           {console.log(this.props.songs)}
             <div className="InsideSongResult">
                 {this.renderSongs()}
             </div>
-            <SongTracker song={this.state.selectedElement}/>
-
         </div>)
     }
 }
@@ -74,7 +69,10 @@ const mapDispatchToProps = dispatch => ({
     turnOnMusic: () => dispatch(turnOnMusic(true)),
     turnOffPause: () => dispatch(turnOffPause(false)),
     turnOnPause: () => dispatch(turnOnPause(true)),
-    turnOffMusic: () => dispatch(turnOffMusic(false))
+    turnOffMusic: () => dispatch(turnOffMusic(false)),
+   changeTrackerSong: (song) => dispatch(changeTrackerSong(song)),
+   eraseTrackerSong: () => dispatch(changeTrackerSong())
+    
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongResult)   

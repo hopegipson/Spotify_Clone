@@ -66,13 +66,21 @@
                   'Content-Type': 'application/json',
                   'Authorization': `Bearer ${token}`
               }
-          // }).then(() => {
-          //      dispatch({type: 'PLAYBACK_ON', playbackOn: true})
-          //      dispatch({type: 'PLAYBACK_PAUSED', playbackPaused: false})
-              
            })
       }
-    //  }
+
+      export const getCurrentlyPlaying = (token) => {
+         return fetch(`https://api.spotify.com/v1/me/player`, {
+              method: 'GET',
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${token}`
+              }
+           }).then((response) => {
+            return response.json()})
+      }
+
       export const turnOnMusic = (playbackOn) => {
         return {
           type: 'PLAYBACK_ON',
@@ -113,5 +121,18 @@
       return {
         type: 'TURN_ON_PAUSE',
         playbackPaused
+      };
+    }
+
+    export const changeTrackerSong = (songPlaying) => {
+      return {
+        type: 'CHANGE_TRACKER_SONG',
+        songPlaying
+      };
+    }
+
+    export const eraseTrackerSong = () => {
+      return {
+        type: 'ERASE_TRACKER_SONG'
       };
     }

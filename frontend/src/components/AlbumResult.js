@@ -3,7 +3,6 @@ import React, { Component} from 'react';
 export default class AlbumResult extends Component {
    
     render(){
-        console.log(this.props.albums)
 
         return(<div className="AlbumResult">
             <h2 className="TitleSection">Albums</h2>

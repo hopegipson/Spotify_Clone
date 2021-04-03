@@ -23,7 +23,6 @@ class App extends Component {
       }
       return initial;
     }, {});    
-    console.log(hash)
     let foundToken = hash.access_token;
     if (foundToken) {
       this.props.setToken(foundToken)

@@ -64,6 +64,16 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
                   ...state,
                   playbackPaused: action.playbackPaused
                 }
+      case 'CHANGE_TRACKER_SONG':
+                return{
+                  ...state,
+                  songPlaying: action.songPlaying
+                }
+      case 'ERASE_TRACKER_SONG':
+                  return{
+                    ...state,
+                    songPlaying: undefined
+                  }
       default:
         return state;
     }

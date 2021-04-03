@@ -15,6 +15,7 @@ class MusicPlayerContainer extends Component {
         spotifyPlayerConnected: false,
         spotifyPlayerReady: false,
         spotifyPlayer: undefined
+        
     };
     }
 
@@ -51,7 +52,6 @@ class MusicPlayerContainer extends Component {
          }
          
          connectToPlayer = () => {
-             console.log(this.state)
             if (this.state.spotifyPlayer) {
                 this.state.spotifyPlayer.addListener('ready', ({device_id}) => {
                     console.log('Ready with Device ID', device_id);

@@ -191,8 +191,13 @@ body {
 .TopArtistName{
   position: absolute;
   top: 110px;
-  left: 30px;
   color: white;
+  width: 400px;
+  text-align: left;
+  left: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .TopArtistTag{
@@ -206,6 +211,39 @@ body {
   width: 850px;
   height: 30px;
 }
+
+.FooterSongDiv{
+  top: 15px;
+  width: 350px;
+  height: 60px;
+  left: 90px;
+  position: absolute;
+}
+
+.FooterImage{
+  top: 15px;
+  width: 60px;
+  height: 60px;
+  left: 15px;
+  position: absolute;
+ 
+}
+
+.FooterSongTitle{
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  font-size: 14px;
+}
+
+.FooterSongArtist{
+  margin-top: 35px;
+  position: absolute;
+  left: 0px;
+  font-size: 11px;
+}
+
 
 .SongAlbumImage{
   position: absolute;
@@ -441,3 +479,61 @@ body {
   width: 97%;
   background-color: #222121;
 }
+
+.progress {
+  position: absolute;
+  left: 400px;
+  border: 1px solid #eee;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressContainer{
+  width: 300px;
+  position:relative;
+
+
+}
+
+.progress__bar {
+
+  position: absolute;
+  left: 550px;
+  top: 51px;
+  background-color: rgb(27, 26, 26);
+  height: 4px;
+  border-radius: 15px;
+}
+
+.progress__bar2 {
+
+  position:absolute;
+  left: 550px;
+  top: 50px;
+  background-color: rgb(190, 186, 186);
+  height: 6px;
+  border-radius: 15px;}
+
+
+  .SongAlbumImagePlay{
+    position: absolute;
+    margin-top: 10px;
+    left: 10px;
+      height: 40px;
+    width: 40px;
+  }
+
+  .timeProgress{
+    position: absolute;
+    left: 520px;
+    top: 43px;  
+    font-size: 12px;
+  }
+
+  .timeDuration{
+    position: absolute;
+    left: 1155px;
+    top: 43px;  
+    font-size: 12px;
+  }
