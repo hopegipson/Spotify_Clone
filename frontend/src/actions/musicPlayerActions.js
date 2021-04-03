@@ -25,6 +25,29 @@
         }
 
 
+        export const fetchUserData = (token) => {
+
+          return (dispatch) => {
+              dispatch({ type: 'LOADING_SPOTIFY_DATA'})
+             return fetch(`https://api.spotify.com/v1/me`, {
+                  method: 'GET', headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                      'Authorization': 'Bearer ' + token
+                  }
+              })
+              .then((response) => {
+                   return response.json().then(
+                             (data) => {
+                               console.log(data)
+                              dispatch({type: 'ADD_SPOTIFY_USER', spotifyuser: data})
+                              }
+                         );
+                 });
+               }
+              }
+
+
         export const loadSpotifyScript = (callback) => {
           const existingScript = document.getElementById('spotify');
           if (!existingScript) {
@@ -57,7 +80,6 @@
 
 
        export const startPlayback = (spotify_uri, deviceID, token) => {
-        // (dispatch) => {
          return fetch("https://api.spotify.com/v1/me/player/play?" +
               "device_id=" + deviceID, {
               method: 'PUT',
@@ -136,3 +158,5 @@
         type: 'ERASE_TRACKER_SONG'
       };
     }
+
+

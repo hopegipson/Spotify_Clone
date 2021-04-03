@@ -6,7 +6,7 @@ import Footer from './containers/Footer';
 import NavBar from './components/NavBar'
 import SearchPage from './containers/SearchPage'
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-
+import UserBar from './components/UserBar'
 
 //will want to show some sort of login to spotify button unless there is already a token
 class Dashboard extends Component {
@@ -26,7 +26,8 @@ class Dashboard extends Component {
             <NavBar />
             <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
 
-          </Router>        
+          </Router>
+        <UserBar/>       
        <Footer token={this.props.state.token}/>
        <br></br>
       </div>  

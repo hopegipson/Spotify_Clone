@@ -74,6 +74,12 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
                     ...state,
                     songPlaying: undefined
                   }
+
+       case 'ADD_SPOTIFY_USER':
+                  return{
+                   ...state,
+                spotifyuser: action.spotifyuser
+              }
       default:
         return state;
     }
