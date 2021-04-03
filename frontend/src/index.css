@@ -480,14 +480,6 @@ body {
   background-color: #222121;
 }
 
-.progress {
-  position: absolute;
-  left: 400px;
-  border: 1px solid #eee;
-  height: 6px;
-  border-radius: 3px;
-  overflow: hidden;
-}
 
 .progressContainer{
   width: 300px;
