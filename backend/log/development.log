@@ -1,0 +1,257 @@
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210403043228)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "display_name" varchar, "spotifyid" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210403043228"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlaylists (20210403043424)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210403043228)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210403043228"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210403043228)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "display_name" varchar, "spotifyid" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210403043228"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlaylists (20210403043424)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "playlists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "image" varchar DEFAULT 'https://i.pinimg.com/originals/7e/4f/89/7e4f892475aca7242883ceaf8aa89cc9.jpg', "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_d67ef1eb45"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_playlists_on_user_id" ON "playlists" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210403043424"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSongs (20210403043430)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "uri" varchar, "duration_ms" integer, "artist" varchar, "album_artwork" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210403043430"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlaylistSongs (20210403044833)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "playlist_songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "playlist_id" integer NOT NULL, "song_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_282ee7fa4c"
+FOREIGN KEY ("playlist_id")
+  REFERENCES "playlists" ("id")
+, CONSTRAINT "fk_rails_4771edc43f"
+FOREIGN KEY ("song_id")
+  REFERENCES "songs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_playlist_songs_on_playlist_id" ON "playlist_songs" ("playlist_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_playlist_songs_on_song_id" ON "playlist_songs" ("song_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210403044833"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-03 06:13:57.711479"], ["updated_at", "2021-04-03 06:13:57.711479"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-04-03 01:14:06 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/hopegipson/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/hopegipson/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.0ms | Allocations: 480)
+Completed 200 OK in 18ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 2632)
+
+
+Started GET "/users" for ::1 at 2021-04-03 01:14:09 -0500
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/users_controller.rb:4: syntax error, unexpected ')', expecting end
+...ceaf8aa89cc9.jpg", user: user))
+...                              ^):
+  
+app/controllers/users_controller.rb:4: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:4: syntax error, unexpected ')', expecting end
+Started GET "/playlist" for ::1 at 2021-04-03 01:14:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/playlist"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/playlists" for ::1 at 2021-04-03 01:14:18 -0500
+Processing by PlaylistsController#index as HTML
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 0.0ms | Allocations: 75645)
+
+
+  
+NameError (undefined local variable or method `users' for #<PlaylistsController:0x00007fa4d8cc18a0>
+Did you mean?  users_url):
+  
+app/controllers/playlists_controller.rb:4:in `index'
+Started GET "/playlists" for ::1 at 2021-04-03 01:14:39 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#index as HTML
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 3100)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-04-03 01:14:39 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/songs" for ::1 at 2021-04-03 01:16:24 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:5: syntax error, unexpected ')', expecting ']'
+...rk: song_params[:album_artwork))
+...                              ^
+/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:38: syntax error, unexpected ':', expecting end
+      name: song_params[:name], uri: son...
+          ^
+/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+... name: song_params[:name], uri: song_params[:uri], duration_...
+...                           ^~~~
+/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+...song_params[:uri], duration_ms: song_params[:duration_ms], a...
+...                   ^~~~~~~~~~~~
+/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+...g_params[:duration_ms], artist: song_params[:artist], album_...
+...                        ^~~~~~~
+/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+...params[:artist], album_artwork: song_params[:album_artwork)
+...                 ^~~~~~~~~~~~~~
+/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:38: syntax error, unexpected ')', expecting ']'
+...rk: song_params[:album_artwork)
+...                              ^
+/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/songs_controller.rb:5: syntax error, unexpected ')', expecting ']'
+app/controllers/songs_controller.rb:38: syntax error, unexpected ':', expecting end
+app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+app/controllers/songs_controller.rb:38: syntax error, unexpected ')', expecting ']'
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+app/controllers/songs_controller.rb:5: syntax error, unexpected ')', expecting ']'
+app/controllers/songs_controller.rb:38: syntax error, unexpected ':', expecting end
+app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+app/controllers/songs_controller.rb:38: syntax error, unexpected tLABEL, expecting '='
+app/controllers/songs_controller.rb:38: syntax error, unexpected ')', expecting ']'
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+Started GET "/songs" for ::1 at 2021-04-03 01:17:26 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:5: syntax error, unexpected ')', expecting ']'
+...rk: song_params[:album_artwork))
+...                              ^
+/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/songs_controller.rb:5: syntax error, unexpected ')', expecting ']'
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+app/controllers/songs_controller.rb:5: syntax error, unexpected ')', expecting ']'
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+Started GET "/songs" for ::1 at 2021-04-03 01:17:48 -0500
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+Started GET "/songs" for ::1 at 2021-04-03 01:17:49 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+Started GET "/songs" for ::1 at 2021-04-03 01:17:56 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/serializers/song_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 3014)
+
+
+Started GET "/playlists" for ::1 at 2021-04-03 01:17:59 -0500
+Processing by PlaylistsController#index as HTML
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 2555)
+
+
+Started GET "/users" for ::1 at 2021-04-03 01:18:03 -0500
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/users_controller.rb:4: syntax error, unexpected ')', expecting end
+...ceaf8aa89cc9.jpg", user: user))
+...                              ^):
+  
+app/controllers/users_controller.rb:4: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:4: syntax error, unexpected ')', expecting end
+Started GET "/users" for ::1 at 2021-04-03 01:18:25 -0500
+  
+SyntaxError (/Users/hopegipson/Flatiron/code/PROJECTS/Music_Player_Application/backend/app/controllers/users_controller.rb:4: syntax error, unexpected ')', expecting end
+...ceaf8aa89cc9.jpg", user: user))
+...                              ^):
+  
+app/controllers/users_controller.rb:4: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:4: syntax error, unexpected ')', expecting end
+Started GET "/users" for ::1 at 2021-04-03 01:18:26 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 2367)
+
+
