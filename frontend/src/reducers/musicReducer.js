@@ -1,4 +1,4 @@
-const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecordingId: " ",  loading: true, token: null, playbackOn: false, playbackPaused: false }, action) => {
+const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecordingId: " ",  loading: true, token: null, playbackOn: false, playbackPaused: false, user: {display_name: "Still loading", spotifyid: "none"}}, action) => {
     switch(action.type) {
       case 'LOADING_SPOTIFY_DATA':
         return {
@@ -80,6 +80,12 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
                    ...state,
                 spotifyuser: action.spotifyuser
               }
+
+      case 'ADD_USER':
+                return{
+                  ...state,
+                  user: action.user
+                }
       default:
         return state;
     }

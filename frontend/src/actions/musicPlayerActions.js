@@ -78,6 +78,14 @@
           };
         };
 
+      // export const addUser = (user) => {
+      //   return {
+      //     type: 'ADD_USER',
+      //     user: user
+      //   }
+
+      // }
+
 
        export const startPlayback = (spotify_uri, deviceID, token) => {
          return fetch("https://api.spotify.com/v1/me/player/play?" +

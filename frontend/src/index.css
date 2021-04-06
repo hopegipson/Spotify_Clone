@@ -380,7 +380,7 @@ body {
     border-radius: 15px;
     border: 1px #000 solid;
     padding: 2px 2px 2px 30px;
-    top: 10;
+    top: 25px;
     position: absolute;
     left: 400px;
 }
@@ -529,3 +529,308 @@ body {
     top: 43px;  
     font-size: 12px;
   }
+
+  .UserNameWelcome{
+    color: white;
+    font-family: "RubikRegular";
+    position: absolute;
+    left: 275px;
+    top: 75px;
+  }
+
+  .UserNameBar{
+    height: 24px;
+    font-family: "RubikRegular";
+    color: white;
+    font-size: 13px;
+      border-radius: 15px;
+      border: 1px rgb(82, 81, 81) solid;
+      padding: 3px 37px 1px 37px;
+      position: absolute;
+      top: 10px;
+      left: 1450px;
+      background-color: black;
+      z-index: -1;
+      margin-left: 10px;
+    
+
+  }
+
+  .UserIcon{
+    border: 3px rgb(82, 81, 81) solid;
+    border-radius: 15px;
+    width: 19px;
+    height: 19px;
+    top: 20px;
+    left: 1490px;
+    position: absolute;
+  }
+
+
+  .dropbtn {
+    height: 24px;
+    font-family: "RubikRegular";
+    color: white;
+    font-size: 13px;
+    position: absolute;
+    top: 20px;
+    left: 1480px;
+    background-color: black;
+    z-index: -1;
+    margin-left: 10px;
+    border-radius: 15px;
+    border: 1px rgb(82, 81, 81) solid;
+    padding: 3px 37px 1px 37px;
+    cursor: pointer;
+    width: 165px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    font-family: "RubikRegular";
+    color: white;
+    font-size: 13px;
+    top: 43px;
+    left: 650px;
+    display: none;
+    background-color: #4d4646;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #201e1e;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "RubikRegular";
+    color: white;
+  }
+
+  .dropdown-content a:hover {background-color: #9c9797}
+
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #201e1e;
+  }
+
+  
+  .ArrowIcon{
+    border-radius: 15px;
+    width: 15px;
+    height: 20px;
+    top: 23px;
+    left: 790px;
+    position: absolute;
+    cursor: pointer;
+
+  }
+
+  .AccountOverview{
+    position: absolute;
+    left: 400px;
+    top: 100px;
+    font-family: "RubikRegular";
+    color: white;
+    font-size: 30px;
+  }
+
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #282828;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #282828;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #282828;
+}
+
+.table-sm th,
+.table-sm td {
+  padding: 0.3rem;
+}
+
+.table-bordered {
+  border: 1px solid #282828;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #282828;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 2px;
+}
+
+.table-borderless th,
+.table-borderless td,
+.table-borderless thead th,
+.table-borderless tbody + tbody {
+  border: 0;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+.table-primary,
+.table-primary > th,
+.table-primary > td {
+  background-color: #c3e4f4;
+}
+
+.table-primary th,
+.table-primary td,
+.table-primary thead th,
+.table-primary tbody + tbody {
+  border-color: #90cdea;
+}
+
+.table-hover .table-primary:hover {
+  background-color: #addaf0;
+}
+
+.table-hover .table-primary:hover > td,
+.table-hover .table-primary:hover > th {
+  background-color: #addaf0;
+}
+
+.TableContainer{
+  font-family: "RubikLight";
+
+  background-color: black;
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  width: 800px;
+}
+
+.TableImageContainer{
+  font-family: "RubikLight";
+  position: absolute;
+  width: 1100px;
+  left: 400px;
+  height: 550px;
+  background-image: url("https://www.prsformusic.com/-/media/images/mmagazine/images/2018/02/hannynaibaho388579.ashx?h=358&w=637&la=en&hash=303428C608D79A9F2B4962CB3F4AD750945E9583");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 200px;
+}
+
+.FormImageContainer{
+  font-family: "RubikLight";
+  position: absolute;
+  width: 1100px;
+  left: 400px;
+  height: 550px;
+  background-image: url("https://www.prsformusic.com/-/media/images/mmagazine/images/2018/02/hannynaibaho388579.ashx?h=358&w=637&la=en&hash=303428C608D79A9F2B4962CB3F4AD750945E9583");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 200px;
+}
+.LabelUser{
+  position: absolute;
+  top: 100px;
+  left: 150px;
+}
+
+.UserFormContainer{
+  font-family: "RubikLight";
+  background-color: black;
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  width: 800px;
+  height: 300px;
+}
+
+.UserEditBar{
+    height: 30px;
+    width: 250px;
+    border-radius: 15px;
+    border: 1px #000 solid;
+    padding: 2px 2px 2px 30px;
+    top: 130px;
+    position: absolute;
+    left: 60px;
+}
+
+.btn-outline-info {
+  color: #93c;
+  border-color: #93c;
+}
+
+.btn-outline-info:hover {
+  color: #fff;
+  background-color: #93c;
+  border-color: #93c;
+}
+
+.btn-outline-info:focus, .btn-outline-info.focus {
+  box-shadow: 0 0 0 0.2rem rgba(153, 51, 204, 0.5);
+}
+
+.btn-outline-info.disabled, .btn-outline-info:disabled {
+  color: #93c;
+  background-color: transparent;
+}
+
+.btn-outline-info:not(:disabled):not(.disabled):active, .btn-outline-info:not(:disabled):not(.disabled).active,
+.show > .btn-outline-info.dropdown-toggle {
+  color: #fff;
+  background-color: #93c;
+  border-color: #93c;
+}
+
+.btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-info.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(153, 51, 204, 0.5);
+}
+
+.changeUsernameBtn{
+  position: absolute;
+  top: 200px;
+  left: 100px;
+
+}
+
+.UserFormInstruction{
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 200px;
+}
+.form-one{
+  position: absolute;
+  left: 400px;
+}

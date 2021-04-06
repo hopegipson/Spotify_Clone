@@ -6,7 +6,9 @@ import Footer from './containers/Footer';
 import NavBar from './components/NavBar'
 import SearchPage from './containers/SearchPage'
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import UserBar from './components/UserBar'
+import UserHomepageContainer from './containers/UserHomepageContainer'
+import UserPage from './components/UserPage'
+import UserForm from './components/UserForm'
 
 //will want to show some sort of login to spotify button unless there is already a token
 class Dashboard extends Component {
@@ -21,19 +23,23 @@ class Dashboard extends Component {
   {
     return (
       <div className="Dashboard">
-          "Dashboard"
           <Router>
             <NavBar />
+            <UserHomepageContainer/>
             <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
-
+            <Route path="/users/:id" render={() => <UserPage user={this.props.state.user} />}/>
+            <Route path="/useredit/:id" render={() => <UserForm user={this.props.state.user} />}/>
           </Router>
-        <UserBar/>       
        <Footer token={this.props.state.token}/>
        <br></br>
-      </div>  
+      </div>
     );
   }
 }
+{/* <Route path={`users/:userId`} render={routerProps => <UserPage {...routerProps} user={this.props.state.user} /> } /> */}
+
+
+
 
 const mapStateToProps = state => {
   return {

@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 
 const imagesPath = {
-    play: "https://lh3.googleusercontent.com/proxy/RiGzAnMYj3wChgCoBWAARaHuuPyn_dsP7cn1NCvlkm6PsHQKw8xqLOxuw9VXqwCrY9jrohEHTTweMFGMNSNUwrPWVHsIeR78rlnwJbjVw3E4977JVgROYVSIBv00K8bNvQv6gQ",
+    play: "https://lh3.googleusercontent.com/proxy/QNiZ5u36ySawhFHprrnvUqcEq3Ki00tb1Gn-am0X44rNKZCJrUp7z7NlWHL-zX_o1frIS6cMpOM6lfKQ614CSkqbBbl4TRJf2xkB-houUnwSiUXbJayBdC6ytQLFdoxkCZt1pQ",
     pause: "https://icon-library.com/images/pause-icon-transparent/pause-icon-transparent-24.jpg"
   }
 
@@ -18,11 +18,11 @@ export default class Song extends Component {
       this.setState(state => ({ open: !this.props.open }))
       }
 
-      componentDidUpdate(prevProps) {
-        if(prevProps.open !== this.props.open) {
-          this.setState({open: this.props.open});
-        }
-      }
+      // componentDidUpdate(prevProps) {
+      //   if(prevProps.open !== this.props.open) {
+      //     this.setState({open: this.props.open});
+      //   }
+      // }
 
       toggleImage = () => {
         this.setState(state => ({ open: !this.props.open }))

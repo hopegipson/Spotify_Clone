@@ -8,7 +8,7 @@ class SongResult extends Component {
         selectedElement: "empty",
         songs: this.props.songs
        }
-    renderSongs = () => this.state.songs.map((song, index) => <Song key={song.id} index={index} song ={song} callPlayback={this.callPlayback} />) 
+    renderSongs = () => this.props.songs.map((song, index) => <Song key={song.id} index={index} song ={song} callPlayback={this.callPlayback} />) 
 
 
     callPlayback = (event) => {
@@ -71,7 +71,7 @@ const mapDispatchToProps = dispatch => ({
     turnOnPause: () => dispatch(turnOnPause(true)),
     turnOffMusic: () => dispatch(turnOffMusic(false)),
    changeTrackerSong: (song) => dispatch(changeTrackerSong(song)),
-   eraseTrackerSong: () => dispatch(changeTrackerSong())
+   eraseTrackerSong: () => dispatch(eraseTrackerSong())
     
 })
 
