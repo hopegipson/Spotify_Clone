@@ -38,6 +38,9 @@ class UserBar extends Component {
         this.props.postUser(this.props.state.spotifyuser.display_name, this.props.state.spotifyuser.id)
     }
 
+    refreshPage = ()=>{
+        window.location.reload();
+     }
 
     
    
@@ -53,7 +56,7 @@ class UserBar extends Component {
                                 <div class="dropdown-content">
                                 <Link key={this.props.state.user.id} className="sidebarOption" to={`/users/${this.props.state.user.id}`}><a>Account</a> </Link>
                                 <Link key={this.props.state.user.id} className="sidebarOption" to={`/useredit/${this.props.state.user.id}`}><a>Edit Profile</a> </Link>
-                                <Link className="sidebarOption" to="/search"><a>Log out</a> </Link>
+                               <a  onClick={this.refreshPage}>Log out</a> 
                             </div>
                       
                     </div>
