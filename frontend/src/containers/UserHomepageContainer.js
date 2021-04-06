@@ -2,11 +2,8 @@ import React, { Component} from 'react';
 import { fetchUserData} from '../actions/musicPlayerActions';
 import { connect } from 'react-redux'
 import {getUsers, postUser, addUserToState} from '../services/localapi.js'
-import UserPage from '../components/UserPage'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
+    BrowserRouter as 
     Link
   } from "react-router-dom";
 

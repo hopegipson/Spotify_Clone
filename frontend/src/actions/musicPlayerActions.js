@@ -4,7 +4,7 @@
 
     return (dispatch) => {
         dispatch({ type: 'LOADING_SPOTIFY_DATA'})
-       return fetch(`https://api.spotify.com/v1/search?query=${term}&type=album,playlist,artist,track`, {
+       return fetch(`https://api.spotify.com/v1/search?query=${term}&type=album,playlist,artist,track&limit=50`, {
             method: 'GET', headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',

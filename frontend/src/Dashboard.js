@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import UserHomepageContainer from './containers/UserHomepageContainer'
 import UserPage from './components/UserPage'
 import UserForm from './components/UserForm'
+import PlaylistForm from './components/PlaylistForm'
 
 //will want to show some sort of login to spotify button unless there is already a token
 class Dashboard extends Component {
@@ -24,11 +25,12 @@ class Dashboard extends Component {
     return (
       <div className="Dashboard">
           <Router>
-            <NavBar />
+            <NavBar user={this.props.state.user}/>
             <UserHomepageContainer/>
             <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
             <Route path="/users/:id" render={() => <UserPage user={this.props.state.user} />}/>
             <Route path="/useredit/:id" render={() => <UserForm user={this.props.state.user} />}/>
+            <Route path="/playlist/new" render={() => <PlaylistForm user={this.props.state.user} />}/>
           </Router>
        <Footer token={this.props.state.token}/>
        <br></br>
@@ -36,7 +38,6 @@ class Dashboard extends Component {
     );
   }
 }
-{/* <Route path={`users/:userId`} render={routerProps => <UserPage {...routerProps} user={this.props.state.user} /> } /> */}
 
 
 

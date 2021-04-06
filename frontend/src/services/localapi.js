@@ -17,7 +17,10 @@ const parseJSON = response => {
   }
 
 export function getUsers() {return fetch(usersURL).then(parseJSON)}
+export function getPlaylists() {return fetch(playlistsURL).then(parseJSON)}
+
 export function getUser(userID) {fetch(usersURL + `/${userID}`).then(parseJSON)}
+export function getPlaylist(playlistID) {fetch(playlistsURL + `/${playlistID}`).then(parseJSON)}
 
 export const postUser = (display_name, spotifyid) =>  {
   return (dispatch) => {
@@ -36,6 +39,23 @@ export const postUser = (display_name, spotifyid) =>  {
    })
   }
   }
+
+  export const postPlaylist = (user_id) =>  {
+   return (dispatch) => {
+    return fetch(playlistsURL, {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify({
+          playlist_info: {
+            user_id: user_id
+          }
+        })
+    }).then(parseJSON).then((data) => {
+      console.log(data)
+       dispatch({type: 'ADD_PLAYLIST', playlist: data })
+     })
+      }
+    }
 
   export const addUserToState = (user) => {
     return {
