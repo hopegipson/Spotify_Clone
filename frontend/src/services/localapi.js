@@ -60,22 +60,40 @@ export const postUser = (display_name, spotifyid) =>  {
       }
     }
 
-  export const postSongtoLibrary = (name, uri, duration_ms, artist, album_artwork, playlist_id) =>  {
-      return fetch(playlistsURL, {
+  export const postSong = (song, playlist_id) =>  {
+      return fetch(songsURL, {
         method: 'POST',
         headers: headers,
         body: JSON.stringify({
             song_info: {
-              name: name,
-              uri: uri,
-              duration_ms: duration_ms,
-              artist: artist,
-              album_artwork: album_artwork,
+              name: song.name,
+              uri: song.uri,
+              duration_ms: song.duration_ms,
+              artist: song.artists[0].name,
+              album: song.album.name,
+              album_artwork: song.album.images[0].url,
               playlist_id: playlist_id
             }
           })
-       }).then(parseJSON)
-        }
+       }).then(parseJSON)}
+
+    export const postSongWithTwo = (song, playlist_id, second_playlist_id) =>  {
+        return fetch(songsURL, {
+          method: 'POST',
+          headers: headers,
+          body: JSON.stringify({
+              song_info: {
+                name: song.name,
+                uri: song.uri,
+                duration_ms: song.duration_ms,
+                artist: song.artists[0].name,
+                album: song.album.name,
+                album_artwork: song.album.images[0].url,
+                playlist_id: playlist_id,
+                second_playlist_id: second_playlist_id
+              }
+            })
+         }).then(parseJSON)}
         //song.name song.uri song.duration_ms 
         //song.artist[0].name song.album.name song.album.images[0].url
 
@@ -97,6 +115,17 @@ export const postUser = (display_name, spotifyid) =>  {
           })
       }).then(parseJSON)
       }
+
+      export const changeSong = (id, playlist_id) => {
+        return fetch(songsURL +`/${id}`, {
+          method: 'PATCH',
+          headers: headers,
+          body: JSON.stringify({
+             song_info: {
+              playlist_id: playlist_id}
+            })
+        }).then(parseJSON)
+        }
   
 
 

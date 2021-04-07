@@ -3,6 +3,9 @@ class SongsController < ApplicationController
     def create
         #when you create one if you don't have a playlist id make it 0
         song = Song.new(name: song_params[:name], uri: song_params[:uri], duration_ms: song_params[:duration_ms], artist: song_params[:artist], album: song_params[:album], album_artwork: song_params[:album_artwork])
+        if song_params[:second_playlist_id]
+          song.playlists << Playlist.all.find_by(id: song_params[:second_playlist_id])
+        end
         song.playlists << Playlist.all.find_by(id: song_params[:playlist_id])
         song.save
         render json: SongSerializer.new(song).to_serialized_json
@@ -21,7 +24,7 @@ class SongsController < ApplicationController
 
       def update
         song = Song.find_by(id: params[:id])
-        playlist = Playlist.find_by(id: song_params_change[:playlist_id])
+        playlist = Playlist.find_by(id: song_params[:playlist_id])
         song.playlists << playlist
         song.save
         render json: SongSerializer.new(song).to_serialized_json
@@ -37,8 +40,10 @@ class SongsController < ApplicationController
       private
 
       def song_params
-        params.require(:song_info).permit(:name, :uri, :duration_ms, :artist, :album_artwork, :album, :date_added, :playlist_id)
+        params.require(:song_info).permit(:name, :uri, :duration_ms, :artist, :album_artwork, :album, :playlist_id, :second_playlist_id)
       end
+
+
 
 
       
