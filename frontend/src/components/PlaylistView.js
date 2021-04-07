@@ -1,18 +1,27 @@
 import React, { Component} from 'react';
 import { addSelectedPlaylist, getPlaylist} from '../services/localapi';
 import { connect } from 'react-redux'
+import PlaylistEditPopUp from '../components/PlaylistEditPopUp'
 
-class PlaylistForm extends Component {
+class PlaylistView extends Component {
 
     state = {
-        text: '',
-        playlist: undefined}
+     seen: false
+    }
     
       handleOnChange(event) {
         this.setState({
           text: event.target.value,
         });
       }
+
+      togglePop = () => {
+        console.log(this.state.seen)
+        this.setState({
+         seen: !this.state.seen
+        });
+       };
+
 
       componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id){
@@ -49,15 +58,6 @@ class PlaylistForm extends Component {
        return DateString
        }
 
-      handleOnSubmit(event) {
-        event.preventDefault();
-        console.log("Submit")
-       //changeUser(this.state.text, this.props.user.spotifyid, this.props.user.id).then((user) => {
-       // this.props.addUserToState(user)})
-        this.setState({
-          text: '',
-        });
-      }
 
 
     render(){
@@ -65,18 +65,23 @@ class PlaylistForm extends Component {
             return(
               
                 <div>
+                     <div>
+                    {this.state.seen ? <PlaylistEditPopUp user={this.props.state.user} playlist={this.props.state.selectedPlaylist} toggle={this.togglePop}  /> : null}
+                   </div>  
+                  
                   <div className="TopHalfPlaylist">
-                    <img className="PlaylistImage" src="http://iconsetc.com/icons-watermarks/flat-square-white-on-dark-gray/classica/classica_music-note-2/classica_music-note-2_flat-square-white-on-dark-gray_512x512.png" alt="SpotifyLogo"></img> 
+              
+                    <img className="PlaylistImage" src={this.props.state.selectedPlaylist.image} alt="SpotifyLogo"></img> 
                     <div className="PlaylistTag"> PLAYLIST</div>
                     {this.props.state.selectedPlaylist ? 
 
                     (<div>
-                    <div className="PlaylistNameTitle"> {this.props.state.selectedPlaylist.name}</div>
+                    <div className="PlaylistNameTitle" onClick={this.togglePop}> {this.props.state.selectedPlaylist.name}</div>
 
                     <div className="UsernameTag"> {this.props.state.user.display_name}</div></div>) : (                    <div className="PlaylistNameTitle"> {"Loading"}</div>)}
 
                   </div>
-                  {this.props.state.selectedPlaylist ? 
+                  {this.props.state.selectedPlaylist.playlist_songs ? 
                     (<div>
                   <div className="BottomHalfPlaylist">
                   <div className="TablePlaylistContainer">
@@ -124,4 +129,4 @@ const mapDispatchToProps = dispatch => ({
 
  })
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlaylistForm);
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistView);

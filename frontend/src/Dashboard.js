@@ -9,7 +9,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import UserHomepageContainer from './containers/UserHomepageContainer'
 import UserPage from './components/UserPage'
 import UserForm from './components/UserForm'
-import PlaylistForm from './components/PlaylistForm'
+import PlaylistView from './components/PlaylistView'
 
 //will want to show some sort of login to spotify button unless there is already a token
 class Dashboard extends Component {
@@ -30,7 +30,7 @@ class Dashboard extends Component {
             <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
             <Route  path="/users/:id" render={() => <UserPage user={this.props.state.user} />}/>
             <Route path="/useredit/:id" render={() => <UserForm user={this.props.state.user} />}/>
-            <Route path="/playlist/:id" render={routerProps => <PlaylistForm {...routerProps} user={this.props.state.user} />}/>
+            <Route path="/playlist/:id" render={routerProps => <PlaylistView {...routerProps} user={this.props.state.user} />}/>
           </Router>
        <Footer token={this.props.state.token}/>
        <br></br>
