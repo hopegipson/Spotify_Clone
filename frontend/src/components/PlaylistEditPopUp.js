@@ -9,15 +9,13 @@ export default class PlaylistEditPopUp extends Component {
     
       handleOnSubmit(event) {
         event.preventDefault();
-        // let number = parseInt(this.state.text)
-        // this.props.addSongToPlaylist(number)
-        // this.setState({
-        //     text: 'this.props.user.playlists[1].id'
-        // })
+        console.log(this.props)
+        this.props.changePlaylist(this.state.text, this.props.playlist.image, this.props.playlist.id)
       }
 
       handleOnSubmitPicture(event) {
         event.preventDefault();
+        this.props.changePlaylist(this.props.playlist.name, this.state.imageurl, this.props.playlist.id)
       }
 
       handleOnChange(event) {

@@ -18458,3 +18458,1049 @@ Processing by PlaylistsController#show as */*
 Completed 200 OK in 92ms (Views: 4.5ms | ActiveRecord: 2.3ms | Allocations: 2761)
 
 
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:13:01 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 46ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2702)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:13:14 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 51ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2702)
+
+
+Started GET "/playlists/3" for ::1 at 2021-04-07 03:13:15 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mPlaylist Load (1.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 32ms (Views: 0.8ms | ActiveRecord: 1.7ms | Allocations: 3796)
+
+
+Started GET "/playlists/4" for ::1 at 2021-04-07 03:13:16 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1543)
+
+
+Started GET "/playlists/5" for ::1 at 2021-04-07 03:13:16 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1544)
+
+
+Started GET "/playlists/4" for ::1 at 2021-04-07 03:13:17 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mPlaylist Load (1.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 1543)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:13:18 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 26ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 2702)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:38:27 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (1.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 319ms (Views: 2.2ms | ActiveRecord: 3.9ms | Allocations: 10016)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:38:28 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 2757)
+
+
+Started PATCH "/users/2" for ::1 at 2021-04-07 03:40:22 -0600
+Processing by UsersController#update as */*
+  Parameters: {"playlist_info"=>{"name"=>"My PlaylistEdit #1"}, "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `update'
+Completed 400 Bad Request in 10ms (ActiveRecord: 1.3ms | Allocations: 753)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user_info):
+  
+app/controllers/users_controller.rb:29:in `user_params'
+app/controllers/users_controller.rb:21:in `update'
+Started GET "/playlists" for ::1 at 2021-04-07 03:40:36 -0600
+Processing by PlaylistsController#index as HTML
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 49ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 19631)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:41:10 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 9952)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:44:25 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.9ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (1.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 59ms (Views: 0.6ms | ActiveRecord: 5.4ms | Allocations: 28570)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:44:32 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 9952)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:44:37 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 9952)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:44:42 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 9952)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:44:48 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 6422)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:44:48 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 2702)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:44:59 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 41ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 9955)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:44:59 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.4ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 2702)
+
+
+Started GET "/playlists/3" for ::1 at 2021-04-07 03:45:01 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 3793)
+
+
+Started GET "/playlists/4" for ::1 at 2021-04-07 03:45:02 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1543)
+
+
+Started GET "/playlists/5" for ::1 at 2021-04-07 03:45:02 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1543)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:45:03 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2702)
+
+
+Started PATCH "/playlists/2" for ::1 at 2021-04-07 03:45:12 -0600
+Processing by PlaylistsController#update as */*
+  Parameters: {"playlist"=>{"name"=>"My Playlist New #1"}, "id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:19:in `update'
+Completed 204 No Content in 3ms (ActiveRecord: 0.1ms | Allocations: 761)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:46:05 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 9952)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:46:07 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 2702)
+
+
+Started GET "/playlists" for ::1 at 2021-04-07 03:46:14 -0600
+Processing by PlaylistsController#index as HTML
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.4ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 68ms (Views: 0.3ms | ActiveRecord: 3.9ms | Allocations: 19632)
+
+
+Started PATCH "/playlists/2" for ::1 at 2021-04-07 03:46:30 -0600
+Processing by PlaylistsController#update as */*
+  Parameters: {"playlist"=>{"name"=>"My Playlist NEW#1"}, "id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:19:in `update'
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms | Allocations: 648)
+
+
+Started GET "/playlists" for ::1 at 2021-04-07 03:47:26 -0600
+Processing by PlaylistsController#index as HTML
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 59ms (Views: 0.9ms | ActiveRecord: 3.0ms | Allocations: 19615)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:49:02 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 54ms (Views: 0.4ms | ActiveRecord: 4.5ms | Allocations: 28567)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:51:53 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 9952)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:51:56 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 9952)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:52:01 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 9952)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:52:10 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 9955)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:52:21 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 9952)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:52:37 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (1.5ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 39ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 20229)
+
+
+Started PATCH "/playlists/2" for ::1 at 2021-04-07 03:52:41 -0600
+Processing by PlaylistsController#update as */*
+  Parameters: {"playlist"=>{"name"=>"My PlaylistNew #1", "image"=>"https://i.pinimg.com/originals/7e/4f/89/7e4f892475aca7242883ceaf8aa89cc9.jpg"}, "id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:19:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mPlaylist Update (2.0ms)[0m  [1m[33mUPDATE "playlists" SET "name" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["name", "My PlaylistNew #1"], ["updated_at", "2021-04-07 09:52:41.777600"], ["id", 2]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+Completed 204 No Content in 38ms (ActiveRecord: 4.5ms | Allocations: 8564)
+
+
+Started GET "/playlists" for ::1 at 2021-04-07 03:52:46 -0600
+Processing by PlaylistsController#index as HTML
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 4.0ms | Allocations: 19639)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:53:52 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 43ms (Views: 0.5ms | ActiveRecord: 1.8ms | Allocations: 10799)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:53:58 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 2702)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:53:58 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 2702)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:54:26 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 31ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 9952)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:54:27 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 2702)
+
+
+Started GET "/playlists/3" for ::1 at 2021-04-07 03:54:29 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mCACHE Song Load (0.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 3793)
+
+
+Started GET "/playlists/4" for ::1 at 2021-04-07 03:54:30 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1543)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:54:31 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 2702)
+
+
+Started PATCH "/playlists/2" for ::1 at 2021-04-07 03:54:41 -0600
+Processing by PlaylistsController#update as */*
+  Parameters: {"playlist"=>{"name"=>"My Playlist #1", "image"=>"https://i.pinimg.com/originals/7e/4f/89/7e4f892475aca7242883ceaf8aa89cc9.jpg"}, "id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:19:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mPlaylist Update (0.8ms)[0m  [1m[33mUPDATE "playlists" SET "name" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["name", "My Playlist #1"], ["updated_at", "2021-04-07 09:54:41.453509"], ["id", 2]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+Completed 204 No Content in 16ms (ActiveRecord: 3.6ms | Allocations: 4106)
+
+
+Started GET "/users/1" for ::1 at 2021-04-07 03:54:41 -0600
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 43ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 9771)
+
+
+Started GET "/users" for ::1 at 2021-04-07 03:56:29 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 49ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 28567)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 03:56:30 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 6422)
+
+
+Started PATCH "/playlists/2" for ::1 at 2021-04-07 03:56:36 -0600
+Processing by PlaylistsController#update as */*
+  Parameters: {"playlist"=>{"name"=>"My PlaylistNew #1", "image"=>"https://i.pinimg.com/originals/7e/4f/89/7e4f892475aca7242883ceaf8aa89cc9.jpg"}, "id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:19:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mPlaylist Update (0.3ms)[0m  [1m[33mUPDATE "playlists" SET "name" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["name", "My PlaylistNew #1"], ["updated_at", "2021-04-07 09:56:36.084362"], ["id", 2]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 6635)
+
+
+Started GET "/users/1" for ::1 at 2021-04-07 03:56:36 -0600
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 9771)
+
+
+Started GET "/users" for ::1 at 2021-04-07 04:00:03 -0600
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 30ms (Views: 2.1ms | ActiveRecord: 1.5ms | Allocations: 9952)
+
+
+Started GET "/playlists/2" for ::1 at 2021-04-07 04:00:04 -0600
+Processing by PlaylistsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:14:in `show'
+  [1m[36mPlaylistSong Load (0.2ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 2702)
+
+
+Started PATCH "/playlists/2" for ::1 at 2021-04-07 04:00:09 -0600
+Processing by PlaylistsController#update as */*
+  Parameters: {"playlist"=>{"name"=>"My Playlist #1", "image"=>"https://i.pinimg.com/originals/7e/4f/89/7e4f892475aca7242883ceaf8aa89cc9.jpg"}, "id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:19:in `update'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mPlaylist Update (0.7ms)[0m  [1m[33mUPDATE "playlists" SET "name" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["name", "My Playlist #1"], ["updated_at", "2021-04-07 10:00:09.386000"], ["id", 2]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 6218)
+
+
+Started GET "/users/1" for ::1 at 2021-04-07 04:00:09 -0600
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 9668)
+
+
+Started PATCH "/playlists/2" for ::1 at 2021-04-07 04:01:06 -0600
+Processing by PlaylistsController#update as */*
+  Parameters: {"playlist"=>{"name"=>"My Playlist  NEW #1", "image"=>"https://i.pinimg.com/originals/7e/4f/89/7e4f892475aca7242883ceaf8aa89cc9.jpg"}, "id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:19:in `update'
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mPlaylist Update (2.8ms)[0m  [1m[33mUPDATE "playlists" SET "name" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["name", "My Playlist  NEW #1"], ["updated_at", "2021-04-07 10:01:06.539189"], ["id", 2]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mPlaylistSong Load (0.3ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 32ms (Views: 0.3ms | ActiveRecord: 5.8ms | Allocations: 6218)
+
+
+Started GET "/users/1" for ::1 at 2021-04-07 04:01:06 -0600
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 90ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 9671)
+
+
+Started PATCH "/playlists/2" for ::1 at 2021-04-07 04:01:55 -0600
+Processing by PlaylistsController#update as */*
+  Parameters: {"playlist"=>{"name"=>"My Playlist  NEW #1", "image"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcH-MLH4M6jxXvKdVrLPsbJrjwjzYoa7738A&usqp=CAU"}, "id"=>"2"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mPlaylist Update (0.5ms)[0m  [1m[33mUPDATE "playlists" SET "image" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcH-MLH4M6jxXvKdVrLPsbJrjwjzYoa7738A&usqp=CAU"], ["updated_at", "2021-04-07 10:01:55.715847"], ["id", 2]]
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:22:in `update'
+  [1m[36mPlaylistSong Load (0.1ms)[0m  [1m[34mSELECT "playlist_songs".* FROM "playlist_songs" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/serializers/playlist_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 6227)
+
+
+Started GET "/users/1" for ::1 at 2021-04-07 04:01:55 -0600
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 1]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 2]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 3]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 4]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" INNER JOIN "playlist_songs" ON "songs"."id" = "playlist_songs"."song_id" WHERE "playlist_songs"."playlist_id" = ?[0m  [["playlist_id", 5]]
+  ↳ app/serializers/user_serializer.rb:7:in `to_serialized_json'
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 9673)
+
+

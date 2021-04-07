@@ -132,6 +132,21 @@ export const postUser = (display_name, spotifyid) =>  {
             })
         }).then(parseJSON)
         }
+
+        export const updatePlaylist = (newName, image, id) => {
+          return fetch(playlistsURL +`/${id}`, {
+            method: 'PATCH',
+            headers: headers,
+            body: JSON.stringify({
+                playlist: {
+                  name: newName,
+                  image: image
+                }
+              })
+          }).then(parseJSON)
+          }
+
+       
   
 
 

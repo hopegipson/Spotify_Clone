@@ -6,7 +6,7 @@ class PlaylistsController < ApplicationController
 
     def create
         selectedNumber = Playlist.all.last.id
-        playlist = Playlist.create(name: "My Playlist ##{selectedNumber}", image: "https://i.pinimg.com/originals/7e/4f/89/7e4f892475aca7242883ceaf8aa89cc9.jpg", user: User.all.find_by(id: playlist_create_params[:user_id]))
+        playlist = Playlist.create(name: "My Playlist ##{selectedNumber}", image: "https://i.pinimg.com/originals/7e/4f/89/7e4f892475aca7242883ceaf8aa89cc9.jpg", user: User.all.find_by(id: playlist_params[:user_id]))
         render json: PlaylistSerializer.new(playlist).to_serialized_json
       end
 
@@ -19,6 +19,8 @@ class PlaylistsController < ApplicationController
         playlist = Playlist.find_by(id: params[:id])
         playlist.name = playlist_params[:name]
         playlist.image = playlist_params[:image]
+        playlist.save
+        render json: PlaylistSerializer.new(playlist).to_serialized_json
     end
 
     def destroy
@@ -37,9 +39,9 @@ private
     @playlist = Playlist.find_by(id: params[:id])
   end
 
-  def playlist_create_params
-    params.require(:playlist_info).permit(:user_id)
-  end
+  # def playlist_create_params
+  #   params.require(:playlist_info).permit(:name, :image, :user_id)
+  # end
 
 
   def playlist_params

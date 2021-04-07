@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { addSelectedPlaylist, getPlaylist} from '../services/localapi';
+import { addSelectedPlaylist, getPlaylist, updatePlaylist, getUser, addUserToState} from '../services/localapi';
 import { connect } from 'react-redux'
 import PlaylistEditPopUp from '../components/PlaylistEditPopUp'
 
@@ -58,6 +58,16 @@ class PlaylistView extends Component {
        return DateString
        }
 
+       changePlaylist = (newName, image, playlist_id) => {
+        updatePlaylist(newName, image, playlist_id).then((playlist) => {
+         this.props.addSelectedPlaylist(playlist)
+          getUser(this.props.state.user.id).then((user) => {
+            this.props.addUserToState(user)})         
+        })
+         // getUser again and then update state
+      }
+
+
 
 
     render(){
@@ -66,7 +76,7 @@ class PlaylistView extends Component {
               
                 <div>
                      <div>
-                    {this.state.seen ? <PlaylistEditPopUp user={this.props.state.user} playlist={this.props.state.selectedPlaylist} toggle={this.togglePop}  /> : null}
+                    {this.state.seen ? <PlaylistEditPopUp user={this.props.state.user} playlist={this.props.state.selectedPlaylist} toggle={this.togglePop} changePlaylist={this.changePlaylist} /> : null}
                    </div>  
                   
                   <div className="TopHalfPlaylist">
@@ -126,6 +136,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     addSelectedPlaylist: (playlist) => dispatch(addSelectedPlaylist(playlist)),
+    addUserToState: (user) => dispatch(addUserToState(user))
 
  })
 
