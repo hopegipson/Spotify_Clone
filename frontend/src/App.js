@@ -7,7 +7,6 @@ import Dashboard from './Dashboard'
 import SpotifyAuthButton from './components/SpotifyAuthButton';
 
 
-
 //will want to show some sort of login to spotify button unless there is already a token
 class App extends Component {
   

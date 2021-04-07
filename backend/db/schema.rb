@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_04_03_044833) do
     t.string "uri"
     t.integer "duration_ms"
     t.string "artist"
+    t.string "album"
     t.string "album_artwork"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

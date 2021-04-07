@@ -5,7 +5,7 @@ class PlaylistSerializer < ActiveModel::Serializer
  
   def to_serialized_json
     @playlist.to_json(:include => { :user => {:only => [:id, :display_name, :spotifyid]},
-    :songs => {:only => [:id, :name, :uri, :duration_ms, :artist, :album_artwork]}
+    :songs => {:only => [:id, :name, :uri, :duration_ms, :artist, :album, :album_artwork]}
   },:except => [:updated_at, :created_at])
   end
 end

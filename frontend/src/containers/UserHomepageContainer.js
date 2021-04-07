@@ -3,9 +3,11 @@ import { fetchUserData} from '../actions/musicPlayerActions';
 import { connect } from 'react-redux'
 import {getUsers, postUser, addUserToState} from '../services/localapi.js'
 import {
-    BrowserRouter as 
+    BrowserRouter as Router, Route,
     Link
   } from "react-router-dom";
+
+
 
 class UserBar extends Component {
 
@@ -46,10 +48,9 @@ class UserBar extends Component {
             <div>
                 {console.log(this.props)}
                 <button class="dropbtn"> {this.props.state.user.display_name}  </button>
-                <img className="UserIcon" src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" ></img><div className="dropdown">
+                <img className="UserIcon" src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" ></img>
+                <div className="dropdown">
                 <img class="ArrowIcon" src="http://dmconsulting.net/wp-content/uploads/2017/09/Drop-down-arrow-icon-rounded.png" ></img>
-               
-
                                 <div class="dropdown-content">
                                 <Link key={this.props.state.user.id} className="sidebarOption" to={`/users/${this.props.state.user.id}`}><a>Account</a> </Link>
                                 <Link key={this.props.state.user.id} className="sidebarOption" to={`/useredit/${this.props.state.user.id}`}><a>Edit Profile</a> </Link>
@@ -57,7 +58,7 @@ class UserBar extends Component {
                             </div>
                       
                     </div>
-                  
+
             </div>
 
         )   

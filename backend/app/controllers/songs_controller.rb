@@ -2,7 +2,7 @@ class SongsController < ApplicationController
     
     def create
         #when you create one if you don't have a playlist id make it 0
-        song = Song.new(name: song_params[:name], uri: song_params[:uri], duration_ms: song_params[:duration_ms], artist: song_params[:artist], album_artwork: song_params[:album_artwork])
+        song = Song.new(name: song_params[:name], uri: song_params[:uri], duration_ms: song_params[:duration_ms], artist: song_params[:artist], album: song_params[:album], album_artwork: song_params[:album_artwork])
         song.playlists << Playlist.all.find_by(id: song_params[:playlist_id])
         song.save
         render json: SongSerializer.new(song).to_serialized_json
@@ -37,12 +37,9 @@ class SongsController < ApplicationController
       private
 
       def song_params
-        params.require(:song_info).permit(:name, :uri, :duration_ms, :artist, :album_artwork, :playlist_id)
+        params.require(:song_info).permit(:name, :uri, :duration_ms, :artist, :album_artwork, :album, :date_added, :playlist_id)
       end
 
-      def song_params_change
-        params.require(:user_info_score).permit(:house_id)
-      end
 
       
  

@@ -8,9 +8,8 @@ import { connect } from 'react-redux'
 class NavBar extends Component {
 
   newPlaylist = () => {
-    this.props.postPlaylist(this.props.user.id).then( () => {
-      //figure out how to change URL to that spot
-     // history.push( `/playlist/${this.props.state.playlists.[this.props.state.playlists.length - 1].id}`)
+      this.props.postPlaylist(this.props.user.id).then( () => {
+      this.props.history.push( `/playlist/${this.props.state.playlists.[this.props.state.playlists.length - 1].id}`)
     })
   }
 

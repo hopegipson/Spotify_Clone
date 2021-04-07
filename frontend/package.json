@@ -20,7 +20,8 @@
     "sinon": "^10.0.0",
     "spotify-playback-sdk-node": "^1.0.2",
     "uuid": "^3.4.0",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "webpack": "^4.44.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -18,9 +18,12 @@ const parseJSON = response => {
 
 export function getUsers() {return fetch(usersURL).then(parseJSON)}
 export function getPlaylists() {return fetch(playlistsURL).then(parseJSON)}
+export function getSongs() {return fetch(songsURL).then(parseJSON)}
+
 
 export function getUser(userID) {fetch(usersURL + `/${userID}`).then(parseJSON)}
 export function getPlaylist(playlistID) {fetch(playlistsURL + `/${playlistID}`).then(parseJSON)}
+export function getSong(songID) {fetch(songsURL + `/${songID}`).then(parseJSON)}
 
 export const postUser = (display_name, spotifyid) =>  {
   return (dispatch) => {
@@ -56,6 +59,25 @@ export const postUser = (display_name, spotifyid) =>  {
      })
       }
     }
+
+  export const postSongtoLibrary = (name, uri, duration_ms, artist, album_artwork, playlist_id) =>  {
+      return fetch(playlistsURL, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            song_info: {
+              name: name,
+              uri: uri,
+              duration_ms: duration_ms,
+              artist: artist,
+              album_artwork: album_artwork,
+              playlist_id: playlist_id
+            }
+          })
+       }).then(parseJSON)
+        }
+        //song.name song.uri song.duration_ms 
+        //song.artist[0].name song.album.name song.album.images[0].url
 
   export const addUserToState = (user) => {
     return {
