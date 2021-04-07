@@ -21,9 +21,9 @@ export function getPlaylists() {return fetch(playlistsURL).then(parseJSON)}
 export function getSongs() {return fetch(songsURL).then(parseJSON)}
 
 
-export function getUser(userID) {fetch(usersURL + `/${userID}`).then(parseJSON)}
-export function getPlaylist(playlistID) {fetch(playlistsURL + `/${playlistID}`).then(parseJSON)}
-export function getSong(songID) {fetch(songsURL + `/${songID}`).then(parseJSON)}
+export function getUser(userID) {return fetch(usersURL + `/${userID}`).then(parseJSON)}
+export function getPlaylist(playlistID) {return fetch(playlistsURL + `/${playlistID}`).then(parseJSON)}
+export function getSong(songID) {return fetch(songsURL + `/${songID}`).then(parseJSON)}
 
 export const postUser = (display_name, spotifyid) =>  {
   return (dispatch) => {
@@ -90,17 +90,23 @@ export const postUser = (display_name, spotifyid) =>  {
                 album: song.album.name,
                 album_artwork: song.album.images[0].url,
                 playlist_id: playlist_id,
-                second_playlist_id: second_playlist_id
+                second_playlist_id: second_playlist_id,
+
               }
             })
          }).then(parseJSON)}
-        //song.name song.uri song.duration_ms 
-        //song.artist[0].name song.album.name song.album.images[0].url
 
   export const addUserToState = (user) => {
     return {
       type: 'ADD_USER',
       user
+    };
+  };
+
+  export const addSelectedPlaylist = (playlist) => {
+    return {
+      type: 'ADD_SELECTED_PLAYLIST',
+      playlist
     };
   };
 

@@ -951,7 +951,7 @@ body {
   position: absolute;
   height: 40%;
   left: 250px;
-  width: 1450px;
+  width: 1427px;
   background-image: linear-gradient(to bottom , rgb(2, 2, 2), rgb(102, 102, 97));
   z-index: -2;
 }
@@ -959,9 +959,10 @@ body {
 .BottomHalfPlaylist{
   position: absolute;
   left: 250px;
-  width: 1450px;
+  width: 1427px;
   top: 350px;
-  height: 430px;
+  min-height: 600px;
+
   background-color: rgb(255, 251, 251);
   background-image: linear-gradient(to top , rgb(0, 0, 0) 70%, rgb(102, 102, 97));
 }

@@ -4,8 +4,6 @@ class UserSerializer < ActiveModel::Serializer
   end
  
   def to_serialized_json
-    @user.to_json(:include => {
-      :playlists => {:only => [:id, :name, :image]},
-    }, :except => [:updated_at, :created_at])
+    @user.to_json(include: {playlists: {include: :songs, :except => [:updated_at, :created_at]}}, :except => [:updated_at, :created_at])
   end
 end

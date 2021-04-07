@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import PlaylistPopUp from '../components/PlaylistPopUp'
-import { postSong, getSongs, changeSong, postSongWithTwo } from '../services/localapi.js'
+import { postSong, getSongs, changeSong, postSongWithTwo, getUser, addUserToState} from '../services/localapi.js'
 import { connect } from 'react-redux'
 
 const imagesPath = {
@@ -42,7 +42,6 @@ class Song extends Component {
     lookForSong = (songs, songuri, playlist_id, musiclibrary_id) => {
       let selectedSong = songs.filter(function(song) { if (song.uri === songuri)  return true})[0]
       if (!selectedSong){
-        //     if need to create currentDateTime: Date().toLocaleString()
         this.CheckifPlaylistOrLibraryCreate(playlist_id, musiclibrary_id)
         }
         else{
@@ -51,20 +50,10 @@ class Song extends Component {
           console.log("Song can't be added to library twice")
           }
           else{
-            console.log(playlist_id)
-            console.log(musiclibrary_id)
-            console.log(selectedSong.id)
 
-
-         // let selectedPlaylist = selectedSong.playlists.filter(function(playlist) { return playlist.id === playlist_id; })
-          // NO need to do this all should be auto added to music library let selectedPlaylist = selectedSong.playlists.filter(function(playlist) { return playlist.id === playlist_id; })
-         // if (selectedPlaylist){
-            //Already in your playlist and library no need to add
-         // }
          changeSong(selectedSong.id, playlist_id).then((data) => {
-          console.log(data)
-         
-          //do something in state dispatch to add to playlist
+          getUser(this.props.state.user.id).then((user) => {
+            this.props.addUserToState(user)})         
         })
       }
         }
@@ -73,15 +62,15 @@ class Song extends Component {
    CheckifPlaylistOrLibraryCreate = (playlist_id, musiclibrary_id) => {
      if (playlist_id === musiclibrary_id){
       postSong(this.state.song, playlist_id).then((data) => {
-        console.log(data)
-        //do something in state dispatch to add to library playlist
-      })
+        getUser(this.props.state.user.id).then((user) => {
+          this.props.addUserToState(user)})       
+       })
      }
      else{
        postSongWithTwo(this.state.song, playlist_id, musiclibrary_id).then((data) => {
-        console.log(data)
-        //do something in state dispatch to add to both playlists
-      })} }
+        getUser(this.props.state.user.id).then((user) => {
+          this.props.addUserToState(user)})       
+       })} }
 
   
 
@@ -146,6 +135,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
+  addUserToState: (user) => dispatch(addUserToState(user)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Song);

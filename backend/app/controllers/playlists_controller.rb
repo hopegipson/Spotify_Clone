@@ -9,6 +9,11 @@ class PlaylistsController < ApplicationController
         playlist = Playlist.create(name: "My Playlist ##{selectedNumber}", image: "https://i.pinimg.com/originals/7e/4f/89/7e4f892475aca7242883ceaf8aa89cc9.jpg", user: User.all.find_by(id: playlist_create_params[:user_id]))
         render json: PlaylistSerializer.new(playlist).to_serialized_json
       end
+
+      def show
+        playlist = Playlist.find(params[:id])
+        render json: PlaylistSerializer.new(playlist).to_serialized_json
+      end
     
     def update
         playlist = Playlist.find_by(id: params[:id])
