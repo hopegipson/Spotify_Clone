@@ -86,7 +86,46 @@ body {
 
 }
 
+.sidebarOption {
+  font-family: "RubikRegular";
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  text-align: center;
+
+  height: 40px;
+  color: rgb(187, 181, 181);
+  transition: 200ms color ease-in;
+
+}
+
+.sidebarOption3 {
+  font-family: "RubikRegular";
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  text-align: center;
+
+  height: 20px;
+  color: rgb(187, 181, 181);
+  transition: 200ms color ease-in;
+
+}
+
 .sidebarOption:hover {
+  color: white;
+  background-color: #2b2424;
+}
+
+.sidebarOption2:hover {
+  color: white;
+  background-color: #2b2424;
+}
+.sidebarOption3:hover {
   color: white;
   background-color: #2b2424;
 }
@@ -718,10 +757,50 @@ body {
     color: white;
   }
 
+  .dropdown-content p {
+    color: #201e1e;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "RubikRegular";
+    color: white;
+  }
+
+  .dropdown-content2 p {
+    color: #201e1e;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "RubikRegular";
+    color: white;
+  }
+
+  .dropdown-content3 p {
+    color: #201e1e;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "RubikRegular";
+    color: white;
+  }
+  .dropdown-content4 p {
+    color: #201e1e;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "RubikRegular";
+    color: white;
+  }
+
   .dropdown-content a:hover {background-color: #9c9797}
   .dropdown-content2 a:hover {background-color: #9c9797}
   .dropdown-content3 a:hover {background-color: #9c9797}
   .dropdown-content4 a:hover {background-color: #9c9797}
+
+  .dropdown-content p:hover {background-color: #9c9797}
+  .dropdown-content2 p:hover {background-color: #9c9797}
+  .dropdown-content3 p:hover {background-color: #9c9797}
+  .dropdown-content4 p:hover {background-color: #9c9797}
 
 
 
@@ -1560,3 +1639,8 @@ body {
   text-overflow: ellipsis;
 }
 
+.OptionDash{
+  position: absolute;
+  height: 10px;
+
+}

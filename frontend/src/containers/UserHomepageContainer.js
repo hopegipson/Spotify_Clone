@@ -36,12 +36,6 @@ class UserBar extends Component {
         this.props.postUser(this.props.state.spotifyuser.display_name, this.props.state.spotifyuser.id)
     }
 
-    refreshPage = ()=>{
-        window.location.reload();
-     }
-
-    
-   
     render(){
         return(
             <div>
@@ -50,14 +44,14 @@ class UserBar extends Component {
           
 
 
-                <button class="dropbtn"> {this.props.state.user.display_name}  </button>
+                <button className="dropbtn"> {this.props.state.user.display_name}  </button>
                 <img className="UserIcon" src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" ></img>
                 <div className="dropdown">
                 <img className="ArrowIcon" src="http://dmconsulting.net/wp-content/uploads/2017/09/Drop-down-arrow-icon-rounded.png" ></img>
-                                <div class="dropdown-content">
-                                <Link key={this.props.state.user.id} className="sidebarOption" to={`/users/${this.props.state.user.id}`}><a>Account</a> </Link>
-                                <Link key={this.props.state.user.id} className="sidebarOption" to={`/useredit/${this.props.state.user.id}`}><a>Edit Profile</a> </Link>
-                               <a  onClick={this.refreshPage}>Log out</a> 
+                                <div className="dropdown-content">
+                                <Link  className="sidebarOption" to={`/users/${this.props.state.user.id}`}><p className="OptionDash">Account</p> </Link>
+                                <Link  className="sidebarOption" to={`/useredit/${this.props.state.user.id}`}><p className="OptionDash">Edit Profile</p> </Link>
+                               <a href="/" className="sidebarOption"><p className="OptionDash">Log out</p></a> 
                             </div>
                       
                     </div>

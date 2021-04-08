@@ -40,7 +40,7 @@ class Song extends Component {
     }
 
     lookForSong = (songs, songuri, playlist_id, musiclibrary_id) => {
-      let selectedSong = songs.filter(function(song) { if (song.uri === songuri)  return true})[0]
+      let selectedSong = songs.filter(function(song) { if (song.uri === songuri)  return song})[0]
       if (!selectedSong){
         this.CheckifPlaylistOrLibraryCreate(playlist_id, musiclibrary_id)
         }
@@ -115,8 +115,8 @@ class Song extends Component {
          <h4 className="SongArtist">{this.props.song.artists[0].name}</h4>
          <h4 className="SongTime">{this.convertDuration(this.props.song.duration_ms)}</h4>
          <div className="dropdown2">
-                <img class="ArrowIcon2" src="https://cdn4.iconfinder.com/data/icons/simple-lines-2/32/More_Functions_Menu_Horizontal_Dots_Hidden-512.png" alt="new" tabindex="1" ></img>
-                                <div class="dropdown-content2">
+                <img className="ArrowIcon2" src="https://cdn4.iconfinder.com/data/icons/simple-lines-2/32/More_Functions_Menu_Horizontal_Dots_Hidden-512.png" alt="new" tabIndex="1" ></img>
+                                <div className="dropdown-content2">
                                <a onClick={this.addSongToLibrary}> Add to Library</a>
                                  <a onClick={this.togglePop}> Add to Playlist</a>
                             </div>

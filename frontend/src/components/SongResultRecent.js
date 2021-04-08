@@ -8,7 +8,7 @@ class SongResultRecent extends Component {
         selectedElement: "empty",
         songs: this.props.songs
        }
-    renderSongs = () => this.props.songs.map((songplaylist, index) => <Song key={songplaylist.track.id} index={index} song ={songplaylist.track} songplaylist ={songplaylist}  user={this.props.state.user} callPlayback={this.callPlayback} />) 
+    renderSongs = () => this.props.songs.map((songplaylist, index) => <Song key={index} index={index} song ={songplaylist.track} songplaylist ={songplaylist}  user={this.props.state.user} callPlayback={this.callPlayback} />) 
 
 
     callPlayback = (event) => {

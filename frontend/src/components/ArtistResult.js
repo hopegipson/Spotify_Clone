@@ -1,16 +1,13 @@
-import React, { Component} from 'react';
+import React from 'react';
 
-export default class ArtistResult extends Component {
-
-    render(){
-
+function ArtistResult (props) {
         return(<div className="ArtistResult">
             <h2 className="TitleSection">Artists</h2>
             <a className="SeeMoreArtistsAlbums" href="http://google.com">SEE ALL</a>
 
             <div className="InsideArtistResult">
                 <div className="Row">
-            {this.props.artists.map(artist =>(
+            {props.artists.map(artist =>(
                 <div className="Column">
                     <div className="Inner">
                         {artist.images.length !== 0 ? 
@@ -23,8 +20,6 @@ export default class ArtistResult extends Component {
                   ))}
                   </div>
             </div>
-            
-
         </div>)
     }
-}
+export default ArtistResult

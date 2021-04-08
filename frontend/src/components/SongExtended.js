@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
-import PlaylistPopUp from '../components/PlaylistPopUp'
-import { postSong, getSongs, changeSong, postSongWithTwo, getUser, addUserToState, changeSongPlaylists, addSelectedPlaylist, getPlaylist, deleteSong} from '../services/localapi.js'
+import { postSong, getSongs, changeSong, postSongWithTwo, getUser, addUserToState, changeSongPlaylists, addSelectedPlaylist, deleteSong} from '../services/localapi.js'
 import { connect } from 'react-redux'
 
 const imagesPath = {
@@ -132,8 +131,8 @@ class SongExtended extends Component {
          <h4 className="DateAddedExtended">{this.convertDateTime(this.props.song.created_at)}</h4>
          <h4 className="SongTimeExtended">{this.convertDuration(this.props.song.duration_ms)}</h4>
          <div className="dropdown4">
-                <img class="ArrowIcon4" src="https://cdn4.iconfinder.com/data/icons/simple-lines-2/32/More_Functions_Menu_Horizontal_Dots_Hidden-512.png" alt="new" tabindex="1" ></img>
-                                <div class="dropdown-content4">
+                <img className="ArrowIcon4" src="https://cdn4.iconfinder.com/data/icons/simple-lines-2/32/More_Functions_Menu_Horizontal_Dots_Hidden-512.png" alt="new" tabIndex="1" ></img>
+                                <div className="dropdown-content4">
                                <a onClick={this.removeSongFromLibrary}> Remove from Library</a>
                                  <a onClick={this.removePlaylistFromSong}> Remove from Playlist</a>
                             </div>

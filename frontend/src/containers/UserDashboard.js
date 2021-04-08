@@ -47,7 +47,7 @@ class UserDashboard extends Component {
              <SongResultExtended  songs={this.props.state.selectedPlaylist.playlist_songs}/>
              </div>
             <div className="TablePlaylistContainer">
-            <table class="table2 table-hover">
+            <table className="table2 table-hover">
             <thead>
               <tr>
                 <th scope="col" width="20px">#</th>

@@ -24,9 +24,9 @@ class MusicPlayerContainer extends Component {
             }
 
        spotifySDKCallback = () => {
-        window.onSpotifyWebPlaybackSDKReady = () => {
+             window.onSpotifyWebPlaybackSDKReady = () => {
 
-        let { Player } = window.Spotify;        
+             let { Player } = window.Spotify;        
                 const spotifyPlayer = new Player({
                     name: 'React Spotify Player',
                     getOAuthToken: cb => {
@@ -60,11 +60,18 @@ class MusicPlayerContainer extends Component {
                         spotifyDeviceId: device_id,
                         spotifyPlayerReady: true
                     }, () => {
-                        this.notifyConnected();
+                      this.notifyConnected()
+                          
                     });
                 });
-                this.state.spotifyPlayer.connect()
-            }
+                //async make after notifyConnected
+                console.log(this.props.state)
+                this.state.spotifyPlayer.connect().then(success => {
+                    if (success) {
+                      console.log('The Web Playback SDK successfully connected to Spotify!');
+                    }})
+               // this.state.spotifyPlayer.connect();
+             }
         }
 
         notifyConnected = () => {

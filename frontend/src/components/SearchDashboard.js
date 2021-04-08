@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import TopResult from './TopResult';
 import SongResult from './SongResult'
 import ArtistResult from './ArtistResult'
-import AlbumResult from './AlbumResult'
 class SearchDashboard extends Component {
 
     componentDidMount() {

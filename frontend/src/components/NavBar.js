@@ -14,7 +14,8 @@ class NavBar extends Component {
   }
 
   calculatePlaylists = () => {
-    let result = this.props.state.user.playlists.filter(playlist => playlist.id !== 1)
+    let userLibrary = this.props.state.user.playlists[0]
+    let result = this.props.state.user.playlists.filter(playlist => playlist.id !== userLibrary.id)
     return result
   }
   render(){
@@ -56,7 +57,7 @@ class NavBar extends Component {
       {this.props.state.user.playlists  ? 
             (
             <div> {this.calculatePlaylists().map(playlist => (
-              <div className="sidebarOption"><img className="sideBarIcon" src={`${playlist.image}`} alt="new" />
+              <div className="sidebarOption" key={`${playlist.id}`}><img className="sideBarIcon" src={`${playlist.image}`} alt="new" />
               <NavLink className="sidebarOption"  to={`/playlist/${playlist.id}`}
         >{playlist.name}
           </NavLink> </div>))} </div> ): (<div className="sidebarOption">Still loading </div>)}

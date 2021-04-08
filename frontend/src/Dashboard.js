@@ -12,7 +12,6 @@ import UserPage from './components/UserPage'
 import UserForm from './components/UserForm'
 import PlaylistView from './components/PlaylistView'
 import SearchDashboard from './components/SearchDashboard'
-import UserDashboard from './containers/UserDashboard'
 
 //will want to show some sort of login to spotify button unless there is already a token
 class Dashboard extends Component {
