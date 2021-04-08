@@ -8,7 +8,7 @@ const imagesPath = {
     pause: "https://i.pinimg.com/originals/e5/96/0e/e5960e813b505af997f745cd5f5e23e9.png"
   }
 
-class Song extends Component {
+class SongExtended extends Component {
 
 
     state = {
@@ -19,7 +19,7 @@ class Song extends Component {
       }
 
       toggleImage = () => {
-      this.setState(state => ({ open: !this.props.open }))
+      this.setState(state => ({ open: !this.props.song.open }))
       }
 
       addSongToLibrary = () => {
@@ -85,7 +85,7 @@ class Song extends Component {
 
 
     
-    getImageName = () => this.state.song.open ? 'pause' : 'play'
+    getImageName = () => this.props.song.open ? 'pause' : 'play'
      
     convertDuration = (milliseconds) => {
         let  minute, seconds;
@@ -98,6 +98,17 @@ class Song extends Component {
         return `${minute}:${seconds}`
        }
 
+       convertDateTime = (date) => {
+        let dateObj = new Date(date).toString();
+        let DateArray = dateObj.split(" ")
+        let month = DateArray[1]
+        let day = DateArray[2]
+        let year = DateArray[3]
+        let DateString = month + " " + day + ", " + year
+         return DateString
+         }
+    
+
     render(){
     const imageName = this.getImageName();
 
@@ -107,23 +118,26 @@ class Song extends Component {
           {this.state.seen ? <PlaylistPopUp user={this.props.state.user} toggle={this.togglePop} addSongToPlaylist={this.addSongToPlaylist} song={this.state.song} /> : null}
         </div>  
         {console.log(this.props.song)}
-        <div className="SongDivWrapper">   
+        <div className="SongDivWrapper2">   
 
 
-        <div className="SongDiv">
-         <img className="SongAlbumImage" src={`${this.props.song.album.images[0].url}`} alt="new"/>
-         <img className="SongAlbumImagePlay" id={this.props.index} name={this.props.song.uri} src={imagesPath[imageName]} onClick={this.props.callPlayback} alt="new"/>
-         <h4 className="SongName">{this.props.song.name}</h4>
-         <h4 className="SongArtist">{this.props.song.artists[0].name}</h4>
-         <h4 className="SongTime">{this.convertDuration(this.props.song.duration_ms)}</h4>
-         <div className="dropdown2">
+        <div className="SongDiv2">
+        <h4 className="IndexExtended">{this.props.song.index}</h4>
+         <img className="SongAlbumImageExtended" src={`${this.props.song.album.images[0].url}`} alt="new"/>
+         <img className="SongAlbumImagePlayExtended" id={this.props.index} name={this.props.song.uri} src={imagesPath[imageName]} onClick={this.props.callPlayback} alt="new"/>
+         <h4 className="SongNameExtended">{this.props.song.name}</h4>
+         <h4 className="SongArtistExtended">{this.props.song.artists[0].name}</h4>
+         <h4 className="AlbumNameExtended">{this.props.song.name}</h4>
+         <h4 className="DateAddedExtended">{this.convertDateTime(this.props.song.created_at)}</h4>
+         <h4 className="SongTimeExtended">{this.convertDuration(this.props.song.duration_ms)}</h4>
+         {/* <div className="dropdown2">
                 <img class="ArrowIcon2" src="https://cdn4.iconfinder.com/data/icons/simple-lines-2/32/More_Functions_Menu_Horizontal_Dots_Hidden-512.png" alt="new" tabindex="1" ></img>
                                 <div class="dropdown-content2">
                                <a onClick={this.addSongToLibrary}> Add to Library</a>
                                  <a onClick={this.togglePop}> Add to Playlist</a>
                             </div>
                       
-                    </div>
+                    </div> */}
                     
          </div>
          </div>
@@ -139,4 +153,4 @@ const mapDispatchToProps = dispatch => ({
   addUserToState: (user) => dispatch(addUserToState(user)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Song);
+export default connect(mapStateToProps, mapDispatchToProps)(SongExtended);

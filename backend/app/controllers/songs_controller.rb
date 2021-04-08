@@ -1,8 +1,7 @@
 class SongsController < ApplicationController
     
     def create
-        #when you create one if you don't have a playlist id make it 0
-        song = Song.new(name: song_params[:name], uri: song_params[:uri], duration_ms: song_params[:duration_ms], artist: song_params[:artist], album: song_params[:album], album_artwork: song_params[:album_artwork])
+        song = Song.new(name: song_params[:name], uri: song_params[:uri], duration_ms: song_params[:duration_ms], artists: song_params[:artists], album: song_params[:album].to_h)
         if song_params[:second_playlist_id]
           song.playlists << Playlist.all.find_by(id: song_params[:second_playlist_id])
         end
@@ -40,7 +39,7 @@ class SongsController < ApplicationController
       private
 
       def song_params
-        params.require(:song_info).permit(:name, :uri, :duration_ms, :artist, :album_artwork, :album, :playlist_id, :second_playlist_id)
+        params.require(:song_info).permit(:name, :uri, :duration_ms, :playlist_id, :second_playlist_id, artists: [:href, :id, :name, :type, :uri, external_urls: [:spotify],], album: {})
       end
 
 

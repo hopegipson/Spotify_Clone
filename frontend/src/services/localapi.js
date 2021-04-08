@@ -49,7 +49,7 @@ export const postUser = (display_name, spotifyid) =>  {
       method: 'POST',
       headers: headers,
       body: JSON.stringify({
-          playlist_info: {
+          playlist: {
             user_id: user_id
           }
         })
@@ -69,9 +69,8 @@ export const postUser = (display_name, spotifyid) =>  {
               name: song.name,
               uri: song.uri,
               duration_ms: song.duration_ms,
-              artist: song.artists[0].name,
-              album: song.album.name,
-              album_artwork: song.album.images[0].url,
+              artists: song.artists,
+              album: song.album,
               playlist_id: playlist_id
             }
           })
@@ -86,9 +85,8 @@ export const postUser = (display_name, spotifyid) =>  {
                 name: song.name,
                 uri: song.uri,
                 duration_ms: song.duration_ms,
-                artist: song.artists[0].name,
-                album: song.album.name,
-                album_artwork: song.album.images[0].url,
+                artists: song.artists,
+                album: song.album,
                 playlist_id: playlist_id,
                 second_playlist_id: second_playlist_id,
 
