@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import Dashboard from './Dashboard'
 import SpotifyAuthButton from './components/SpotifyAuthButton';
+import UserDashboard from './components/SearchDashboard';
 
 
 //will want to show some sort of login to spotify button unless there is already a token
@@ -43,8 +44,7 @@ class App extends Component {
       <div className="App">
       {this.isValidToken() ? ( 
         <Router>
-        <Redirect to="/dashboard" />
-        <Route path='/dashboard' render={routerProps => <Dashboard/> } />
+        <Route path='/' render={routerProps => <Dashboard/> } />
         </Router>
       ) : ( <SpotifyAuthButton/>)}
            

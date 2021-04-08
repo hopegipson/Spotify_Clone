@@ -1318,3 +1318,17 @@ body {
   margin-top: 20px;
 
 }
+
+.BottomHalfPlaylist2{
+  position: absolute;
+  left: 250px;
+  width: 1427px;
+  top: 680px;
+  min-height: 600px;
+
+}
+
+.ArtistHome{
+  position: absolute;
+  top: 1000px;
+}

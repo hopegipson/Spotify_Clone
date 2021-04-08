@@ -13,6 +13,7 @@ class SearchPage extends Component {
      <div>
     <Route exact path={this.props.match.url} render={routerProps =>  <Search {...routerProps}/>}/>
     <Route path={`${this.props.match.url}/:searchTerm`} render={routerProps => <div><Search {...routerProps}  /> <AlbumsSongsArtistsContainer/></div>}/>
+    
      </div>
   )
         }}

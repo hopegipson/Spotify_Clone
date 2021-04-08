@@ -6,7 +6,7 @@ import {
     BrowserRouter as Router, Route,
     Link
   } from "react-router-dom";
-
+import UserDashboard from '../containers/UserDashboard'
 
 
 class UserBar extends Component {
@@ -46,6 +46,11 @@ class UserBar extends Component {
     render(){
         return(
             <div>
+                 {this.props.state.user.playlists ? 
+            (<Route exact path='/dashboard'  render={routerProps => <UserDashboard/> } /> ): (<div> </div>)}
+          
+
+
                 {console.log(this.props)}
                 <button class="dropbtn"> {this.props.state.user.display_name}  </button>
                 <img className="UserIcon" src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" ></img>

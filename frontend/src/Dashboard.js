@@ -2,6 +2,7 @@ import './App.css';
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import Footer from './containers/Footer';
+import { Redirect } from 'react-router-dom';
 
 import NavBar from './components/NavBar'
 import SearchPage from './containers/SearchPage'
@@ -10,6 +11,8 @@ import UserHomepageContainer from './containers/UserHomepageContainer'
 import UserPage from './components/UserPage'
 import UserForm from './components/UserForm'
 import PlaylistView from './components/PlaylistView'
+import SearchDashboard from './components/SearchDashboard'
+import UserDashboard from './containers/UserDashboard'
 
 //will want to show some sort of login to spotify button unless there is already a token
 class Dashboard extends Component {
@@ -25,7 +28,9 @@ class Dashboard extends Component {
     return (
       <div className="Dashboard">
           <Router>
+          <Redirect to="/dashboard" />
             <UserHomepageContainer/>
+            <Route exact path='/search' render={routerProps => <SearchDashboard/> } />
             <Route path='/' render={routerProps => <NavBar {...routerProps} user={this.props.state.user} />} />
             <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
             <Route  path="/users/:id" render={() => <UserPage user={this.props.state.user} />}/>

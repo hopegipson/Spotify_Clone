@@ -24,6 +24,46 @@
          }
         }
 
+        export const fetchSpotifyUserArtists = (token) => {
+
+          return (dispatch) => {
+              dispatch({ type: 'LOADING_RECOMMENDED_ARTISTS'})
+             return fetch(`https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=20&offset=0`, {
+                  method: 'GET', headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                      'Authorization': 'Bearer ' + token
+                  }
+              })
+              .then((response) => {
+                   return response.json().then(
+                             (data) => {
+                               console.log(data)
+                              dispatch({type: 'ADD_RECOMMENDED_ARTISTS', artists  : data.items})
+                              }
+                         );
+                 });}}
+
+          export const fetchSpotifyUserSongs = (token) => {
+
+          return (dispatch) => {
+              dispatch({ type: 'LOADING_RECOMMENDED_SONGS'})
+              return fetch(`https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=20&offset=0`, {
+                  method: 'GET', headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                      'Authorization': 'Bearer ' + token
+                  }
+              })
+              .then((response) => {
+                    return response.json().then(
+                              (data) => {
+                                console.log(data)
+                              dispatch({type: 'ADD_RECOMMENDED_SONGS', songs: data.items})
+                              }
+                          );
+                  });}}
+
 
         export const fetchUserData = (token) => {
 

@@ -25,16 +25,19 @@ class PlaylistView extends Component {
 
 
       componentDidUpdate(prevProps) {
+        if (this.props.match){
         if (this.props.match.params.id !== prevProps.match.params.id){
           getPlaylist(this.props.match.params.id).then((playlist) => {
             this.props.addSelectedPlaylist(playlist)}) 
         }
       }
+      }
       
       componentWillMount() {
+        if(this.props.match){
         getPlaylist(this.props.match.params.id).then((playlist) => {
           console.log(playlist)
-          this.props.addSelectedPlaylist(playlist)}) 
+          this.props.addSelectedPlaylist(playlist)}) }
 
       }
 
@@ -102,16 +105,6 @@ class PlaylistView extends Component {
                     </tr>
                   </thead>
                   <tbody>
-
-                 {/* {this.props.state.selectedPlaylist.playlist_songs.map(playlistsong => (
-                  <tr class="table-active">
-                  <th scope="row">1</th>
-                  <td>{playlistsong.song.name}</td>
-                  <td>{playlistsong.song.album.name}</td>
-                  <td>{this.convertDateTime(playlistsong.created_at)}</td>
-                  <td>{this.convertDuration(playlistsong.song.duration_ms)}</td>
-                </tr>
-              ))}  */}
                    
                     </tbody>
                     </table>
