@@ -1,33 +1,25 @@
 import React, { Component} from 'react';
-import { fetchUserData} from '../actions/musicPlayerActions';
 import { connect } from 'react-redux'
 import {getPlaylist, addSelectedPlaylist} from '../services/localapi.js'
-import {
-    BrowserRouter as Router, Route,
-    Link
-  } from "react-router-dom";
   import { fetchRecentlyPlayedUserSongs, fetchSpotifyUserArtists} from '../actions/musicPlayerActions';
 import UserResult from '../components/UserResult';
 import SongResultRecent from '../components/SongResultRecent'
 import ArtistResultHome from '../components/ArtistResultHome'
 import SongResultExtended from '../components/SongResultExtended'
 import TopResultHome from '../components/TopResultHome'
-import PlaylistView from '../components/PlaylistView'
 
 class UserDashboard extends Component {
 
     componentDidMount() {
         getPlaylist(this.props.state.user.playlists[0].id).then((playlist) => {
-            console.log(playlist)
             this.props.addSelectedPlaylist(playlist)}) 
-    this.props.fetchRecentlyPlayedUserSongs(this.props.state.token).then((data) => { console.log(data)})
-    this.props.fetchSpotifyUserArtists(this.props.state.token).then((data) => { console.log(data)})
+    this.props.fetchRecentlyPlayedUserSongs(this.props.state.token)
+    this.props.fetchSpotifyUserArtists(this.props.state.token)
     }
 
     componentDidUpdate(prevProps) {
         if (this.props.state.user !== prevProps.state.user){
             getPlaylist(this.props.state.user.playlists[0].id).then((playlist) => {
-                console.log(playlist)
                 this.props.addSelectedPlaylist(playlist)}) 
         }
       }
