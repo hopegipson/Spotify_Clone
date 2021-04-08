@@ -122,7 +122,7 @@ class SongExtended extends Component {
 
 
         <div className="SongDiv2">
-        <h4 className="IndexExtended">{this.props.song.index}</h4>
+        <h4 className="IndexExtended">{this.props.index + 1}</h4>
          <img className="SongAlbumImageExtended" src={`${this.props.song.album.images[0].url}`} alt="new"/>
          <img className="SongAlbumImagePlayExtended" id={this.props.index} name={this.props.song.uri} src={imagesPath[imageName]} onClick={this.props.callPlayback} alt="new"/>
          <h4 className="SongNameExtended">{this.props.song.name}</h4>
