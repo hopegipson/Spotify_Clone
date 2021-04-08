@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import PlaylistPopUp from '../components/PlaylistPopUp'
-import { postSong, getSongs, changeSong, postSongWithTwo, getUser, addUserToState} from '../services/localapi.js'
+import { postSong, getSongs, changeSong, postSongWithTwo, getUser, addUserToState, changeSongPlaylists, addSelectedPlaylist, getPlaylist, deleteSong} from '../services/localapi.js'
 import { connect } from 'react-redux'
 
 const imagesPath = {
@@ -81,6 +81,21 @@ class SongExtended extends Component {
         });
        };
 
+       removePlaylistFromSong = () => {
+         console.log(this.props)
+        changeSongPlaylists(this.props.song.id, this.props.state.selectedPlaylist.id).then((song) => {
+          getUser(this.props.state.user.id).then((user) => {
+            this.props.addUserToState(user)} )
+           })
+       }
+
+      removeSongFromLibrary = () => {
+        deleteSong(this.props.song.id).then((songs) => {
+          getUser(this.props.state.user.id).then((user) => {
+            this.props.addUserToState(user)} )
+        })
+      }
+
 
 
 
@@ -114,9 +129,9 @@ class SongExtended extends Component {
 
         return(
           <div>
-          <div>
-          {this.state.seen ? <PlaylistPopUp user={this.props.state.user} toggle={this.togglePop} addSongToPlaylist={this.addSongToPlaylist} song={this.state.song} /> : null}
-        </div>  
+          {/* <div>
+          {this.state.seen ? <PlaylistPopUp user={this.props.state.user} toggle={this.togglePop} removePlaylistFromSong={this.removePlaylistFromSong} song={this.state.song} /> : null}
+        </div>   */}
         {console.log(this.props.song)}
         <div className="SongDivWrapper2">   
 
@@ -130,14 +145,14 @@ class SongExtended extends Component {
          <h4 className="AlbumNameExtended">{this.props.song.name}</h4>
          <h4 className="DateAddedExtended">{this.convertDateTime(this.props.song.created_at)}</h4>
          <h4 className="SongTimeExtended">{this.convertDuration(this.props.song.duration_ms)}</h4>
-         {/* <div className="dropdown2">
-                <img class="ArrowIcon2" src="https://cdn4.iconfinder.com/data/icons/simple-lines-2/32/More_Functions_Menu_Horizontal_Dots_Hidden-512.png" alt="new" tabindex="1" ></img>
-                                <div class="dropdown-content2">
-                               <a onClick={this.addSongToLibrary}> Add to Library</a>
-                                 <a onClick={this.togglePop}> Add to Playlist</a>
+         <div className="dropdown4">
+                <img class="ArrowIcon4" src="https://cdn4.iconfinder.com/data/icons/simple-lines-2/32/More_Functions_Menu_Horizontal_Dots_Hidden-512.png" alt="new" tabindex="1" ></img>
+                                <div class="dropdown-content4">
+                               <a onClick={this.removeSongFromLibrary}> Remove from Library</a>
+                                 <a onClick={this.removePlaylistFromSong}> Remove from Playlist</a>
                             </div>
                       
-                    </div> */}
+                    </div>
                     
          </div>
          </div>
@@ -151,6 +166,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   addUserToState: (user) => dispatch(addUserToState(user)),
+  addSelectedPlaylist: (playlist) => dispatch(addSelectedPlaylist(playlist)),
+
+  
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongExtended);

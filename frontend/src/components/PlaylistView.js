@@ -30,6 +30,11 @@ class PlaylistView extends Component {
           getPlaylist(this.props.match.params.id).then((playlist) => {
             this.props.addSelectedPlaylist(playlist)}) 
         }
+        if (this.props.state.user !== prevProps.state.user){
+          getPlaylist(this.props.match.params.id).then((playlist) => {
+              console.log(playlist)
+              this.props.addSelectedPlaylist(playlist)}) 
+      }
       }
       }
       
@@ -56,11 +61,11 @@ class PlaylistView extends Component {
 
        changePlaylist = (newName, image, playlist_id) => {
         updatePlaylist(newName, image, playlist_id).then((playlist) => {
+          console.log(playlist)
          this.props.addSelectedPlaylist(playlist)
           getUser(this.props.state.user.id).then((user) => {
             this.props.addUserToState(user)})         
         })
-         // getUser again and then update state
       }
 
 
@@ -91,7 +96,7 @@ class PlaylistView extends Component {
                     (<div>
                   <div className="BottomHalfPlaylist">
                   <div>
-                   <SongResultExtended songs={this.props.state.selectedPlaylist.playlist_songs}/>
+                   <SongResultExtended  songs={this.props.state.selectedPlaylist.playlist_songs}/>
                    </div>
                   <div className="TablePlaylistContainer">
                   <table class="table2 table-hover">

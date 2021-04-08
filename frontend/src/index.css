@@ -621,6 +621,11 @@ body {
     position: absolute;
     display: inline-block;
   }
+
+  .dropdown4 {
+    position: absolute;
+    display: inline-block;
+  }
   
   .dropdown-content {
     position: absolute;
@@ -643,6 +648,20 @@ body {
     font-size: 13px;
     top: 40px;
     left: 265px;
+    display: none;
+    background-color: #4d4646;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content4 {
+    position: absolute;
+    font-family: "RubikRegular";
+    color: white;
+    font-size: 13px;
+    top: 40px;
+    left: 530px;
     display: none;
     background-color: #4d4646;
     min-width: 160px;
@@ -690,10 +709,20 @@ body {
     font-family: "RubikRegular";
     color: white;
   }
+  .dropdown-content4 a {
+    color: #201e1e;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "RubikRegular";
+    color: white;
+  }
 
   .dropdown-content a:hover {background-color: #9c9797}
   .dropdown-content2 a:hover {background-color: #9c9797}
   .dropdown-content3 a:hover {background-color: #9c9797}
+  .dropdown-content4 a:hover {background-color: #9c9797}
+
 
 
   .dropdown:hover .dropdown-content {
@@ -707,6 +736,11 @@ body {
   .dropdown3:hover .dropdown-content3 {
     display: block;
   }
+
+  .dropdown4:hover .dropdown-content4 {
+    display: block;
+  }
+  
   
   .dropdown:hover .dropbtn {
     background-color: #201e1e;
@@ -740,6 +774,16 @@ body {
     height: 20px;
     top: 40px;
     left: 390px;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .ArrowIcon4{
+    border-radius: 15px;
+    width: 15px;
+    height: 20px;
+    top: 20px;
+    left: 660px;
     position: absolute;
     cursor: pointer;
   }
@@ -1323,8 +1367,8 @@ body {
   position: absolute;
   left: 250px;
   width: 1427px;
-  top: 680px;
-  min-height: 600px;
+  top: 1500px;
+  min-height: 1000px;
 
 }
 
@@ -1332,3 +1376,187 @@ body {
   position: absolute;
   top: 1000px;
 }
+
+.ArtistResultHome {
+  position: absolute;
+  top: 720px; 
+  left: 300px;
+  width: 1300px;
+  height: 300px;
+  background-color: #121212;
+}
+
+.ArtistResultHome2 {
+  position: absolute;
+  top: 720px; 
+  left: 300px;
+  width: 1300px;
+  height: 700px;
+  background-color: #121212;
+}
+
+.InsideArtistResultHome{
+ 
+  position: absolute;
+  width: 1300px;
+  height: 300px;
+  top: 70px; 
+  left: 15px;
+
+}
+
+.Row2 {
+  position: absolute;
+  display: table;
+  top: 320px;
+  width: 100%; 
+  table-layout: fixed; 
+  border-spacing: 10px; 
+  display: flex;
+  align-items: center
+}
+
+.SongResultRecent {
+  position: absolute;
+  top: 80px; 
+  width: 99%;
+  height: 310px;
+  left: 300px;
+  /* background-image: linear-gradient(to top , rgb(0, 0, 0) 70%, rgb(102, 102, 97)); */
+
+}
+
+.InsideSongResultRecent{
+  position: absolute;
+  width: 99%;
+  height: 240px;
+  top: 70px; 
+  left: 15px;
+
+}
+
+.UserResult {
+  position: absolute;
+  top: 80px; 
+  left: 300px;
+  width: 400px;
+  height: 300px;
+  background-color: #121212;
+}
+
+.InsideUserResult{
+  position: absolute;
+  background-color:  #0e0c0c;
+  width: 400px;
+  height: 210px;
+  top: 70px; 
+  left: 15px;
+
+}
+
+.SongResultC{
+  left: 450px;
+  position: absolute;
+  width: 500px;
+}
+
+.TopResultHome {
+  position: absolute;
+  top: 375px; 
+  left: 300px;
+  width: 400px;
+  height: 300px;
+  background-color: #121212;
+}
+
+.InsideTopResultHome{
+  position: absolute;
+  background-color:  #0e0c0c;
+  width: 400px;
+  height: 240px;
+  top: 70px; 
+  left: 15px;
+
+}
+
+.TitleSectionHome{
+  font-family: 'RubikRegular';
+  position: absolute;
+  margin-left: 20px;
+  color: white;
+  font-size: 16px;
+  top: 20px;
+}
+
+.TopArtistGenre{
+  position: absolute;
+  top: 40px;
+  color: rgb(143, 134, 134);
+  width: 200px;
+  text-align: left;
+  left: 150px;
+  font-size: 14px;
+
+}
+
+.TopArtistGenreLabel{
+  position: absolute;
+  top: 10px;
+  color: rgb(37, 158, 47);
+  width: 400px;
+  text-align: left;
+  left: 150px;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.TopArtistFollowers{
+  position: absolute;
+  top: 120px;
+  color: rgb(143, 134, 134);
+  width: 200px;
+  text-align: left;
+  left: 150px;
+  font-size: 14px;
+
+}
+
+.TopArtistFollowersLabel{
+  position: absolute;
+  top: 90px;
+  color: rgb(37, 158, 47);
+  width: 400px;
+  text-align: left;
+  left: 150px;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.TopArtistPopularity{
+  position: absolute;
+  top: 180px;
+  color: rgb(143, 134, 134);
+  width: 200px;
+  text-align: left;
+  left: 150px;
+  font-size: 14px;
+
+}
+
+.TopArtistPopularityLabel{
+  position: absolute;
+  top: 150px;
+  color: rgb(37, 158, 47);
+  width: 400px;
+  text-align: left;
+  left: 150px;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

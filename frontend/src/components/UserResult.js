@@ -17,9 +17,9 @@ export default class UserResult extends Component {
     render(){
 
         return(
-        <div className="TopResult">
+        <div className="UserResult">
             <h2 className="TitleSection">{this.getGreeting()}</h2>
-            <div className="InsideTopResult">
+            <div className="InsideUserResult">
             <img className="TopArtistImage" src={`https://www.scdn.co/i/_global/twitter_card-default.jpg`} alt="Avatar"></img>
         
             <h1 className={"TopArtistName"}>{this.props.user.display_name}</h1>

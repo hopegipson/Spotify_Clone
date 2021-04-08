@@ -6,11 +6,12 @@ import {
     BrowserRouter as Router, Route,
     Link
   } from "react-router-dom";
-  import { fetchSpotifyUserSongs, fetchSpotifyUserArtists} from '../actions/musicPlayerActions';
-import SongResultExtended from '../components/SongResultExtended'
+  import { fetchRecentlyPlayedUserSongs, fetchSpotifyUserArtists} from '../actions/musicPlayerActions';
 import UserResult from '../components/UserResult';
-import SongResult from '../components/SongResult'
+import SongResultRecent from '../components/SongResultRecent'
 import ArtistResultHome from '../components/ArtistResultHome'
+import SongResultExtended from '../components/SongResultExtended'
+import TopResultHome from '../components/TopResultHome'
 import PlaylistView from '../components/PlaylistView'
 
 class UserDashboard extends Component {
@@ -19,9 +20,17 @@ class UserDashboard extends Component {
         getPlaylist(this.props.state.user.playlists[0].id).then((playlist) => {
             console.log(playlist)
             this.props.addSelectedPlaylist(playlist)}) 
-    this.props.fetchSpotifyUserSongs(this.props.state.token).then((data) => { console.log(data)})
+    this.props.fetchRecentlyPlayedUserSongs(this.props.state.token).then((data) => { console.log(data)})
     this.props.fetchSpotifyUserArtists(this.props.state.token).then((data) => { console.log(data)})
     }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.state.user !== prevProps.state.user){
+            getPlaylist(this.props.state.user.playlists[0].id).then((playlist) => {
+                console.log(playlist)
+                this.props.addSelectedPlaylist(playlist)}) 
+        }
+      }
 
 
 
@@ -30,16 +39,20 @@ class UserDashboard extends Component {
         return(
             <div>
                 
-                {this.props.state.recArtistsloading && this.props.state.recSongsloading  ? 
+                {this.props.state.recArtistsloading && this.props.state.recPlayedloading  ? 
             (    <div>         <UserResult user={this.props.state.user}/>   
-                            <SongResult songs={this.props.state.recSongs.slice(0,9)}/> 
-                            <ArtistResultHome artists={this.props.state.recArtists.slice(0,12)}/>
+                            <TopResultHome artist={this.props.state.recArtists[0]}/>
+            <div className="SongResultC">
+                            <SongResultRecent songs={this.props.state.recPlayedSongs.slice(0,9  )}/>
+                            </div> 
+                            <ArtistResultHome artists={this.props.state.recArtists}/>
 
 
                             
                  <div className="BottomHalfPlaylist2">
             <div>
-             <SongResultExtended songs={this.props.state.selectedPlaylist.playlist_songs}/>
+                <h2 className="TitleSection">{"Music Library"}</h2>
+             <SongResultExtended  songs={this.props.state.selectedPlaylist.playlist_songs}/>
              </div>
             <div className="TablePlaylistContainer">
             <table class="table2 table-hover">
@@ -69,7 +82,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     addSelectedPlaylist: (playlist) => dispatch(addSelectedPlaylist(playlist)),
-    fetchSpotifyUserSongs: (token) => dispatch(fetchSpotifyUserSongs(token)),
+    fetchRecentlyPlayedUserSongs: (token) => dispatch(fetchRecentlyPlayedUserSongs(token)),
     fetchSpotifyUserArtists: (token) => dispatch(fetchSpotifyUserArtists(token))
  })
 

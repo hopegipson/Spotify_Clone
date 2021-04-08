@@ -1,4 +1,4 @@
-const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecordingId: " ",  loading: true, token: null, playbackOn: false, playbackPaused: false, recArtistsloading: false, recSongsloading: false, user: {display_name: "Still loading", spotifyid: "none"}, playlists: [], selectedPlaylist: "nothing"}, action) => {
+const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecordingId: " ",  loading: true, token: null, playbackOn: false, playbackPaused: false, recArtistsloading: false, recSongsloading: false, recSongsloading: false, user: {display_name: "Still loading", spotifyid: "none"}, playlists: [], selectedPlaylist: "nothing"}, action) => {
     switch(action.type) {
       case 'LOADING_SPOTIFY_DATA':
         return {
@@ -122,6 +122,17 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
                ...state,
                recSongsloading: false,
               }
+    case 'ADD_RECENTLY_PLAYED_SONGS':
+              return{
+                ...state,
+                recPlayedloading: true,
+                recPlayedSongs: action.songs
+              }
+      case 'LOADING_RECENT_SONGS':
+        return{
+            ...state,
+            recSongsloading: false
+          }
       default:
         return state;
     }

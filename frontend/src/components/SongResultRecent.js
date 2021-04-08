@@ -1,20 +1,15 @@
 import React, { Component} from 'react';
-import SongExtended from './SongExtended'
+import Song from './Song'
 import { connect } from 'react-redux'
 import {startPlayback, turnOnMusic, turnOffMusic, turnOffPause, turnOnPause, pauseTrack, changeTrackerSong, eraseTrackerSong} from '../actions/musicPlayerActions'
 
-class SongResultExtended extends Component {
+class SongResultRecent extends Component {
     state = {
         selectedElement: "empty",
         songs: this.props.songs
        }
-    renderSongs = () => this.props.songs.map((songplaylist, index) => <SongExtended key={songplaylist.song.id} index={index} song ={songplaylist.song} songplaylist ={songplaylist}  user={this.props.state.user} callPlayback={this.callPlayback} />) 
+    renderSongs = () => this.props.songs.map((songplaylist, index) => <Song key={songplaylist.track.id} index={index} song ={songplaylist.track} songplaylist ={songplaylist}  user={this.props.state.user} callPlayback={this.callPlayback} />) 
 
-    componentDidUpdate(prevProps) {
-      if (this.props.songs !== prevProps.songs){
-        this.setState(state => ({ songs: this.props.songs }))
-      }
-    }
 
     callPlayback = (event) => {
         console.log(this.props.songs)
@@ -25,11 +20,11 @@ class SongResultExtended extends Component {
         let selectedElement = this.props.songs.splice(event.target.id, 1)[0]
          console.log(selectedElement)
 
-         startPlayback(event.target.name, this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay(selectedElement.song))
+         startPlayback(event.target.name, this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay(selectedElement.track))
            this.props.songs.forEach(function (songplaylist) {
-             songplaylist.song.open = false;
+             songplaylist.track.open = false;
            })
-         selectedElement.song.open = true;
+         selectedElement.track.open = true;
         this.props.songs.splice(event.target.id, 0, selectedElement)   
         console.log(this.props.songs)
         this.setState({songs: this.props.songs, selectedElement: selectedElement})
@@ -37,7 +32,7 @@ class SongResultExtended extends Component {
          else if(!this.props.state.playbackPaused){
             pauseTrack(this.props.state.deviceID, this.props.state.token).then(this.changeStatesPause())
            this.props.songs.forEach(function (songplaylist) {
-            songplaylist.song.open = false;
+            songplaylist.track.open = false;
           })
        this.setState({songs: this.props.songs, selectedElement: "empty"})  
       }
@@ -59,10 +54,13 @@ class SongResultExtended extends Component {
   }
 
 
+
     render(){
 
-        return(<div className="SongResultExtended">
-            <div className="InsideSongResultExtended">
+        return(<div className="SongResultRecent">
+             <h4 className="TitleSection">{"Recently Played Songs"}</h4>
+
+            <div className="InsideSongResultRecent">
                 {this.renderSongs()}
             </div>
         </div>)
@@ -85,4 +83,4 @@ const mapDispatchToProps = dispatch => ({
     
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SongResultExtended) 
+export default connect(mapStateToProps, mapDispatchToProps)(SongResultRecent) 

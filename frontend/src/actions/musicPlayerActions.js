@@ -64,6 +64,26 @@
                           );
                   });}}
 
+      export const fetchRecentlyPlayedUserSongs = (token) => {
+
+        return (dispatch) => {
+            dispatch({ type: 'LOADING_RECENT_SONGS'})
+            return fetch(`https://api.spotify.com/v1/me/player/recently-played?limit=10&after=1484811043508`, {
+                method: 'GET', headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                }
+            })
+            .then((response) => {
+                  return response.json().then(
+                            (data) => {
+                              console.log(data)
+                            dispatch({type: 'ADD_RECENTLY_PLAYED_SONGS', songs: data.items})
+                            }
+                        );
+                });}}
+
 
         export const fetchUserData = (token) => {
 

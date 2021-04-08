@@ -131,6 +131,25 @@ export const postUser = (display_name, spotifyid) =>  {
         }).then(parseJSON)
         }
 
+      export const changeSongPlaylists = (id, remove_playlist_id) => {
+        return fetch(songsURL +`/${id}`, {
+          method: 'PATCH',
+          headers: headers,
+          body: JSON.stringify({
+              song_info: {
+              remove_playlist_id: remove_playlist_id}
+            })
+        }).then(parseJSON)
+        }
+
+        export const deleteSong = (id) => {
+          return fetch(songsURL +`/${id}`, {
+            method: 'DELETE',
+            headers: headers,
+            
+          }).then(parseJSON)
+          }
+
         export const updatePlaylist = (newName, image, id) => {
           return fetch(playlistsURL +`/${id}`, {
             method: 'PATCH',
