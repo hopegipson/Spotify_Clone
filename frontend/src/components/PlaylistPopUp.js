@@ -8,8 +8,6 @@ export default class PlaylistPopUp extends Component {
     
       handleOnSubmit(event) {
         event.preventDefault();
-        console.log(this.state.text)
-        console.log(this.props)
         let number = parseInt(this.state.text)
         this.props.addSongToPlaylist(number)
         this.setState({

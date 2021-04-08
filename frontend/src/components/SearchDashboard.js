@@ -9,8 +9,8 @@ class SearchDashboard extends Component {
 
     componentDidMount() {
         
-        this.props.fetchSpotifyUserSongs(this.props.state.token).then((data) => { console.log(data)})
-        this.props.fetchSpotifyUserArtists(this.props.state.token).then((data) => { console.log(data)})
+        this.props.fetchSpotifyUserSongs(this.props.state.token)
+        this.props.fetchSpotifyUserArtists(this.props.state.token)
 
        }
 

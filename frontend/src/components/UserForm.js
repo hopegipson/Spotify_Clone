@@ -15,7 +15,6 @@ class UserForm extends Component {
     
       handleOnSubmit(event) {
         event.preventDefault();
-        console.log("Submit")
        changeUser(this.state.text, this.props.user.spotifyid, this.props.user.id).then((user) => {
         this.props.addUserToState(user)})
         this.setState({

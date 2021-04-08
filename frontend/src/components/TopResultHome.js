@@ -8,7 +8,6 @@ export default class TopResultHome extends Component {
     render(){
 
         return(<div className="TopResultHome">
-            {console.log(this.props.artist)}
             <h2 className="TitleSectionHome">Top Suggestion:</h2>
             <div className="InsideTopResultHome">
             {this.props.artist.images.length !== 0 ? 

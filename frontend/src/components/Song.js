@@ -75,7 +75,6 @@ class Song extends Component {
   
 
       togglePop = () => {
-        console.log(this.state.seen)
         this.setState({
          seen: !this.state.seen
         });
@@ -106,7 +105,6 @@ class Song extends Component {
           <div>
           {this.state.seen ? <PlaylistPopUp user={this.props.state.user} toggle={this.togglePop} addSongToPlaylist={this.addSongToPlaylist} song={this.state.song} /> : null}
         </div>  
-        {console.log(this.props.song)}
         <div className="SongDivWrapper">   
 
 

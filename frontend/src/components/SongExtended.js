@@ -72,17 +72,7 @@ class SongExtended extends Component {
           this.props.addUserToState(user)})       
        })} }
 
-  
-
-      togglePop = () => {
-        console.log(this.state.seen)
-        this.setState({
-         seen: !this.state.seen
-        });
-       };
-
        removePlaylistFromSong = () => {
-         console.log(this.props)
         changeSongPlaylists(this.props.song.id, this.props.state.selectedPlaylist.id).then((song) => {
           getUser(this.props.state.user.id).then((user) => {
             this.props.addUserToState(user)} )
@@ -129,10 +119,6 @@ class SongExtended extends Component {
 
         return(
           <div>
-          {/* <div>
-          {this.state.seen ? <PlaylistPopUp user={this.props.state.user} toggle={this.togglePop} removePlaylistFromSong={this.removePlaylistFromSong} song={this.state.song} /> : null}
-        </div>   */}
-        {console.log(this.props.song)}
         <div className="SongDivWrapper2">   
 
 

@@ -17,7 +17,6 @@ class PlaylistView extends Component {
       }
 
       togglePop = () => {
-        console.log(this.state.seen)
         this.setState({
          seen: !this.state.seen
         });
@@ -32,7 +31,6 @@ class PlaylistView extends Component {
         }
         if (this.props.state.user !== prevProps.state.user){
           getPlaylist(this.props.match.params.id).then((playlist) => {
-              console.log(playlist)
               this.props.addSelectedPlaylist(playlist)}) 
       }
       }
@@ -41,7 +39,6 @@ class PlaylistView extends Component {
       componentWillMount() {
         if(this.props.match){
         getPlaylist(this.props.match.params.id).then((playlist) => {
-          console.log(playlist)
           this.props.addSelectedPlaylist(playlist)}) }
 
       }
@@ -61,7 +58,6 @@ class PlaylistView extends Component {
 
        changePlaylist = (newName, image, playlist_id) => {
         updatePlaylist(newName, image, playlist_id).then((playlist) => {
-          console.log(playlist)
          this.props.addSelectedPlaylist(playlist)
           getUser(this.props.state.user.id).then((user) => {
             this.props.addUserToState(user)})         

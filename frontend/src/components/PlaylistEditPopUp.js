@@ -9,7 +9,6 @@ export default class PlaylistEditPopUp extends Component {
     
       handleOnSubmit(event) {
         event.preventDefault();
-        console.log(this.props)
         this.props.changePlaylist(this.state.text, this.props.playlist.image, this.props.playlist.id)
       }
 

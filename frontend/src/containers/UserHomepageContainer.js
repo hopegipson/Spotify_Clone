@@ -33,7 +33,6 @@ class UserBar extends Component {
     }
 
     createUser = () => {    
-        console.log(this.props.state.spotifyuser.id)
         this.props.postUser(this.props.state.spotifyuser.display_name, this.props.state.spotifyuser.id)
     }
 
@@ -51,7 +50,6 @@ class UserBar extends Component {
           
 
 
-                {console.log(this.props)}
                 <button class="dropbtn"> {this.props.state.user.display_name}  </button>
                 <img className="UserIcon" src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" ></img>
                 <div className="dropdown">

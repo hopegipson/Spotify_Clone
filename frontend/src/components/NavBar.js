@@ -52,7 +52,6 @@ class NavBar extends Component {
       </div></div>
       <hr></hr>
 <div>
-  {console.log(this.props.user)}
 
       {this.props.state.user.playlists  ? 
             (

@@ -15,7 +15,6 @@ class SongResult extends Component {
 
        if(!this.props.state.playbackOn){
         let selectedElement = this.props.songs.splice(event.target.id, 1)[0]
-        console.log(selectedElement)
 
         startPlayback(event.target.name, this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay(selectedElement))
           this.props.songs.forEach(function (song) {

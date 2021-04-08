@@ -17,13 +17,9 @@ class SongResultExtended extends Component {
     }
 
     callPlayback = (event) => {
-        console.log(this.props.songs)
-        
-        
-            console.log(this.props.state.playbackOn)
+
         if(!this.props.state.playbackOn){
         let selectedElement = this.props.songs.splice(event.target.id, 1)[0]
-         console.log(selectedElement)
 
          startPlayback(event.target.name, this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay(selectedElement.song))
            this.props.songs.forEach(function (songplaylist) {
@@ -31,7 +27,6 @@ class SongResultExtended extends Component {
            })
          selectedElement.song.open = true;
         this.props.songs.splice(event.target.id, 0, selectedElement)   
-        console.log(this.props.songs)
         this.setState({songs: this.props.songs, selectedElement: selectedElement})
          }
          else if(!this.props.state.playbackPaused){
@@ -52,7 +47,6 @@ class SongResultExtended extends Component {
   }
 
     changeStatesPlay = (songPlaying) => {
-        console.log(songPlaying)
       this.props.turnOnMusic()
       this.props.turnOffPause()
       this.props.changeTrackerSong(songPlaying)
