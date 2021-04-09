@@ -1,112 +1,104 @@
- 
+const parseJSON = res => res.json()
+const SPOTIFYURL = 'https://api.spotify.com/v1/me'
+const TOPARTISTSURL = 'https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=20&offset=0'
+const TOPSONGSURL = 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=20&offset=0'
+
+const PLAYERURL = `https://api.spotify.com/v1/me/player`
+const RECENTLYPLAYEDURL = 'https://api.spotify.com/v1/me/player/recently-played?limit=10&after=1484811043508'
+const STARTPLAYBACKURL = "https://api.spotify.com/v1/me/player/play?"
+const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
 
  export const fetchSpotifyData = (term, token) => {
-
     return (dispatch) => {
-        dispatch({ type: 'LOADING_SPOTIFY_DATA'})
+        dispatch({ type: 'LOADING_SPOTIFY_DATA'}) //in the process of doing something sending redux a busy signal
        return fetch(`https://api.spotify.com/v1/search?query=${term}&type=album,playlist,artist,track&limit=50`, {
             method: 'GET', headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + token
-            }
-        })
-        .then((response) => {
-             return response.json().then(
-                       (data) => {
-                         console.log(data)
+            }}).then(parseJSON).then((data) => {
                         dispatch({type: 'ADD_ALBUMS', albums: data.albums.items})
                         dispatch({type: 'ADD_SONGS', songs: data.tracks.items})
                         dispatch({type: 'ADD_ARTISTS', artists: data.artists.items})
-                        }
-                   );
-           });
-         }
-        }
+                        })}}
 
-        export const fetchSpotifyUserArtists = (token) => {
+  export const fetchSpotifyUserArtists = (token) => {
+    return (dispatch) => {
+        dispatch({ type: 'LOADING_RECOMMENDED_ARTISTS'})
+        return fetch(TOPARTISTSURL, {
+            method: 'GET', headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+        }}).then(parseJSON).then((data) => {
+                        dispatch({type: 'ADD_RECOMMENDED_ARTISTS', artists  : data.items})
+                        })}}
 
-          return (dispatch) => {
-              dispatch({ type: 'LOADING_RECOMMENDED_ARTISTS'})
-             return fetch(`https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=20&offset=0`, {
-                  method: 'GET', headers: {
-                      'Accept': 'application/json',
-                      'Content-Type': 'application/json',
-                      'Authorization': 'Bearer ' + token
-                  }
-              })
-              .then((response) => {
-                   return response.json().then(
-                             (data) => {
-                               console.log(data)
-                              dispatch({type: 'ADD_RECOMMENDED_ARTISTS', artists  : data.items})
-                              }
-                         );
-                 });}}
-
-          export const fetchSpotifyUserSongs = (token) => {
-
-          return (dispatch) => {
-              dispatch({ type: 'LOADING_RECOMMENDED_SONGS'})
-              return fetch(`https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=20&offset=0`, {
-                  method: 'GET', headers: {
-                      'Accept': 'application/json',
-                      'Content-Type': 'application/json',
-                      'Authorization': 'Bearer ' + token
-                  }
-              })
-              .then((response) => {
-                    return response.json().then(
-                              (data) => {
-                                console.log(data)
-                              dispatch({type: 'ADD_RECOMMENDED_SONGS', songs: data.items})
-                              }
-                          );
-                  });}}
-
-      export const fetchRecentlyPlayedUserSongs = (token) => {
-
-        return (dispatch) => {
-            dispatch({ type: 'LOADING_RECENT_SONGS'})
-            return fetch(`https://api.spotify.com/v1/me/player/recently-played?limit=10&after=1484811043508`, {
-                method: 'GET', headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + token
-                }
-            })
-            .then((response) => {
-                  return response.json().then(
-                            (data) => {
-                              console.log(data)
-                            dispatch({type: 'ADD_RECENTLY_PLAYED_SONGS', songs: data.items})
-                            }
-                        );
-                });}}
+  export const fetchSpotifyUserSongs = (token) => {
+    return (dispatch) => {
+        dispatch({ type: 'LOADING_RECOMMENDED_SONGS'})
+        return fetch(TOPSONGSURL, {
+            method: 'GET', headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            }}).then(parseJSON).then((data) => {
+              dispatch({type: 'ADD_RECOMMENDED_SONGS', songs: data.items})
+              })}}
 
 
-        export const fetchUserData = (token) => {
+  export const fetchRecentlyPlayedUserSongs = (token) => {
+    return (dispatch) => {
+        dispatch({ type: 'LOADING_RECENT_SONGS'})
+        return fetch(RECENTLYPLAYEDURL, {
+            method: 'GET', headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            }}).then(parseJSON).then((data) => {
+              dispatch({type: 'ADD_RECENTLY_PLAYED_SONGS', songs: data.items})
+              })}}
 
-          return (dispatch) => {
-              dispatch({ type: 'LOADING_SPOTIFY_DATA'})
-             return fetch(`https://api.spotify.com/v1/me`, {
-                  method: 'GET', headers: {
-                      'Accept': 'application/json',
-                      'Content-Type': 'application/json',
-                      'Authorization': 'Bearer ' + token
-                  }
-              })
-              .then((response) => {
-                   return response.json().then(
-                             (data) => {
-                               console.log(data)
-                              dispatch({type: 'ADD_SPOTIFY_USER', spotifyuser: data})
-                              }
-                         );
-                 });
-               }
-              }
 
+  export const fetchUserData = (token) => {
+    return (dispatch) => {
+        dispatch({ type: 'LOADING_SPOTIFY_DATA'})
+        return fetch(SPOTIFYURL, {
+            method: 'GET', headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            }}).then(parseJSON).then((data) => {
+              dispatch({type: 'ADD_SPOTIFY_USER', spotifyuser: data})
+              })}}
+
+  export const startPlayback = (spotify_uri, deviceID, token) => {
+    return fetch(STARTPLAYBACKURL +
+          "device_id=" + deviceID, {
+          method: 'PUT',
+          body: JSON.stringify({uris: [spotify_uri]}),
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+          }})}
+
+  export const getCurrentlyPlaying = (token) => {
+    return fetch(PLAYERURL, {
+          method: 'GET',
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+          }}).then(parseJSON)}
+
+  export const pauseTrack = ( deviceID, token) => {
+    return fetch(PAUSEURL +
+          "device_id=" + deviceID, {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+          }})}
 
         export const loadSpotifyScript = (callback) => {
           const existingScript = document.getElementById('spotify');
@@ -147,29 +139,7 @@
       // }
 
 
-       export const startPlayback = (spotify_uri, deviceID, token) => {
-         return fetch("https://api.spotify.com/v1/me/player/play?" +
-              "device_id=" + deviceID, {
-              method: 'PUT',
-              body: JSON.stringify({uris: [spotify_uri]}),
-              headers: {
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${token}`
-              }
-           })
-      }
-
-      export const getCurrentlyPlaying = (token) => {
-         return fetch(`https://api.spotify.com/v1/me/player`, {
-              method: 'GET',
-              headers: {
-                  'Accept': 'application/json',
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${token}`
-              }
-           }).then((response) => {
-            return response.json()})
-      }
+      
 
       export const turnOnMusic = (playbackOn) => {
         return {
@@ -191,21 +161,6 @@
           playbackPaused
         };
       }
-
-      
-
-      export const pauseTrack = ( deviceID, token) => {
-       return fetch("https://api.spotify.com/v1/me/player/pause?" +
-            "device_id=" + deviceID, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
-         })
-    }
-
- 
 
     export const turnOnPause = (playbackPaused) => {
       return {

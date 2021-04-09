@@ -3,7 +3,6 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
       case 'LOADING_SPOTIFY_DATA':
         return {
           ...state,
-         // cats: [...state.cats],
           loading: true
         }
       case 'ADD_SONGS':
@@ -27,7 +26,7 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
             return{
               ...state,
               albums: action.albums,
-              loading: false
+             loading: false
             }
     
       case 'ADD_PLAYER':
@@ -52,7 +51,6 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
                 ...state,
                 playbackOn: action.playbackOn
               }
-
       case 'TURN_OFF_PAUSE':
               return{
                 ...state,
@@ -131,7 +129,8 @@ const musicReducer = (state = { songs: [], albums: [], artists: [], playingRecor
       case 'LOADING_RECENT_SONGS':
         return{
             ...state,
-            recSongsloading: false
+            recPlayedloading: false
+            //recSongsloading: false
           }
       default:
         return state;

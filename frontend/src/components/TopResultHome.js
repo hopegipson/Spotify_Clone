@@ -5,7 +5,7 @@ import React from 'react';
         return(<div className="TopResultHome">
             <h2 className="TitleSectionHome">Top Suggestion:</h2>
             <div className="InsideTopResultHome">
-            {props.artist.images.length !== 0 ? 
+            {props.artist.images ? 
             (<img className="TopArtistImage" src={`${props.artist.images[0].url}`} alt="Avatar"></img> ): (<img className="TopArtistImage" src="https://i.pinimg.com/originals/7e/4f/89/7e4f892475aca7242883ceaf8aa89cc9.jpg"alt="new"/> )}
             <h1 className={"TopArtistName"}>{props.artist.name}</h1>
             <h1 className={"TopArtistGenreLabel"}>{"Genres:"}</h1>

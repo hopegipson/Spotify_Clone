@@ -42,8 +42,6 @@ class UserBar extends Component {
                  {this.props.state.user.playlists ? 
             (<Route exact path='/dashboard'  render={routerProps => <UserDashboard/> } /> ): (<div> </div>)}
           
-
-
                 <button className="dropbtn"> {this.props.state.user.display_name}  </button>
                 <img className="UserIcon" src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" ></img>
                 <div className="dropdown">
