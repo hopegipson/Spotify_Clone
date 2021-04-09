@@ -51,8 +51,7 @@ class SongExtended extends Component {
           else{
 
          changeSong(selectedSong.id, playlist_id).then((data) => {
-          getUser(this.props.state.user.id).then((user) => {
-            this.props.addUserToState(user)})         
+          this.props.getUser(this.props.state.user.id)         
         })
       }
         }
@@ -61,34 +60,26 @@ class SongExtended extends Component {
    CheckifPlaylistOrLibraryCreate = (playlist_id, musiclibrary_id) => {
      if (playlist_id === musiclibrary_id){
       postSong(this.state.song, playlist_id).then((data) => {
-        getUser(this.props.state.user.id).then((user) => {
-          this.props.addUserToState(user)})       
+        this.props.getUser(this.props.state.user.id)      
        })
      }
      else{
        postSongWithTwo(this.state.song, playlist_id, musiclibrary_id).then((data) => {
-        getUser(this.props.state.user.id).then((user) => {
-          this.props.addUserToState(user)})       
+        this.props.getUser(this.props.state.user.id)       
        })} }
 
        removePlaylistFromSong = () => {
         changeSongPlaylists(this.props.song.id, this.props.state.selectedPlaylist.id).then((song) => {
-          getUser(this.props.state.user.id).then((user) => {
-            this.props.addUserToState(user)} )
+          this.props.getUser(this.props.state.user.id)
            })
        }
 
       removeSongFromLibrary = () => {
         deleteSong(this.props.song.id).then((songs) => {
-          getUser(this.props.state.user.id).then((user) => {
-            this.props.addUserToState(user)} )
+          this.props.getUser(this.props.state.user.id)
         })
       }
 
-
-
-
-    
     getImageName = () => this.props.song.open ? 'pause' : 'play'
      
     convertDuration = (milliseconds) => {
@@ -152,6 +143,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   addUserToState: (user) => dispatch(addUserToState(user)),
   addSelectedPlaylist: (playlist) => dispatch(addSelectedPlaylist(playlist)),
+  getUser: (user) => dispatch(getUser(user))
 
   
 })

@@ -59,8 +59,7 @@ class PlaylistView extends Component {
        changePlaylist = (newName, image, playlist_id) => {
         updatePlaylist(newName, image, playlist_id).then((playlist) => {
          this.props.addSelectedPlaylist(playlist)
-          getUser(this.props.state.user.id).then((user) => {
-            this.props.addUserToState(user)})         
+          this.props.getUser(this.props.state.user.id)       
         })
       }
 
@@ -126,8 +125,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     addSelectedPlaylist: (playlist) => dispatch(addSelectedPlaylist(playlist)),
-    addUserToState: (user) => dispatch(addUserToState(user))
-
+    addUserToState: (user) => dispatch(addUserToState(user)),
+    getUser: (user) => dispatch(getUser(user))
  })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistView);

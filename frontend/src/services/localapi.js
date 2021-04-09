@@ -21,7 +21,7 @@ export function getPlaylists() {return fetch(playlistsURL).then(parseJSON)}
 export function getSongs() {return fetch(songsURL).then(parseJSON)}
 
 
-export function getUser(userID) {return fetch(usersURL + `/${userID}`).then(parseJSON)}
+//export function getUser(userID) {return fetch(usersURL + `/${userID}`).then(parseJSON)}
 export function getPlaylist(playlistID) {return fetch(playlistsURL + `/${playlistID}`).then(parseJSON)}
 export function getSong(songID) {return fetch(songsURL + `/${songID}`).then(parseJSON)}
 
@@ -34,31 +34,29 @@ export const postUser = (display_name, spotifyid) =>  {
         user_info: {
           display_name: display_name,
           spotifyid: spotifyid
-        }
-      })
+        }})
   }).then(parseJSON).then((data) => {
-    console.log(data)
      dispatch({type: 'ADD_USER', user: data })
-   })
-  }
-  }
+   })}}
+
+   export const getUser = (userID) =>  {
+    return (dispatch) => {
+    return fetch(usersURL + `/${userID}`, {
+      method: 'GET',
+      headers: headers,
+    }).then(parseJSON).then((data) => {
+       dispatch({type: 'ADD_USER', user: data })
+     })}}
 
   export const postPlaylist = (user_id) =>  {
-   return (dispatch) => {
     return fetch(playlistsURL, {
       method: 'POST',
       headers: headers,
       body: JSON.stringify({
           playlist: {
-            user_id: user_id
-          }
-        })
-    }).then(parseJSON).then((data) => {
-      console.log(data)
-       dispatch({type: 'ADD_PLAYLIST', playlist: data })
-     })
-      }
-    }
+            user_id: user_id} })
+    }).then(parseJSON)
+     }
 
   export const postSong = (song, playlist_id) =>  {
       return fetch(songsURL, {
@@ -88,10 +86,7 @@ export const postUser = (display_name, spotifyid) =>  {
                 artists: song.artists,
                 album: song.album,
                 playlist_id: playlist_id,
-                second_playlist_id: second_playlist_id,
-
-              }
-            })
+                second_playlist_id: second_playlist_id }})
          }).then(parseJSON)}
 
   export const addUserToState = (user) => {
@@ -109,6 +104,7 @@ export const postUser = (display_name, spotifyid) =>  {
   };
 
   export const changeUser = (username, spotifyid, id) => {
+    return (dispatch) => {
       return fetch(usersURL +`/${id}`, {
         method: 'PATCH',
         headers: headers,
@@ -117,8 +113,10 @@ export const postUser = (display_name, spotifyid) =>  {
               display_name: username,
               spotifyid: spotifyid}
           })
-      }).then(parseJSON)
-      }
+      }).then(parseJSON).then((data) => {
+         dispatch({type: 'ADD_USER', user: data })
+       })}}
+
 
       export const changeSong = (id, playlist_id) => {
         return fetch(songsURL +`/${id}`, {

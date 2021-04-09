@@ -52,8 +52,7 @@ class Song extends Component {
           else{
 
          changeSong(selectedSong.id, playlist_id).then((data) => {
-          getUser(this.props.state.user.id).then((user) => {
-            this.props.addUserToState(user)})         
+          this.props.getUser(this.props.state.user.id)      
         })
       }
         }
@@ -62,14 +61,12 @@ class Song extends Component {
    CheckifPlaylistOrLibraryCreate = (playlist_id, musiclibrary_id) => {
      if (playlist_id === musiclibrary_id){
       postSong(this.state.song, playlist_id).then((data) => {
-        getUser(this.props.state.user.id).then((user) => {
-          this.props.addUserToState(user)})       
+        this.props.getUser(this.props.state.user.id)       
        })
      }
      else{
        postSongWithTwo(this.state.song, playlist_id, musiclibrary_id).then((data) => {
-        getUser(this.props.state.user.id).then((user) => {
-          this.props.addUserToState(user)})       
+        this.props.getUser(this.props.state.user.id)       
        })} }
 
   
@@ -122,7 +119,6 @@ class Song extends Component {
                             </div>
                       
                     </div>
-                    
          </div>
          </div>
          </div>
@@ -135,6 +131,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   addUserToState: (user) => dispatch(addUserToState(user)),
+  getUser: (user) => dispatch(getUser(user))
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Song);

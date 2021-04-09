@@ -160,7 +160,6 @@ body {
 
 .InsideSongResult{
   position: absolute;
-  background-color:  #0e0c0c;
   width: 850px;
   height: 240px;
   top: 70px; 
@@ -199,7 +198,6 @@ body {
 .InsideArtistResult{
  
   position: absolute;
-  background-color:  #0e0c0c;
   width: 1300px;
   height: 300px;
   top: 70px; 
@@ -1159,10 +1157,10 @@ body {
 
 
 .modal {
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  width: 50%;
-  height: 50%;
+  width: 700px;
+  height: 500px;
   background-color: rgba(0, 0, 0, .9);
 }
 

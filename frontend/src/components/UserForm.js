@@ -9,18 +9,13 @@ class UserForm extends Component {
     
       handleOnChange(event) {
         this.setState({
-          text: event.target.value,
-        });
-      }
+          text: event.target.value})}
     
       handleOnSubmit(event) {
         event.preventDefault();
-       changeUser(this.state.text, this.props.user.spotifyid, this.props.user.id).then((user) => {
-        this.props.addUserToState(user)})
+       this.props.changeUser(this.state.text, this.props.state.user.spotifyid, this.props.state.user.id)
         this.setState({
-          text: '',
-        });
-      }
+          text: ''})}
 
 
     render(){
@@ -34,7 +29,7 @@ class UserForm extends Component {
                 <form class="form-one" onSubmit={(event) => this.handleOnSubmit(event)}>
                 <label className="LabelUser">Username   </label>
         <input
-          type="text" className="UserEditBar" value={this.state.text} placeholder={this.props.user.display_name}
+          type="text" className="UserEditBar" value={this.state.text} placeholder={this.props.state.user.display_name}
           onChange={(event) => this.handleOnChange(event)} />
         <input  className="btn btn-outline-info changeUsernameBtn" type="submit" value="Change Username" />
       </form>
@@ -51,6 +46,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     addUserToState: (user) => dispatch(addUserToState(user)),
+    changeUser: (user, spotifyid, id) => dispatch(changeUser(user, spotifyid, id))
 
  })
 

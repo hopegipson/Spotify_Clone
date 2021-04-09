@@ -1,15 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import  { Component } from 'react';
-import {postPlaylist} from '../services/localapi'
+import {postPlaylist, getUser} from '../services/localapi'
 import { connect } from 'react-redux'
-
 
 class NavBar extends Component {
 
   newPlaylist = () => {
-      this.props.postPlaylist(this.props.user.id).then( () => {
-      this.props.history.push( `/playlist/${this.props.state.playlists.[this.props.state.playlists.length - 1].id}`)
+      postPlaylist(this.props.user.id).then( () => {
+        this.props.getUser(this.props.state.user.id)
+        console.log(this.props.state.playlists)
+        console.log(this.props.state.user.playlists[this.props.state.user.playlists.length - 1].id)
+      this.props.history.push( `/playlist/${this.props.state.user.playlists[this.props.state.user.playlists.length - 1].id}`)
     })
   }
 
@@ -73,6 +75,7 @@ class NavBar extends Component {
 
 const mapDispatchToProps = dispatch => ({
     postPlaylist: (user_id) => dispatch(postPlaylist(user_id)),
+    getUser: (user) => dispatch(getUser(user))
 
  })
 

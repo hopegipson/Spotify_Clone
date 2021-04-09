@@ -30,6 +30,7 @@ class UserDashboard extends Component {
     render(){
         return(
             <div>
+              
                 
                 {this.props.state.recArtistsloading && this.props.state.recPlayedloading  ? 
             (    <div>         <UserResult user={this.props.state.user}/>   
