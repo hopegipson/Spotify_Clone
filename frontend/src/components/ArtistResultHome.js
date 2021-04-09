@@ -1,16 +1,13 @@
 import React, { Component} from 'react';
 
-export default class ArtistResultHome extends Component {
-
-    render(){
-
+function ArtistResultHome (props) {
         return(<div className="ArtistResultHome">
             <h2 className="TitleSectionHome">Suggested Artists</h2>
             <a className="SeeMoreArtistsAlbums" href="http://google.com">SEE ALL</a>
 
             <div className="InsideArtistResultHome">
                 <div className="Row">
-            {this.props.artists.slice(0,6).map(artist =>(
+            {props.artists.slice(0,6).map(artist =>(
                 <div className="Column" key={artist.id}>
                     <div className="Inner">
                         {artist.images.length !== 0 ? 
@@ -25,7 +22,7 @@ export default class ArtistResultHome extends Component {
             
                   </div>
                   <div className="Row2">
-                  {this.props.artists.slice(7,13).map(artist =>(
+                  {props.artists.slice(7,13).map(artist =>(
                 <div className="Column" key={artist.id}>
                     <div className="Inner">
                         {artist.images.length !== 0 ? 
@@ -41,5 +38,5 @@ export default class ArtistResultHome extends Component {
             
 
         </div>)
-    }
 }
+export default ArtistResultHome
