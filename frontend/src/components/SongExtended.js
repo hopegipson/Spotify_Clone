@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { postSong, getSongs, changeSong, postSongWithTwo, getUser, addUserToState, changeSongPlaylists, addSelectedPlaylist, deleteSong, deletePlaylistSong} from '../services/localapi.js'
+import { getUser, addUserToState, addSelectedPlaylist, deleteSong, deletePlaylistSong} from '../services/localapi.js'
 import { connect } from 'react-redux'
 
 const imagesPath = {
@@ -21,61 +21,11 @@ class SongExtended extends Component {
       this.setState(state => ({ open: !this.props.song.open }))
       }
 
-      addSongToLibrary = () => {
-        this.checkifSongExists(this.props.state.user.playlists[0].id, this.props.state.user.playlists[0].id)
-      }
-
-      addSongToPlaylist = (playlist_id) => {
-        this.checkifSongExists(playlist_id, this.props.state.user.playlists[0].id)
-      }
-
-      checkifSongExists = (playlist_id, musiclibrary_id) => {
-        let value = getSongs()
-        if (value)
-        {value.then(json => this.lookForSong(json, this.state.song.uri, playlist_id, musiclibrary_id))}
-        else{
-          this.CheckifPlaylistOrLibrary(playlist_id, musiclibrary_id)
-        }       
-    }
-
-    lookForSong = (songs, songuri, playlist_id, musiclibrary_id) => {
-      let selectedSong = songs.filter(function(song) { if (song.uri === songuri)  return true})[0]
-      if (!selectedSong){
-        this.CheckifPlaylistOrLibraryCreate(playlist_id, musiclibrary_id)
-        }
-        else{
-          if (playlist_id === musiclibrary_id){
-            //maybe show some kind of pop up warning "song can't be added to library twice"
-          console.log("Song can't be added to library twice")
-          }
-          else{
-
-            changeSong(selectedSong.id, playlist_id).then(() => {
-              this.props.getUser(this.props.state.user.id)          
-        })
-      }
-        }
-   }
-
-   CheckifPlaylistOrLibraryCreate = (playlist_id, musiclibrary_id) => {
-     if (playlist_id === musiclibrary_id){
-      postSong(this.state.song, playlist_id).then((data) => {
-        this.props.getUser(this.props.state.user.id)      
-       })
-     }
-     else{
-       postSongWithTwo(this.state.song, playlist_id, musiclibrary_id).then((data) => {
-        this.props.getUser(this.props.state.user.id)       
-       })} }
-
        removePlaylistFromSong = () => {
          console.log(this.props)
         deletePlaylistSong(this.props.songplaylist.id).then((song) => {
           this.props.getUser(this.props.state.user.id)
            })
-        // changeSongPlaylists(this.props.song.id, this.props.state.selectedPlaylist.id).then((song) => {
-        //   this.props.getUser(this.props.state.user.id)
-        //    })
        }
 
       removeSongFromLibrary = () => {

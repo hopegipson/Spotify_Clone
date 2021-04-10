@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import Song from './Song'
 import { connect } from 'react-redux'
 import {startPlayback, turnOnMusic, turnOffMusic, turnOffPause, turnOnPause, pauseTrack, changeTrackerSong, eraseTrackerSong} from '../actions/musicPlayerActions'
-import { removeSongMessage} from '../services/localapi.js'
 
 
 class SongResult extends Component {

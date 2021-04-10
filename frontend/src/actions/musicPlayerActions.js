@@ -4,7 +4,8 @@ const TOPARTISTSURL = 'https://api.spotify.com/v1/me/top/artists?time_range=long
 const TOPSONGSURL = 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=20&offset=0'
 
 const PLAYERURL = `https://api.spotify.com/v1/me/player`
-const RECENTLYPLAYEDURL = 'https://api.spotify.com/v1/me/player/recently-played?limit=10&after=1484811043508'
+const RECENTLYPLAYEDURL = 'https://api.spotify.com/v1/me/player/recently-played?limit=10&'
+//after=1484811043508
 const STARTPLAYBACKURL = "https://api.spotify.com/v1/me/player/play?"
 const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
 

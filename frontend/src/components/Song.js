@@ -52,7 +52,6 @@ class Song extends Component {
             this.toggleMessageLibrary()
           }
           else{
-            //Path 3
          changeSong(selectedSong.id, playlist_id).then(() => {
           this.props.getUser(this.props.state.user.id)   
           this.toggleMessage(playlist_name)             
@@ -144,8 +143,8 @@ class Song extends Component {
          <div className="dropdown2">
                 <img className="ArrowIcon2" src="https://cdn4.iconfinder.com/data/icons/simple-lines-2/32/More_Functions_Menu_Horizontal_Dots_Hidden-512.png" alt="new" tabIndex="1" ></img>
                                 <div className="dropdown-content2">
-                               <a onClick={this.addSongToLibrary}> Add to Library</a>
-                                 <a onClick={this.togglePop}> Add to Playlist</a>
+                               <a  onClick={this.addSongToLibrary}> Add to Library</a>
+                                 <a  onClick={this.togglePop}> Add to Playlist</a>
                             </div>
                       
                     </div>

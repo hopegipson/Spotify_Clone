@@ -30,7 +30,7 @@ class MusicPlayerContainer extends Component {
                 const spotifyPlayer = new Player({
                     name: 'React Spotify Player',
                     getOAuthToken: cb => {
-                        cb(this.props.token);
+                        cb(this.props.state.token);
                     }
                 });
                 spotifyPlayer.addListener('player_state_changed', ({
@@ -64,15 +64,10 @@ class MusicPlayerContainer extends Component {
                           
                     });
                 });
-                //async make after notifyConnected
-                console.log(this.props.state)
                 this.state.spotifyPlayer.connect().then(success => {
                     if (success) {
                       console.log('The Web Playback SDK successfully connected to Spotify!');
-                    }})
-               // this.state.spotifyPlayer.connect();
-             }
-        }
+                    }})}}
 
         notifyConnected = () => {
             this.props.addPlayer(this.state.spotifyPlayer)
