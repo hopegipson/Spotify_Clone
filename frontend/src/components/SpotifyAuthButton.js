@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { clientId, redirectUri} from "./config";
+import { clientId, redirectUri} from "../services/config";
 
 import './SpotifyAuthButton.css';
 const authEndpoint = "https://accounts.spotify.com/authorize";
