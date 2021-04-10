@@ -43,7 +43,7 @@ class UserBar extends Component {
             (<Route exact path='/dashboard'  render={routerProps => <UserDashboard/> } /> ): (<div> </div>)}
           
                 <button className="dropbtn"> {this.props.state.user.display_name}  </button>
-                <img className="UserIcon" src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" ></img>
+                <img className="UserIcon" src="http://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png" ></img>
                 <div className="dropdown">
                 <img className="ArrowIcon" src="http://dmconsulting.net/wp-content/uploads/2017/09/Drop-down-arrow-icon-rounded.png" ></img>
                                 <div className="dropdown-content">

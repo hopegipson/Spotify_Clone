@@ -116,8 +116,7 @@ class SongExtended extends Component {
 
         return(
           <div>
-        <div className="SongDivWrapper2">   
-
+        <div className="SongDivWrapper2">     
 
         <div className="SongDiv2">
         <h4 className="IndexExtended">{this.props.index + 1}</h4>

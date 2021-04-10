@@ -12,9 +12,7 @@ import UserPage from './components/UserPage'
 import UserForm from './components/UserForm'
 import PlaylistView from './components/PlaylistView'
 import SearchDashboard from './components/SearchDashboard'
-import PlaylistsPage from './components/PlaylistsPage';
 
-//will want to show some sort of login to spotify button unless there is already a token
 class Dashboard extends Component {
   constructor() {
     super();
@@ -25,7 +23,7 @@ class Dashboard extends Component {
   render() 
 
   {
-    return (
+    return (<div className="FooterCont">
       <div className="Dashboard">
           <Router>
           <Redirect to="/dashboard" />
@@ -35,13 +33,13 @@ class Dashboard extends Component {
             <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
             <Route  path="/users/:id" render={() => <UserPage user={this.props.state.user} />}/>
             <Route path="/useredit/:id" render={() => <UserForm user={this.props.state.user} />}/>
-            <Route exact path="/playlists/" render={routerProps => <PlaylistsPage {...routerProps} user={this.props.state.user} />}/>
             <Route path="/playlist/:id" render={routerProps => <PlaylistView {...routerProps} user={this.props.state.user} />}/>
             <Route path="/library" render={routerProps => <LibraryView {...routerProps} user={this.props.state.user} />}/>
 
           </Router>
-       <Footer token={this.props.state.token}/>
        <br></br>
+      </div>
+      <Footer token={this.props.state.token}/>
       </div>
     );
   }

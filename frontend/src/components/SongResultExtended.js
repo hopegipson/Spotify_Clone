@@ -55,11 +55,13 @@ class SongResultExtended extends Component {
 
     render(){
 
-        return(<div className="SongResultExtended">
+        return(<div>
+        <div className="SongResultExtended">
             <div className="InsideSongResultExtended">
                 {this.renderSongs()}
             </div>
-        </div>)
+        </div>            
+      </div>)
     }
 }
 

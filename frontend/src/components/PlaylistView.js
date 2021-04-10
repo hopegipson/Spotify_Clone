@@ -111,9 +111,7 @@ class PlaylistView extends Component {
 
                     
                   </div>
-           
-             </div>) : (<div>{"Still loading..."}</div>)}
-             
+            </div>) : (<div>{"Still loading..."}</div>)}
              </div>
     )
     }

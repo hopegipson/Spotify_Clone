@@ -19,6 +19,7 @@ body {
   color: #adafae;
   text-align: left;
   background-color: #121212;
+
 }
 
 .sidebar {
@@ -1082,7 +1083,9 @@ body {
   left: 250px;
   width: 1427px;
   top: 350px;
-  height: 100%;
+  height: auto;
+  margin-bottom: 200px;
+  padding-bottom: 200px;
   background-color: rgb(255, 251, 251);
   background-image: linear-gradient(to top , #121212 70%, rgb(102, 102, 97));
 }
@@ -1366,21 +1369,22 @@ body {
 }
 
 .SongResultExtended {
-  position: absolute;
+  position: relative;
   top: 80px; 
   width: 99%;
-  height: 310px;
+  height: auto;
   left: 5px;
   /* background-image: linear-gradient(to top , rgb(0, 0, 0) 70%, rgb(102, 102, 97)); */
 
 }
 
 .InsideSongResultExtended{
-  position: absolute;
+  position: relative;
   width: 99%;
-  height: 240px;
+  height: auto;
   top: 70px; 
   left: 15px;
+  margin-bottom: 200px;
 
 }
 
@@ -1471,7 +1475,9 @@ body {
   left: 250px;
   width: 1427px;
   top: 1500px;
-  min-height: 1000px;
+  height: auto;
+  margin-bottom: 200px;
+  padding-bottom: 200px;
 
 }
 
@@ -1520,7 +1526,7 @@ body {
 }
 
 .SongResultRecent {
-  position: absolute;
+  position: relative;
   top: 80px; 
   width: 99%;
   height: 310px;
@@ -1530,7 +1536,7 @@ body {
 }
 
 .InsideSongResultRecent{
-  position: absolute;
+  position: relative;
   width: 99%;
   height: 240px;
   top: 70px; 
@@ -1717,13 +1723,4 @@ body {
   position: absolute;
   top: 600px;
 }
-
-.BoxSpace{
-  position: relative;
-  top: 315px;
-  height: 200px;
-  width: 100%;
-  background-color: blanchedalmond;
-}
-
 

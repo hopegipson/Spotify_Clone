@@ -91,7 +91,7 @@ class LibraryView extends Component {
                     </div>
                     
                   </div>
-                  
+
            
              </div>) : (<div>{"Still loading..."}</div>)}
              </div>
