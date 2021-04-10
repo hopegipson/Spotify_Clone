@@ -83,6 +83,16 @@ const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
               'Authorization': `Bearer ${token}`
           }})}
 
+  export const resumePlayback = (deviceID, token) => {
+    return fetch(STARTPLAYBACKURL +
+          "device_id=" + deviceID, {
+          method: 'PUT',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+          }})}
+
+
   export const getCurrentlyPlaying = (token) => {
     return fetch(PLAYERURL, {
           method: 'GET',

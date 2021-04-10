@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import {loadSpotifyScript} from '../actions/musicPlayerActions'
 import { connect } from 'react-redux';
-import { addPlayer } from '../actions/musicPlayerActions';
+import { addPlayer, changeTrackerSong } from '../actions/musicPlayerActions';
 import { addDevice } from '../actions/musicPlayerActions';
 
 
@@ -41,6 +41,7 @@ class MusicPlayerContainer extends Component {
                     console.log('Currently Playing', current_track);
                     console.log('Position in Song', position);
                     console.log('Duration of Song', duration);
+                    this.props.changeTrackerSong(current_track)
                   });
                 this.setState({
                     loadingState: "Loaded",
@@ -87,7 +88,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     addPlayer: (player) => dispatch(addPlayer(player)),
-    addDeviceID: (deviceid) => dispatch(addDevice(deviceid))
+    addDeviceID: (deviceid) => dispatch(addDevice(deviceid)),
+    changeTrackerSong: (song) => dispatch(changeTrackerSong(song))
+
  })
   
  export default connect(mapStateToProps, mapDispatchToProps)(MusicPlayerContainer)

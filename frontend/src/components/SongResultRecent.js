@@ -1,37 +1,70 @@
 import React, { Component} from 'react';
 import Song from './Song'
 import { connect } from 'react-redux'
-import {startPlayback, turnOnMusic, turnOffMusic, turnOffPause, turnOnPause, pauseTrack, changeTrackerSong, eraseTrackerSong} from '../actions/musicPlayerActions'
+import {startPlayback, turnOnMusic, turnOffMusic, turnOffPause, turnOnPause, pauseTrack, changeTrackerSong, eraseTrackerSong, resumePlayback} from '../actions/musicPlayerActions'
 
 class SongResultRecent extends Component {
     state = {
         selectedElement: "empty",
-        songs: this.props.songs
+        songs: this.props.songs,
+        currentSong: "empty"
        }
     renderSongs = () => this.props.songs.map((songplaylist, index) => <Song key={index} index={index} song ={songplaylist.track} songplaylist ={songplaylist}  user={this.props.state.user} callPlayback={this.callPlayback} />) 
 
 
     callPlayback = (event) => {
-        
-        
-        if(!this.props.state.playbackOn){
-        let selectedElement = this.props.songs.splice(event.target.id, 1)[0]
+      let savedInfo = event
+        if (savedInfo.target.id !== this.state.currentSong){
+          this.callPlaybackOnNewSong(savedInfo)
+        }
+        else if (savedInfo.target.id === this.state.currentSong){
+         this.callPlaybackOnSameSong(savedInfo)
+        }
+   }
 
-         startPlayback(event.target.name, this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay(selectedElement.track))
-           this.props.songs.forEach(function (songplaylist) {
-             songplaylist.track.open = false;
-           })
-         selectedElement.track.open = true;
-        this.props.songs.splice(event.target.id, 0, selectedElement)   
-        this.setState({songs: this.props.songs, selectedElement: selectedElement})
-         }
-         else if(!this.props.state.playbackPaused){
-            pauseTrack(this.props.state.deviceID, this.props.state.token).then(this.changeStatesPause())
-           this.props.songs.forEach(function (songplaylist) {
-            songplaylist.track.open = false;
-          })
-       this.setState({songs: this.props.songs, selectedElement: "empty"})  
-      }
+   callPlaybackOnNewSong = (savedInfo) => {
+    if(!this.props.state.playbackOn){
+      let selectedElement = this.props.songs.splice(savedInfo.target.id, 1)[0]
+
+       startPlayback(savedInfo.target.name, this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay(selectedElement.track))
+         this.props.songs.forEach(function (songplaylist) {
+           songplaylist.track.open = false;
+         })
+       selectedElement.track.open = true;
+      this.props.songs.splice(savedInfo.target.id, 0, selectedElement)   
+      this.setState({songs: this.props.songs, selectedElement: selectedElement})
+       }
+       else if(!this.props.state.playbackPaused){
+          pauseTrack(this.props.state.deviceID, this.props.state.token).then(this.changeStatesPause())
+         this.props.songs.forEach(function (songplaylist) {
+          songplaylist.track.open = false;
+        })
+
+     this.setState({songs: this.props.songs, currentSong: savedInfo.target.id})  
+    }
+   }
+
+   callPlaybackOnSameSong = (savedInfo) => {
+    if(!this.props.state.playbackOn && this.props.state.playbackPaused){
+      console.log("Resume Playback")
+      let selectedElement = this.props.songs.splice(savedInfo.target.id, 1)[0]
+
+       resumePlayback(this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay(selectedElement.track))
+         this.props.songs.forEach(function (songplaylist) {
+           songplaylist.track.open = false;
+         })
+       selectedElement.track.open = true;
+      this.props.songs.splice(savedInfo.target.id, 0, selectedElement)   
+      this.setState({songs: this.props.songs, selectedElement: selectedElement})
+       }
+       else if (!this.props.state.playbackPaused){
+        pauseTrack(this.props.state.deviceID, this.props.state.token).then(this.changeStatesPause())
+        this.props.songs.forEach(function (songplaylist) {
+         songplaylist.track.open = false;
+       })
+      this.setState({songs: this.props.songs})    
+       }
+
    }
 
    
@@ -39,13 +72,13 @@ class SongResultRecent extends Component {
     changeStatesPause = () => {
       this.props.turnOnPause()
       this.props.turnOffMusic()
-      this.props.eraseTrackerSong()
+      //this.props.eraseTrackerSong()
   }
 
     changeStatesPlay = (songPlaying) => {
       this.props.turnOnMusic()
       this.props.turnOffPause()
-      this.props.changeTrackerSong(songPlaying)
+    //  this.props.changeTrackerSong(songPlaying)
   }
 
 
