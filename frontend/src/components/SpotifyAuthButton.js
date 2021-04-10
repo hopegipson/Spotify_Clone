@@ -1,7 +1,16 @@
 import React, { Component} from 'react';
-import { authEndpoint, clientId, redirectUri, scopes } from "./config";
+import { clientId, redirectUri} from "./config";
 
 import './SpotifyAuthButton.css';
+const authEndpoint = "https://accounts.spotify.com/authorize";
+export const scopes = [
+    "user-top-read",
+    "user-read-currently-playing",
+    "user-read-playback-state",
+    "streaming",
+    "user-read-recently-played"
+
+];
 
 export default class SpotifyAuthButton extends Component {
 
