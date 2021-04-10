@@ -9,6 +9,8 @@ To watch a demo of the Rails Application in action you can visit:
 Before using this application, you will need an application id and client secret from the Spotify website. Login to developer.spotify.com, create an application with any name, and edit the settings of that application. In the redirectURI, you should put whatever local host URL you intend on running the frontend side of the applciation on, for me it was localhost:3001. In a config.js file in the master branch of the frontend, save your clientId, clientSecret, and redirectUri as exportable const variables so they can be used by the SpotifyAuthButton component.
 
 To use this app:
+
+
     -The app will be using localhost:3000 for the backend server by default.
     -The front end should be run on whatever URL specified in the Spotify Dev redirect URI
     -cd into backend
