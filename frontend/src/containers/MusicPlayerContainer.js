@@ -81,9 +81,7 @@ class MusicPlayerContainer extends Component {
     
     render(
     ){
-        return(<div>
-            {console.log(this.props.state.player)}
-        
+        return(<div>        
      </div>  )
     }
 }
