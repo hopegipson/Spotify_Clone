@@ -1,6 +1,7 @@
 const URL = 'http://localhost:3000/'
 const usersURL = URL + 'users'
 const playlistsURL = URL + 'playlists'
+const PlaylistSongsURL = URL + "playlist_songs"
 const songsURL = URL + 'songs'
 const headers = {"Accepts":"application/json", "Content-Type": "application/json"}
 
@@ -126,8 +127,7 @@ export const postUser = (display_name, spotifyid) =>  {
              song_info: {
               playlist_id: playlist_id}
             })
-        }).then(parseJSON)
-        }
+        }).then(parseJSON)}
 
       export const changeSongPlaylists = (id, remove_playlist_id) => {
         return fetch(songsURL +`/${id}`, {
@@ -137,16 +137,21 @@ export const postUser = (display_name, spotifyid) =>  {
               song_info: {
               remove_playlist_id: remove_playlist_id}
             })
-        }).then(parseJSON)
-        }
+        }).then(parseJSON)}
 
         export const deleteSong = (id) => {
           return fetch(songsURL +`/${id}`, {
             method: 'DELETE',
             headers: headers,
             
-          }).then(parseJSON)
-          }
+          }).then(parseJSON)}
+
+          export const deletePlaylistSong = (id) => {
+            return fetch(PlaylistSongsURL +`/${id}`, {
+              method: 'DELETE',
+              headers: headers,
+              
+            }).then(parseJSON)}
 
         export const updatePlaylist = (newName, image, id) => {
           return fetch(playlistsURL +`/${id}`, {
@@ -160,6 +165,8 @@ export const postUser = (display_name, spotifyid) =>  {
               })
           }).then(parseJSON)
           }
+
+
 
        
   

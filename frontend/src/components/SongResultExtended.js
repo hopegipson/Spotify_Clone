@@ -8,7 +8,7 @@ class SongResultExtended extends Component {
         selectedElement: "empty",
         songs: this.props.songs
        }
-    renderSongs = () => this.props.songs.map((songplaylist, index) => <SongExtended key={songplaylist.song.id} index={index} song ={songplaylist.song} songplaylist ={songplaylist}  user={this.props.state.user} callPlayback={this.callPlayback} />) 
+    renderSongs = () => this.props.songs.map((songplaylist, index) => <SongExtended key={index} index={index} song ={songplaylist.song} songplaylist ={songplaylist}  user={this.props.state.user} callPlayback={this.callPlayback} />) 
 
     componentDidUpdate(prevProps) {
       if (this.props.songs !== prevProps.songs){

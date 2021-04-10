@@ -2,22 +2,27 @@ import React, { Component} from 'react';
 
 export default class PlaylistPopUp extends Component {
     state = {
-        text: this.props.user.playlists[1].id}
+        text: this.props.user.playlists[1].id,
+        name: this.props.user.playlists[1].name}
 
 
     
       handleOnSubmit(event) {
         event.preventDefault();
         let number = parseInt(this.state.text)
-        this.props.addSongToPlaylist(number)
+        let name = this.state.name
+        console.log(name)
+        this.props.addSongToPlaylist(number, name)
         this.setState({
-            text: 'this.props.user.playlists[1].id'
+            text: this.props.user.playlists[1].id
         })
+        this.props.toggle()
       }
 
       handleOnChange(event) {
         this.setState({
           text: event.target.value,
+          name: event.target.name
         });
       }
 
@@ -46,7 +51,7 @@ export default class PlaylistPopUp extends Component {
                  <br></br>
                 <select className="custom-select" id="playlists" name="playlists" size="10" value={this.state.text} onChange={(event) => this.handleOnChange(event)}>
                 {this.calculatePlaylists().map(playlist => (
-                    <option key={playlist.id} value={playlist.id}>{playlist.name} </option>))} 
+                    <option key={playlist.id} name={playlist.name} value={playlist.id}>{playlist.name} </option>))} 
                    
                 </select><br></br>
                 <input className="btn btn-outline-info" type="submit"/>

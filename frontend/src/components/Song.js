@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import PlaylistPopUp from '../components/PlaylistPopUp'
 import { postSong, getSongs, changeSong, postSongWithTwo, getUser, addUserToState} from '../services/localapi.js'
 import { connect } from 'react-redux'
+import MessagePopUp from '../components/MessagePopUp'
 
 const imagesPath = {
     play: "https://www.freeiconspng.com/uploads/play-button-icon-png-0.png",
@@ -15,7 +16,9 @@ class Song extends Component {
        song: this.props.song,
        key: this.props.key,
        open: this.props.open,
-       seen: false
+       seen: false,
+       message: false,
+       messageContent: ""
       }
 
       toggleImage = () => {
@@ -23,50 +26,52 @@ class Song extends Component {
       }
 
       addSongToLibrary = () => {
-        this.checkifSongExists(this.props.state.user.playlists[0].id, this.props.state.user.playlists[0].id)
+        this.checkifSongExists(this.props.state.user.playlists[0].id, this.props.state.user.playlists[0].id, this.props.state.user.playlists[0].name)
       }
 
-      addSongToPlaylist = (playlist_id) => {
-        this.checkifSongExists(playlist_id, this.props.state.user.playlists[0].id)
+      addSongToPlaylist = (playlist_id, playlist_name) => {
+        this.checkifSongExists(playlist_id, this.props.state.user.playlists[0].id, playlist_name)
       }
 
-      checkifSongExists = (playlist_id, musiclibrary_id) => {
+      checkifSongExists = (playlist_id, musiclibrary_id, playlist_name) => {
         let value = getSongs()
         if (value)
-        {value.then(json => this.lookForSong(json, this.state.song.uri, playlist_id, musiclibrary_id))}
+        {value.then(json => this.lookForSong(json, this.state.song.uri, playlist_id, musiclibrary_id, playlist_name))}
         else{
-          this.CheckifPlaylistOrLibrary(playlist_id, musiclibrary_id)
+          this.CheckifPlaylistOrLibraryCreate(playlist_id, musiclibrary_id, playlist_name)
         }       
     }
 
-    lookForSong = (songs, songuri, playlist_id, musiclibrary_id) => {
+    lookForSong = (songs, songuri, playlist_id, musiclibrary_id, playlist_name) => {
       let selectedSong = songs.filter(function(song) { if (song.uri === songuri)  return song})[0]
       if (!selectedSong){
-        this.CheckifPlaylistOrLibraryCreate(playlist_id, musiclibrary_id)
+        this.CheckifPlaylistOrLibraryCreate(playlist_id, musiclibrary_id, playlist_name)
         }
         else{
           if (playlist_id === musiclibrary_id){
-            //maybe show some kind of pop up warning "song can't be added to library twice"
-          console.log("Song can't be added to library twice")
+            this.toggleMessageLibrary()
           }
           else{
-
-         changeSong(selectedSong.id, playlist_id).then((data) => {
-          this.props.getUser(this.props.state.user.id)      
+            //Path 3
+         changeSong(selectedSong.id, playlist_id).then(() => {
+          this.props.getUser(this.props.state.user.id)   
+          this.toggleMessage(playlist_name)             
         })
       }
         }
    }
 
-   CheckifPlaylistOrLibraryCreate = (playlist_id, musiclibrary_id) => {
+   CheckifPlaylistOrLibraryCreate = (playlist_id, musiclibrary_id, playlist_name) => {
      if (playlist_id === musiclibrary_id){
       postSong(this.state.song, playlist_id).then((data) => {
-        this.props.getUser(this.props.state.user.id)       
+        this.props.getUser(this.props.state.user.id)
+        this.toggleMessage(playlist_name)       
        })
      }
      else{
        postSongWithTwo(this.state.song, playlist_id, musiclibrary_id).then((data) => {
-        this.props.getUser(this.props.state.user.id)       
+        this.props.getUser(this.props.state.user.id)    
+        this.toggleMessage(playlist_name)          
        })} }
 
   
@@ -77,8 +82,29 @@ class Song extends Component {
         });
        };
 
+       toggleMessage = (name) => {
+         console.log(name)
+        this.setState({
+         message: !this.state.message,
+         messageContent: `${this.state.song.name} has been successfully added to ${name}`
+        });
+        setTimeout(this.toggleMessageClosed, 5000)
+       };
 
+       toggleMessageLibrary = () => {
+       this.setState({
+        message: !this.state.message,
+        messageContent: `${this.state.song.name} is already in your Library`
+       });
+       setTimeout(this.toggleMessageClosed, 3000)
+      };
 
+       toggleMessageClosed = () => {
+        this.setState({
+          message: false,
+          messageContent: ""
+        })
+       }
 
     
     getImageName = () => this.state.song.open ? 'pause' : 'play'
@@ -101,7 +127,11 @@ class Song extends Component {
           <div>
           <div>
           {this.state.seen ? <PlaylistPopUp user={this.props.state.user} toggle={this.togglePop} addSongToPlaylist={this.addSongToPlaylist} song={this.state.song} /> : null}
-        </div>  
+        </div>
+
+        <div>
+          {this.state.message ? <MessagePopUp messageContent={this.state.messageContent} toggleMessageClosed={this.toggleMessageClosed}  /> : null}
+        </div>
         <div className="SongDivWrapper">   
 
 
@@ -132,7 +162,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   addUserToState: (user) => dispatch(addUserToState(user)),
   getUser: (user) => dispatch(getUser(user))
-
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Song);

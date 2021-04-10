@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { postSong, getSongs, changeSong, postSongWithTwo, getUser, addUserToState, changeSongPlaylists, addSelectedPlaylist, deleteSong} from '../services/localapi.js'
+import { postSong, getSongs, changeSong, postSongWithTwo, getUser, addUserToState, changeSongPlaylists, addSelectedPlaylist, deleteSong, deletePlaylistSong} from '../services/localapi.js'
 import { connect } from 'react-redux'
 
 const imagesPath = {
@@ -50,8 +50,8 @@ class SongExtended extends Component {
           }
           else{
 
-         changeSong(selectedSong.id, playlist_id).then((data) => {
-          this.props.getUser(this.props.state.user.id)         
+            changeSong(selectedSong.id, playlist_id).then(() => {
+              this.props.getUser(this.props.state.user.id)          
         })
       }
         }
@@ -69,13 +69,17 @@ class SongExtended extends Component {
        })} }
 
        removePlaylistFromSong = () => {
-        changeSongPlaylists(this.props.song.id, this.props.state.selectedPlaylist.id).then((song) => {
+         console.log(this.props)
+        deletePlaylistSong(this.props.songplaylist.id).then((song) => {
           this.props.getUser(this.props.state.user.id)
            })
+        // changeSongPlaylists(this.props.song.id, this.props.state.selectedPlaylist.id).then((song) => {
+        //   this.props.getUser(this.props.state.user.id)
+        //    })
        }
 
       removeSongFromLibrary = () => {
-        deleteSong(this.props.song.id).then((songs) => {
+        deleteSong(this.props.song.id).then((data) => {
           this.props.getUser(this.props.state.user.id)
         })
       }
@@ -102,6 +106,9 @@ class SongExtended extends Component {
         let DateString = month + " " + day + ", " + year
          return DateString
          }
+
+      
+         
     
 
     render(){
@@ -144,8 +151,6 @@ const mapDispatchToProps = dispatch => ({
   addUserToState: (user) => dispatch(addUserToState(user)),
   addSelectedPlaylist: (playlist) => dispatch(addSelectedPlaylist(playlist)),
   getUser: (user) => dispatch(getUser(user))
-
-  
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongExtended);

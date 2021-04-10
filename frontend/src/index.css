@@ -535,7 +535,7 @@ body {
   bottom: 0;
   padding: 20px;
   height: 50px;
-  width: 97%;
+  width: 99%;
   background-color: #222121;
 }
 
@@ -1073,7 +1073,7 @@ body {
   height: 40%;
   left: 250px;
   width: 1427px;
-  background-image: linear-gradient(to bottom , rgb(2, 2, 2), rgb(102, 102, 97));
+  background-image: linear-gradient(to bottom , #121212, rgb(102, 102, 97));
   z-index: -2;
 }
 
@@ -1082,10 +1082,9 @@ body {
   left: 250px;
   width: 1427px;
   top: 350px;
-  min-height: 600px;
-
+  height: 100%;
   background-color: rgb(255, 251, 251);
-  background-image: linear-gradient(to top , rgb(0, 0, 0) 70%, rgb(102, 102, 97));
+  background-image: linear-gradient(to top , #121212 70%, rgb(102, 102, 97));
 }
 
 .PlaylistImage{
@@ -1164,6 +1163,8 @@ body {
   background-color: rgba(0, 0, 0, .9);
 }
 
+
+
 .modal_content {
   background-color: rgba(0, 0, 0, 0.25);
   position: absolute;
@@ -1186,6 +1187,16 @@ body {
   background-color: rgba(0, 0, 0, .9);
 }
 
+
+
+.modal3 {
+  position: absolute;
+  z-index: 1;
+  width: 550px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 1);
+}
+
 .modal_content2 {
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -1195,6 +1206,21 @@ body {
   height: 100%;
   border-radius: 5px;
 }
+
+.modal_content3 {
+  font-family: "RubikLight";
+  font-size: 16px;
+  padding-top: 20px;
+  background-color: rgba(57, 58, 58, 0.5);
+  position: absolute;
+  height: 50px;
+  top: 30px;
+  left: 10%;
+  width: 400px;
+  border-radius: 20px;
+}
+
+
 
 .close {
   color: rgb(255, 255, 255);
@@ -1642,3 +1668,62 @@ body {
   height: 10px;
 
 }
+
+.ArtistResult {
+  position: absolute;
+  top: 420px; 
+  left: 300px;
+  width: 1300px;
+  height: 300px;
+  background-color: #121212;
+}
+
+.InsideArtistResult{
+ 
+  position: absolute;
+  width: 1300px;
+  height: 300px;
+  top: 70px; 
+  left: 15px;
+}
+
+.TopHalfPlaylist2{
+  position: relative;
+  height: 1300px;
+  left: 250px;
+  width: 1427px;
+  background-image: linear-gradient(to bottom , rgb(2, 2, 2), rgb(102, 102, 97));
+  z-index: -2;
+}
+
+
+.row0{
+  position: relative;
+  top: 200px;
+  left: 50px;
+  width: 1250px;
+}
+
+.row1{
+  position: relative;
+  top: 600px;
+  left: 50px;
+  width: 1250px;
+
+}
+
+
+.row2{
+  position: absolute;
+  top: 600px;
+}
+
+.BoxSpace{
+  position: relative;
+  top: 315px;
+  height: 200px;
+  width: 100%;
+  background-color: blanchedalmond;
+}
+
+

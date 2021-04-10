@@ -8,10 +8,8 @@ class NavBar extends Component {
 
   newPlaylist = () => {
       postPlaylist(this.props.user.id).then( () => {
-        this.props.getUser(this.props.state.user.id)
-        console.log(this.props.state.playlists)
-        console.log(this.props.state.user.playlists[this.props.state.user.playlists.length - 1].id)
-      this.props.history.push( `/playlist/${this.props.state.user.playlists[this.props.state.user.playlists.length - 1].id}`)
+        this.props.getUser(this.props.state.user.id).then(() =>        this.props.history.push( `/playlist/${this.props.state.user.playlists[this.props.state.user.playlists.length - 1].id}`)
+        )
     })
   }
 
@@ -42,9 +40,9 @@ class NavBar extends Component {
     <img className="sideBarIcon" src="https://icons555.com/images/icons-gray/image_icon_book_stack_pic_512x512.png" alt="House"></img>
 
       <NavLink className="sidebarOption" 
-        to="/search"
+        to={`/library`}
       >
-        My Playlists
+        My Library
       </NavLink>
     </div>
     <br></br>

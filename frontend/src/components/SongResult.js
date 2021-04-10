@@ -2,13 +2,15 @@ import React, { Component} from 'react';
 import Song from './Song'
 import { connect } from 'react-redux'
 import {startPlayback, turnOnMusic, turnOffMusic, turnOffPause, turnOnPause, pauseTrack, changeTrackerSong, eraseTrackerSong} from '../actions/musicPlayerActions'
+import { removeSongMessage} from '../services/localapi.js'
+
 
 class SongResult extends Component {
     state = {
         selectedElement: "empty",
         songs: this.props.songs
        }
-    renderSongs = () => this.props.songs.map((song, index) => <Song key={song.id} index={index} song ={song} user={this.props.state.user} callPlayback={this.callPlayback} />) 
+    renderSongs = () => this.props.songs.map((song, index) => <Song key={index} index={index} song ={song} user={this.props.state.user} callPlayback={this.callPlayback} />) 
 
 
     callPlayback = (event) => {
@@ -47,6 +49,9 @@ class SongResult extends Component {
       this.props.changeTrackerSong(songPlaying)
   }
 
+ 
+
+  
     render(){
 
         return(<div className="SongResult">
@@ -71,8 +76,7 @@ const mapDispatchToProps = dispatch => ({
     turnOnPause: () => dispatch(turnOnPause(true)),
     turnOffMusic: () => dispatch(turnOffMusic(false)),
    changeTrackerSong: (song) => dispatch(changeTrackerSong(song)),
-   eraseTrackerSong: () => dispatch(eraseTrackerSong())
-    
+   eraseTrackerSong: () => dispatch(eraseTrackerSong())    
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongResult)   

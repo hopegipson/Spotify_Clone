@@ -83,7 +83,6 @@ class PlaylistView extends Component {
 
                     (<div>
                     <div className="PlaylistNameTitle" onClick={this.togglePop}> {this.props.state.selectedPlaylist.name}</div>
-
                     <div className="UsernameTag"> {this.props.state.user.display_name}</div></div>) : (                    <div className="PlaylistNameTitle"> {"Loading"}</div>)}
 
                   </div>
@@ -91,10 +90,10 @@ class PlaylistView extends Component {
                     (<div>
                   <div className="BottomHalfPlaylist">
                   <div>
-                   <SongResultExtended  songs={this.props.state.selectedPlaylist.playlist_songs}/>
+                   <SongResultExtended playlist={this.props.state.selectedPlaylist}  songs={this.props.state.selectedPlaylist.playlist_songs}/>
                    </div>
                   <div className="TablePlaylistContainer">
-                  <table class="table2 table-hover">
+                  <table className="table2 table-hover">
                   <thead>
                     <tr>
                       <th scope="col" width="20px">#</th>
@@ -109,11 +108,12 @@ class PlaylistView extends Component {
                     </tbody>
                     </table>
                     </div>
+
                     
                   </div>
-                  
            
              </div>) : (<div>{"Still loading..."}</div>)}
+             
              </div>
     )
     }
@@ -127,6 +127,7 @@ const mapDispatchToProps = dispatch => ({
     addSelectedPlaylist: (playlist) => dispatch(addSelectedPlaylist(playlist)),
     addUserToState: (user) => dispatch(addUserToState(user)),
     getUser: (user) => dispatch(getUser(user))
+
  })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistView);
