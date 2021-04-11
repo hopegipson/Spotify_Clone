@@ -74,6 +74,9 @@ const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
               })}}
 
   export const startPlayback = (spotify_uri, deviceID, token) => {
+    console.log(spotify_uri)
+    console.log(deviceID)
+    return (dispatch) => {
     return fetch(STARTPLAYBACKURL +
           "device_id=" + deviceID, {
           method: 'PUT',
@@ -81,16 +84,23 @@ const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
           headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token}`
-          }})}
+          }}).then((
+            dispatch({type: 'PLAYBACK_ON', playbackOn: true}),
+            dispatch({type: 'TURN_OFF_PAUSE', playbackPaused: false})
+          ))}}
 
   export const resumePlayback = (deviceID, token) => {
+    return (dispatch) => {
     return fetch(STARTPLAYBACKURL +
           "device_id=" + deviceID, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token}`
-          }})}
+          }}).then((
+            dispatch({type: 'PLAYBACK_ON', playbackOn: true}),
+            dispatch({type: 'TURN_OFF_PAUSE', playbackPaused: false})
+            ))}}
 
 
   export const getCurrentlyPlaying = (token) => {
@@ -103,13 +113,20 @@ const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
           }}).then(parseJSON)}
 
   export const pauseTrack = ( deviceID, token) => {
+    return (dispatch) => {
     return fetch(PAUSEURL +
           "device_id=" + deviceID, {
           method: 'PUT',
           headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token}`
-          }})}
+          }}).then((
+            dispatch({type: 'PLAYBACK_OFF', playbackOn: false}),
+            dispatch({type: 'TURN_ON_PAUSE', playbackPaused: true})
+            ))}}
+
+          // turnOnPause: () => dispatch(turnOnPause(true)),
+          // turnOffMusic: () => dispatch(turnOffMusic(false)),
 
         export const loadSpotifyScript = (callback) => {
           const existingScript = document.getElementById('spotify');

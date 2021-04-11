@@ -31,7 +31,7 @@ class SongResultExtended extends Component {
     if(!this.props.state.playbackOn){
       let selectedElement = this.props.songs.splice(savedInfo.target.id, 1)[0]
 
-       startPlayback(savedInfo.target.name, this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay(selectedElement.song))
+       this.props.startPlayback(savedInfo.target.name, this.props.state.deviceID, this.props.state.token)
          this.props.songs.forEach(function (songplaylist) {
            songplaylist.song.open = false;
          })
@@ -40,7 +40,7 @@ class SongResultExtended extends Component {
       this.setState({songs: this.props.songs, selectedElement: selectedElement})
        }
        else if(!this.props.state.playbackPaused){
-          pauseTrack(this.props.state.deviceID, this.props.state.token).then(this.changeStatesPause())
+          this.props.pauseTrack(this.props.state.deviceID, this.props.state.token)
          this.props.songs.forEach(function (songplaylist) {
           songplaylist.song.open = false;
         })
@@ -52,7 +52,7 @@ class SongResultExtended extends Component {
     if(!this.props.state.playbackOn && this.props.state.playbackPaused){
       let selectedElement = this.props.songs.splice(savedInfo.target.id, 1)[0]
 
-       resumePlayback( this.props.state.deviceID, this.props.state.token).then(this.changeStatesPlay(selectedElement.song))
+       this.props.resumePlayback( this.props.state.deviceID, this.props.state.token)
          this.props.songs.forEach(function (songplaylist) {
            songplaylist.song.open = false;
          })
@@ -61,7 +61,7 @@ class SongResultExtended extends Component {
       this.setState({songs: this.props.songs, selectedElement: selectedElement})
        }
        else if(!this.props.state.playbackPaused){
-          pauseTrack(this.props.state.deviceID, this.props.state.token).then(this.changeStatesPause())
+          this.props.pauseTrack(this.props.state.deviceID, this.props.state.token)
          this.props.songs.forEach(function (songplaylist) {
           songplaylist.song.open = false;
         })
@@ -69,24 +69,7 @@ class SongResultExtended extends Component {
     }
    }
 
-
-   
-
-    changeStatesPause = () => {
-      this.props.turnOnPause()
-      this.props.turnOffMusic()
-     // this.props.eraseTrackerSong()
-  }
-
-    changeStatesPlay = (songPlaying) => {
-      this.props.turnOnMusic()
-      this.props.turnOffPause()
-     // this.props.changeTrackerSong(songPlaying)
-  }
-
-
     render(){
-
         return(<div>
         <div className="SongResultExtended">
             <div className="InsideSongResultExtended">
@@ -104,11 +87,9 @@ const mapStateToProps = state => {
   }
 
 const mapDispatchToProps = dispatch => ({
-    turnOnMusic: () => dispatch(turnOnMusic(true)),
-    turnOffPause: () => dispatch(turnOffPause(false)),
-    turnOnPause: () => dispatch(turnOnPause(true)),
-    turnOffMusic: () => dispatch(turnOffMusic(false)),
-   changeTrackerSong: (song) => dispatch(changeTrackerSong(song)),
+   startPlayback: (spotifyuri, deviceID, token) => dispatch(startPlayback(spotifyuri, deviceID, token)),
+   resumePlayback: (deviceID, token) => dispatch(resumePlayback(deviceID, token)),
+   pauseTrack: (deviceID, token) => dispatch(pauseTrack(deviceID, token)),
    eraseTrackerSong: () => dispatch(eraseTrackerSong())
     
 })
