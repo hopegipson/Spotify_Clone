@@ -167,4 +167,11 @@ const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
       };
     }
 
+    export const changeFromTracker = (changeFromTracker) => {
+      return {
+        type: 'CHANGE_FROM_TRACKER',
+        changeFromTracker
+      };
+    }
+
 

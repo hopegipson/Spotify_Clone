@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux'
-import {getCurrentlyPlaying, resumePlayback, pauseTrack, startPlayback} from '../actions/musicPlayerActions'
+import {getCurrentlyPlaying, resumePlayback, pauseTrack, startPlayback, changeFromTracker} from '../actions/musicPlayerActions'
 
 const imagesPath = {
   play: "https://www.freeiconspng.com/uploads/play-button-icon-png-0.png",
@@ -23,7 +23,7 @@ class SongTracker extends Component {
           this.props.resumePlayback( this.props.state.deviceID, this.props.state.token)
          }
          else if(this.props.state.playbackOn && !this.props.state.playbackPaused){
-           console.log("3")
+           this.props.changeFromTracker(!this.props.state.changeFromTracker)
          this.props.pauseTrack(this.props.state.deviceID, this.props.state.token)
          }
         }
@@ -110,8 +110,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   startPlayback: (spotifyuri, deviceID, token) => dispatch(startPlayback(spotifyuri, deviceID, token)),
   resumePlayback: (deviceID, token) => dispatch(resumePlayback(deviceID, token)),
-  pauseTrack: (deviceID, token) => dispatch(pauseTrack(deviceID, token))
-    
+  pauseTrack: (deviceID, token) => dispatch(pauseTrack(deviceID, token)),
+  changeFromTracker: (changeFromTrackerState) => dispatch(changeFromTracker(changeFromTrackerState))
+  
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongTracker)   

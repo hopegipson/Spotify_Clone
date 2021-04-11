@@ -67,7 +67,7 @@ class LibraryView extends Component {
 
                   </div>
                   {this.props.state.selectedPlaylist.playlist_songs ? 
-                    (<div>
+                    (
                   <div className="BottomHalfPlaylist">
                   <div>
                    <SongResultExtended extrabutton="None" songs={this.props.state.selectedPlaylist.playlist_songs}/>
@@ -92,7 +92,7 @@ class LibraryView extends Component {
                   </div>
 
            
-             </div>) : (<div>{"Still loading..."}</div>)}
+             ) : (<div>{"Still loading..."}</div>)}
              </div>
     )
     }

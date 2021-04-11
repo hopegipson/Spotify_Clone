@@ -122,6 +122,12 @@ const musicReducer = (state = { songs: [], albums: [], artists: [],  loading: tr
             ...state,
             recPlayedloading: false
           }
+
+        case 'CHANGE_FROM_TRACKER':
+            return{
+                ...state,
+                changeFromTracker: action.changeFromTracker
+              }
       default:
         return state;
     }

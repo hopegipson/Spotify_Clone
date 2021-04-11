@@ -1040,10 +1040,10 @@ body {
 
 .TopHalfPlaylist{
   position: absolute;
-  height: 40%;
+  height: 50%;
   left: 250px;
   width: 1427px;
-  background-image: linear-gradient(to bottom , #121212, rgb(102, 102, 97));
+  background-image: linear-gradient(to bottom , #121212 , rgb(102, 102, 97) 70%);
   z-index: -2;
 }
 
@@ -1704,7 +1704,7 @@ body {
   top: 5px;
   width: 40px;
   height: 40px;
-  left: 50%;
+  left: 820px;
   position: absolute;
  
 }

@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import SongExtended from './SongExtended'
 import { connect } from 'react-redux'
-import {startPlayback, turnOnMusic, turnOffMusic, turnOffPause, turnOnPause, pauseTrack, changeTrackerSong, eraseTrackerSong, resumePlayback} from '../actions/musicPlayerActions'
+import {startPlayback, pauseTrack, eraseTrackerSong, resumePlayback} from '../actions/musicPlayerActions'
 
 class SongResultExtended extends Component {
     state = {
@@ -11,11 +11,17 @@ class SongResultExtended extends Component {
         extrabutton: this.props.extrabutton
       }
 
+
     renderSongs = () => this.props.songs.map((songplaylist, index) => <SongExtended key={index} index={index} extrabutton={this.props.extrabutton} song ={songplaylist.song} songplaylist ={songplaylist}  user={this.props.state.user} callPlayback={this.callPlayback} />) 
 
     componentDidUpdate(prevProps) {
       if (this.props.songs !== prevProps.songs){
         this.setState(state => ({ songs: this.props.songs }))
+      }
+      if(prevProps.state.changeFromTracker !== this.props.state.changeFromTracker){
+        this.props.songs.forEach(function (songplaylist) {
+          songplaylist.song.open = false;
+        })
       }
     }
 

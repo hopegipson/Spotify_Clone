@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import Footer from '../containers/Footer';
-import { Redirect } from 'react-router-dom';
 import LibraryView from '../components/LibraryView'
 import NavBar from '../components/NavBar'
 import SearchPage from '../containers/SearchPage'

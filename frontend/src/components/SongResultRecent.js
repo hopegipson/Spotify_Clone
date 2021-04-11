@@ -1,16 +1,26 @@
 import React, { Component} from 'react';
 import Song from './Song'
 import { connect } from 'react-redux'
-import {startPlayback, turnOnMusic, turnOffMusic, turnOffPause, turnOnPause, pauseTrack, changeTrackerSong, eraseTrackerSong, resumePlayback} from '../actions/musicPlayerActions'
+import {startPlayback, pauseTrack, eraseTrackerSong, resumePlayback, changeFromTracker} from '../actions/musicPlayerActions'
 
 class SongResultRecent extends Component {
+
+  componentDidUpdate(prevProps) {
+    if (this.props.songs !== prevProps.songs){
+      this.setState(state => ({ songs: this.props.songs }))
+    }
+    if(prevProps.state.changeFromTracker !== this.props.state.changeFromTracker){
+      this.props.songs.forEach(function (songplaylist) {
+        songplaylist.track.open = false;
+      })}
+  }
+
     state = {
         selectedElement: "empty",
         songs: this.props.songs,
         currentSong: "empty"
        }
     renderSongs = () => this.props.songs.map((songplaylist, index) => <Song key={index} index={index} song ={songplaylist.track} songplaylist ={songplaylist}  user={this.props.state.user} callPlayback={this.callPlayback} />) 
-
 
     callPlayback = (event) => {
       let savedInfo = event
@@ -72,6 +82,7 @@ class SongResultRecent extends Component {
     render(){
 
         return(<div className="SongResultRecent">
+
              <h4 className="TitleSection">{"Recently Played Songs"}</h4>
 
             <div className="InsideSongResultRecent">
@@ -80,6 +91,7 @@ class SongResultRecent extends Component {
         </div>)
     }
 }
+
 
 const mapStateToProps = state => {
     return {
@@ -91,7 +103,9 @@ const mapDispatchToProps = dispatch => ({
   startPlayback: (spotifyuri, deviceID, token) => dispatch(startPlayback(spotifyuri, deviceID, token)),
    resumePlayback: (deviceID, token) => dispatch(resumePlayback(deviceID, token)),
    pauseTrack: (deviceID, token) => dispatch(pauseTrack(deviceID, token)),
-   eraseTrackerSong: () => dispatch(eraseTrackerSong())
+   eraseTrackerSong: () => dispatch(eraseTrackerSong()),
+   changeFromTracker: (changeFromTrackerState) => dispatch(changeFromTracker(changeFromTrackerState))
+
     
 })
 

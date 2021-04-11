@@ -6,20 +6,6 @@ import { connect } from 'react-redux'
 
 class NavBar extends Component {
 
-  componentDidMount = () => {
-    if(this.props.state.user.playlists){
-    this.props.getUser(this.props.state.user.id)
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if(this.props.state.user.playlists){
-    // if (this.props.state.user.playlists.length !== prevProps.state.user.playlists.length){
-    //   this.props.getUser(this.props.state.user.id)
-    // }
-  }
-  }
-
   newPlaylist = () => {
       postPlaylist(this.props.user.id).then( () => {
         this.props.getUser(this.props.state.user.id).then(() =>        this.props.history.push( `/playlist/${this.props.state.user.playlists[this.props.state.user.playlists.length - 1].id}`)
@@ -43,7 +29,7 @@ class NavBar extends Component {
       </NavLink>
       </div>
           <div className="sidebarOption">
-          <img className="sideBarIcon" src="http://assets.stickpng.com/thumbs/585e4ae1cb11b227491c3393.png" alt="House"></img>
+          <img className="sideBarIcon" src="https://lh3.googleusercontent.com/proxy/EaDqNBbcHJ5nENwZ_1RF0rrE-AJVgNTv0L5lhNt8X2H9mJ8qJKn_ETPIlmZrCTBAFdAbZp5glVTzAriZyP20v-sF29w0YGKZNx9MXNk69y9_0HAP8ON-YXnDx6HX01-63hMYG8ULVVA" alt="Search"></img>
       <NavLink className="sidebarOption" 
         to="/search"
       >
