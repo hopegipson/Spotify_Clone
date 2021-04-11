@@ -24,13 +24,8 @@ class PlaylistsController < ApplicationController
     end
 
     def destroy
-        playlist = Playlist.find_by(id: params[:id])
-        playlist.song.each { |song| 
-        song.playlists.delete(playlist)
-        song.save
-        }
-        #for all songs delete this playlist from their playlists
-        playlist.destroy
+      playlist = Playlist.find_by(id: params[:id])
+      playlist.destroy
     end
 
 
@@ -38,10 +33,6 @@ private
   def find_playlist
     @playlist = Playlist.find_by(id: params[:id])
   end
-
-  # def playlist_create_params
-  #   params.require(:playlist_info).permit(:name, :image, :user_id)
-  # end
 
 
   def playlist_params

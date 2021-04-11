@@ -1,12 +1,8 @@
 import './App.css';
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Dashboard from './Dashboard'
 import SpotifyAuthButton from './components/SpotifyAuthButton';
-
-
-//will want to show some sort of login to spotify button unless there is already a token
+import MusicPlayerContainer from './containers/MusicPlayerContainer'
 class App extends Component {
   
 
@@ -40,12 +36,9 @@ class App extends Component {
   {
     return (
       <div className="App">
-      {this.isValidToken() ? ( 
-        <Router>
-        <Route path='/' render={routerProps => <Dashboard/> } />
-        </Router>
+      {this.isValidToken() ? (
+      <MusicPlayerContainer token={this.props.token}/>
       ) : ( <SpotifyAuthButton/>)}
-           
       </div>  
     );
   }

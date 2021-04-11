@@ -11,7 +11,7 @@ const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
 
  export const fetchSpotifyData = (term, token) => {
     return (dispatch) => {
-        dispatch({ type: 'LOADING_SPOTIFY_DATA'}) //in the process of doing something sending redux a busy signal
+        dispatch({ type: 'LOADING_SPOTIFY_DATA'}) 
        return fetch(`https://api.spotify.com/v1/search?query=${term}&type=album,playlist,artist,track&limit=50`, {
             method: 'GET', headers: {
                 'Accept': 'application/json',
@@ -125,9 +125,6 @@ const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
             dispatch({type: 'TURN_ON_PAUSE', playbackPaused: true})
             ))}}
 
-          // turnOnPause: () => dispatch(turnOnPause(true)),
-          // turnOffMusic: () => dispatch(turnOffMusic(false)),
-
         export const loadSpotifyScript = (callback) => {
           const existingScript = document.getElementById('spotify');
           if (!existingScript) {
@@ -152,50 +149,10 @@ const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
 
         export const addDevice = (deviceID) => {
           return {
-        
             type: 'ADD_DEVICE',
             deviceID
           };
         };
-
-      // export const addUser = (user) => {
-      //   return {
-      //     type: 'ADD_USER',
-      //     user: user
-      //   }
-
-      // }
-
-
-      
-
-      export const turnOnMusic = (playbackOn) => {
-        return {
-          type: 'PLAYBACK_ON',
-          playbackOn
-        };
-      }
-
-      export const turnOffMusic = (playbackOn) => {
-        return {
-          type: 'PLAYBACK_OFF',
-          playbackOn
-        };
-      }
-
-      export const turnOffPause = (playbackPaused) => {
-        return {
-          type: 'TURN_OFF_PAUSE',
-          playbackPaused
-        };
-      }
-
-    export const turnOnPause = (playbackPaused) => {
-      return {
-        type: 'TURN_ON_PAUSE',
-        playbackPaused
-      };
-    }
 
     export const changeTrackerSong = (songPlaying) => {
       return {

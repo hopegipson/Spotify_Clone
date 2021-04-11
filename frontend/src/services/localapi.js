@@ -153,6 +153,13 @@ export const postUser = (display_name, spotifyid) =>  {
               
             }).then(parseJSON)}
 
+          export const deletePlaylist = (id) => {
+            return fetch(playlistsURL +`/${id}`, {
+              method: 'DELETE',
+              headers: headers,
+              
+            }).then(parseJSON)}
+
         export const updatePlaylist = (newName, image, id) => {
           return fetch(playlistsURL +`/${id}`, {
             method: 'PATCH',

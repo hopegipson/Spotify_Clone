@@ -1,4 +1,9 @@
 import React, { Component} from 'react';
+import {
+  BrowserRouter as Router, Route,
+  Link
+} from "react-router-dom";
+import {deletePlaylist} from '../services/localapi.js'
 
 export default class PlaylistEditPopUp extends Component {
     state = {
@@ -33,6 +38,10 @@ export default class PlaylistEditPopUp extends Component {
         this.props.toggle();
        };
 
+    handleClick2 = () => {
+      deletePlaylist(this.props.playlist.id)
+      };
+
 
     render(){
 
@@ -65,6 +74,8 @@ export default class PlaylistEditPopUp extends Component {
           onChange={(event) => this.handleOnChange(event)} />
         <input  className="btn3 btn-outline-info changePlaylistBtn2" type="submit" value="Change Name" />
       </form>
+      <Link onClick={this.handleClick2}  className="btn4 btn-outline-danger changePlaylistBtn3"  to={`/dashboard`}>
+            Delete Playlist</Link>
       </div>
                 </div>
 </div> 

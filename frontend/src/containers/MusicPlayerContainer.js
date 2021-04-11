@@ -1,9 +1,13 @@
 import React, { Component} from 'react';
+import { Redirect } from 'react-router-dom';
+
 import {loadSpotifyScript} from '../actions/musicPlayerActions'
 import { connect } from 'react-redux';
 import { addPlayer, changeTrackerSong } from '../actions/musicPlayerActions';
 import { addDevice } from '../actions/musicPlayerActions';
-
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Dashboard from '../containers/Dashboard'
+import LoadingScreen from '../components/LoadingScreen';
 
 class MusicPlayerContainer extends Component {
     constructor(props){
@@ -15,7 +19,6 @@ class MusicPlayerContainer extends Component {
         spotifyPlayerConnected: false,
         spotifyPlayerReady: false,
         spotifyPlayer: undefined
-        
     };
     }
 
@@ -74,13 +77,26 @@ class MusicPlayerContainer extends Component {
             this.props.addPlayer(this.state.spotifyPlayer)
             this.props.addDeviceID(this.state.spotifyDeviceId)
         }
+
+        isSetUp = () => {
+            if(this.props.state.deviceID && this.props.state.player){
+                return true
+            }
+        }
     
     render(
     ){
-        return(<div>        
-     </div>  )
+        return(  
+        <div>    
+            {this.state.spotifyDeviceId && this.state.spotifyPlayer ? ( <div>
+                <Router>  <Redirect to="/dashboard" />
+          <Route exact path='/dashboard' render={routerProps => <Dashboard/> } /></Router></div>  
+      ) : (<LoadingScreen/>)}
+     </div> 
+     )
     }
 }
+
 
 const mapStateToProps = state => {
     return {state} 

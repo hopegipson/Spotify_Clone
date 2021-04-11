@@ -6,6 +6,18 @@ import { connect } from 'react-redux'
 
 class NavBar extends Component {
 
+  componentDidMount = () => {
+    if(this.props.state.user.playlists){
+    this.props.getUser(this.props.state.user.id)
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.state.user.playlists.length !== prevProps.state.user.playlists.length){
+      this.props.getUser(this.props.state.user.id)
+    }
+  }
+
   newPlaylist = () => {
       postPlaylist(this.props.user.id).then( () => {
         this.props.getUser(this.props.state.user.id).then(() =>        this.props.history.push( `/playlist/${this.props.state.user.playlists[this.props.state.user.playlists.length - 1].id}`)

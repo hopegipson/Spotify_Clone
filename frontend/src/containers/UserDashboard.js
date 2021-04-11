@@ -45,7 +45,7 @@ class UserDashboard extends Component {
                  <div className="BottomHalfPlaylist2">
             <div>
                 <h2 className="TitleSection">{"Music Library"}</h2>
-             <SongResultExtended  songs={this.props.state.selectedPlaylist.playlist_songs}/>
+             <SongResultExtended extrabutton="None"  songs={this.props.state.selectedPlaylist.playlist_songs}/>
              </div>
             <div className="TablePlaylistContainer">
             <table className="table2 table-hover">

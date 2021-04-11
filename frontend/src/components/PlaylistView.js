@@ -76,6 +76,7 @@ class PlaylistView extends Component {
                    </div>  
                   
                   <div className="TopHalfPlaylist">
+                    
               
                     <img className="PlaylistImage" onClick={this.togglePop} src={this.props.state.selectedPlaylist.image} alt="SpotifyLogo"></img> 
                     <div className="PlaylistTag"> PLAYLIST</div>
@@ -90,7 +91,7 @@ class PlaylistView extends Component {
                     (<div>
                   <div className="BottomHalfPlaylist">
                   <div>
-                   <SongResultExtended playlist={this.props.state.selectedPlaylist}  songs={this.props.state.selectedPlaylist.playlist_songs}/>
+                   <SongResultExtended extrabutton="RemovePlaylist" playlist={this.props.state.selectedPlaylist}  songs={this.props.state.selectedPlaylist.playlist_songs}/>
                    </div>
                   <div className="TablePlaylistContainer">
                   <table className="table2 table-hover">

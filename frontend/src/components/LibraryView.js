@@ -16,10 +16,9 @@ class LibraryView extends Component {
       }
 
 
-
       componentDidUpdate(prevProps) {
         if (this.props.state.user !== prevProps.state.user){
-          getPlaylist(this.props.match.params.id).then((playlist) => {
+          getPlaylist(this.props.state.user.playlists[0].id).then((playlist) => {
               this.props.addSelectedPlaylist(playlist)}) 
       }
       }
@@ -71,7 +70,7 @@ class LibraryView extends Component {
                     (<div>
                   <div className="BottomHalfPlaylist">
                   <div>
-                   <SongResultExtended  songs={this.props.state.selectedPlaylist.playlist_songs}/>
+                   <SongResultExtended extrabutton="None" songs={this.props.state.selectedPlaylist.playlist_songs}/>
                    </div>
                   <div className="TablePlaylistContainer">
                   <table className="table2 table-hover">
