@@ -91,7 +91,6 @@ const mapDispatchToProps = dispatch => ({
    resumePlayback: (deviceID, token) => dispatch(resumePlayback(deviceID, token)),
    pauseTrack: (deviceID, token) => dispatch(pauseTrack(deviceID, token)),
    eraseTrackerSong: () => dispatch(eraseTrackerSong())
-    
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongResultExtended) 

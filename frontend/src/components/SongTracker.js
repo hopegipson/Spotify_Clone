@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux'
-import {getCurrentlyPlaying, resumePlayback, pausePlayback, startPlayback} from '../actions/musicPlayerActions'
+import {getCurrentlyPlaying, resumePlayback, pauseTrack, startPlayback} from '../actions/musicPlayerActions'
 
 const imagesPath = {
   play: "https://www.freeiconspng.com/uploads/play-button-icon-png-0.png",
@@ -12,23 +12,19 @@ class SongTracker extends Component {
     state = {
         progress_ms: 0,
         duration_ms: 0,
-        width: 0
-       // open: false
-       }
+        width: 0}
 
        toggleImage = () => {
          if (!this.props.state.playbackOn && !this.props.state.playbackPaused){
-           //start playback
-           //change your start playback, pause playback, resume playback to have dispatch state stuff at the same time
-
+           console.log("no song yet")
+           this.props.startPlayback(this.props.state.recPlayedSongs[0].track.uri, this.props.state.deviceID, this.props.state.token)
          }
          else if (this.props.state.playbackPaused && !this.props.state.playbackOn){
-           //resume
-
+          this.props.resumePlayback( this.props.state.deviceID, this.props.state.token)
          }
-         else if(!this.props.state.playbackOn && !this.props.state.playbackPaused){
-           //pause playback
-
+         else if(this.props.state.playbackOn && !this.props.state.playbackPaused){
+           console.log("3")
+         this.props.pauseTrack(this.props.state.deviceID, this.props.state.token)
          }
         }
 
@@ -51,14 +47,8 @@ class SongTracker extends Component {
       tick = () => {
          if(this.props.state.playbackOn === true){
         this.getCurrentlyPlayingS(this.props.state.token);  
-         }
-         
-      }
+         }}
 
-     // getImageName = () => this.state.open ? 'pause' : 'play'
-
-
-      
       getCurrentlyPlayingS = (token) => {
           getCurrentlyPlaying(token).then((data) => {
                     this.setState({
@@ -68,23 +58,8 @@ class SongTracker extends Component {
                       is_playing: data.is_playing,
                       width: ((data.progress_ms * 100 / data.item.duration_ms)*6),
                       progress_ms: data.progress_ms
-                    })
-          
-            }
-          )
-    }
+                    })})}
 
-    // getInitialImageState = () => {
-    //   if (!this.props.state.PlaybackOn){
-    //     this.setState(state => ({ open: false}))
-    //   }
-    //   else if(this.props.state.PlaybackOn){
-    //     this.setState(state => ({ open: true}))
-    //   }
-    // }
-   
-    
-   
 
     render(){
         const progressBarStyles =  {
@@ -95,8 +70,6 @@ class SongTracker extends Component {
           const progressBarStyles2 = {
             width: 600 + 'px'
           };
-
-       //   const imageName = this.getImageName();
 
             return(
                 <div>
@@ -135,6 +108,9 @@ const mapStateToProps = state => {
   }
 
 const mapDispatchToProps = dispatch => ({
+  startPlayback: (spotifyuri, deviceID, token) => dispatch(startPlayback(spotifyuri, deviceID, token)),
+  resumePlayback: (deviceID, token) => dispatch(resumePlayback(deviceID, token)),
+  pauseTrack: (deviceID, token) => dispatch(pauseTrack(deviceID, token))
     
 })
 
