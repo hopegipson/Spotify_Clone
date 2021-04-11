@@ -13,9 +13,11 @@ class NavBar extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.state.user.playlists.length !== prevProps.state.user.playlists.length){
-      this.props.getUser(this.props.state.user.id)
-    }
+    if(this.props.state.user.playlists){
+    // if (this.props.state.user.playlists.length !== prevProps.state.user.playlists.length){
+    //   this.props.getUser(this.props.state.user.id)
+    // }
+  }
   }
 
   newPlaylist = () => {

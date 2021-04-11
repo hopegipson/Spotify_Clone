@@ -3,9 +3,10 @@ import {
   BrowserRouter as Router, Route,
   Link
 } from "react-router-dom";
-import {deletePlaylist} from '../services/localapi.js'
+import {deletePlaylist, getUser} from '../services/localapi.js'
+import { connect } from 'react-redux'
 
-export default class PlaylistEditPopUp extends Component {
+class PlaylistEditPopUp extends Component {
     state = {
         text: this.props.playlist.name,
         imageurl: this.props.playlist.image}
@@ -39,8 +40,9 @@ export default class PlaylistEditPopUp extends Component {
        };
 
     handleClick2 = () => {
-      deletePlaylist(this.props.playlist.id)
-      };
+      deletePlaylist(this.props.playlist.id).then(() =>
+      this.props.getUser(this.props.state.user.id))
+      }
 
 
     render(){
@@ -82,3 +84,19 @@ export default class PlaylistEditPopUp extends Component {
     )
     }
 }
+
+const mapStateToProps = state => {
+  return {
+    state
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getUser: (user) => dispatch(getUser(user))
+
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistEditPopUp); 
