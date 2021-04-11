@@ -24,9 +24,6 @@ class SongResultRecent extends Component {
 
     callPlayback = (event) => {
       let savedInfo = event
-      console.log(savedInfo.target.id)
-      console.log(this.state.currentSong)
-      console.log(savedInfo.target.id !== this.state.currentSong)
         if (savedInfo.target.id !== this.state.currentSong){
           this.callPlaybackOnNewSong(savedInfo)
           console.log("new song")
