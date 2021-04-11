@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux'
-import { fetchSpotifyData } from '../actions/musicPlayerActions';
+import { fetchSpotifyData, addSearchTerm } from '../actions/musicPlayerActions';
 
 
  class Search extends Component {
@@ -16,6 +16,7 @@ import { fetchSpotifyData } from '../actions/musicPlayerActions';
         if(this.state.text){
        this.props.fetchSpotifyData(this.state.text, this.props.state.token).then((response) => {
        this.props.history.push( `/search/${this.state.text}`)
+       this.props.addSearchTerm(this.state.text)
        this.setState({text: ''})
       }) 
       }
@@ -53,7 +54,9 @@ import { fetchSpotifyData } from '../actions/musicPlayerActions';
       }
     
     const mapDispatchToProps = dispatch => ({
-        fetchSpotifyData: (term, token) => dispatch(fetchSpotifyData(term, token))
+        fetchSpotifyData: (term, token) => dispatch(fetchSpotifyData(term, token)),
+        addSearchTerm: (term) => dispatch(addSearchTerm(term))
+
 
      })
       

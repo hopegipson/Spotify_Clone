@@ -1,4 +1,4 @@
-const musicReducer = (state = { songs: [], albums: [], artists: [],  loading: true, token: null, playbackOn: false, playbackPaused: false, recArtistsloading: false, recSongsloading: false, user: {display_name: "Still loading", spotifyid: "none"}, selectedPlaylist: "nothing", songMessage: false}, action) => {
+const musicReducer = (state = { songs: [], albums: [], artists: [],  loading: true, token: null, playbackOn: false, playbackPaused: false, recArtistsloading: false, recSongsloading: false, user: {display_name: "Still loading", spotifyid: "none"}, selectedPlaylist: "nothing", songMessage: false, searchTerm: "Recommended Songs"}, action) => {
     switch(action.type) {
       case 'LOADING_SPOTIFY_DATA':
         return {
@@ -128,6 +128,12 @@ const musicReducer = (state = { songs: [], albums: [], artists: [],  loading: tr
                 ...state,
                 changeFromTracker: action.changeFromTracker
               }
+
+        case 'ADD_SEARCH_TERM':
+          return{
+              ...state,
+              searchTerm: action.searchTerm
+            }
       default:
         return state;
     }

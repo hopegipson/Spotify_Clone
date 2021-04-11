@@ -2,14 +2,18 @@ import React, { Component} from 'react';
 import Song from './Song'
 import { connect } from 'react-redux'
 import {startPlayback, pauseTrack, eraseTrackerSong, resumePlayback} from '../actions/musicPlayerActions'
+import {
+  BrowserRouter as Router, Route,
+  NavLink
+} from "react-router-dom";
 
+import SeeMoreSongsView from './SeeMoreSongsView'
 
 class SongResult extends Component {
     state = {
         selectedElement: "empty",
         songs: this.props.songs,
         currentSong: "empty"
-
        }
     renderSongs = () => this.props.songs.map((song, index) => <Song key={index} index={index} song ={song} user={this.props.state.user} callPlayback={this.callPlayback} />) 
 
@@ -85,7 +89,10 @@ class SongResult extends Component {
 
         return(<div className="SongResult">
             <h2 className="TitleSection">Songs</h2>
-            <a className="SeeMore" href="http://google.com">SEE ALL</a>
+            {this.props.searchId ? 
+            (<NavLink className="SeeMore" to={"/SeeMoreSongs"}>SEE ALL</NavLink>) :
+           ( <NavLink className="SeeMore" to={"/SeeMoreSongs/Recent"}>SEE ALL</NavLink>)}
+            
             <div className="InsideSongResult">
                 {this.renderSongs()}
             </div>

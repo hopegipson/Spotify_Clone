@@ -174,4 +174,11 @@ const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
       };
     }
 
+    export const addSearchTerm = (searchTerm) => {
+      return {
+        type: 'ADD_SEARCH_TERM',
+        searchTerm
+      };
+    }
+
 

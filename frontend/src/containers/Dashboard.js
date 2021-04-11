@@ -10,6 +10,7 @@ import UserPage from '../components/UserPage'
 import UserForm from '../components/UserForm'
 import PlaylistView from '../components/PlaylistView'
 import SearchDashboard from '../components/SearchDashboard'
+import SeeMoreSongsView from '../components/SeeMoreSongsView'
 
 class Dashboard extends Component {
   constructor() {
@@ -27,13 +28,14 @@ class Dashboard extends Component {
           <Router>
             <UserHomepageContainer/>
             <Route exact path='/search' render={routerProps => <SearchDashboard/> } />
+            <Route exact path='/SeeMoreSongs' render={routerProps =>  <SeeMoreSongsView searchTerm={this.props.state.searchTerm}/>}/>
+            <Route exact path='/SeeMoreSongs/Recent' render={routerProps =>  <SeeMoreSongsView searchTerm={"Recently Played Songs"} songs={this.props.state.recSongs}/>}/>
             <Route path='/' render={routerProps => <NavBar {...routerProps} user={this.props.state.user} />} />
             <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
             <Route  path="/users/:id" render={() => <UserPage user={this.props.state.user} />}/>
             <Route path="/useredit/:id" render={() => <UserForm user={this.props.state.user} />}/>
             <Route path="/playlist/:id" render={routerProps => <PlaylistView {...routerProps} user={this.props.state.user} />}/>
             <Route path="/library" render={routerProps => <LibraryView {...routerProps} user={this.props.state.user} />}/>
-
           </Router>
        <br></br>
       </div>

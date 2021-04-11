@@ -26,7 +26,7 @@ class UserForm extends Component {
             <div className="FormImageContainer">
                 <div className="UserFormContainer">
                     <div className="UserFormInstruction">{"Your username is your public display name. Each user must have a unique display name."}</div>
-                <form class="form-one" onSubmit={(event) => this.handleOnSubmit(event)}>
+                <form className="form-one" onSubmit={(event) => this.handleOnSubmit(event)}>
                 <label className="LabelUser">Username   </label>
         <input
           type="text" className="UserEditBar" value={this.state.text} placeholder={this.props.state.user.display_name}

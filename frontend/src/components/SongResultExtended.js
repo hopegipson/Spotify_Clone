@@ -8,8 +8,7 @@ class SongResultExtended extends Component {
         selectedElement: "empty",
         songs: this.props.songs,
         currentSong: "empty",
-        extrabutton: this.props.extrabutton
-      }
+        extrabutton: this.props.extrabutton      }
 
 
     renderSongs = () => this.props.songs.map((songplaylist, index) => <SongExtended key={index} index={index} extrabutton={this.props.extrabutton} song ={songplaylist.song} songplaylist ={songplaylist}  user={this.props.state.user} callPlayback={this.callPlayback} />) 

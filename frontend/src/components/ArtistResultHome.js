@@ -3,7 +3,6 @@ import React from 'react';
 function ArtistResultHome (props) {
         return(<div className="ArtistResultHome">
             <h2 className="TitleSectionHome">Suggested Artists</h2>
-            <a className="SeeMoreArtistsAlbums" href="http://google.com">SEE ALL</a>
 
             <div className="InsideArtistResultHome">
                 <div className="Row">
