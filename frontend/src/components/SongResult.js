@@ -51,13 +51,26 @@ class SongResult extends Component {
      this.props.songs.splice(savedInfo.target.id, 0, selectedElement)   
      this.setState({songs: this.props.songs, selectedElement: selectedElement})
       }
+      else if (this.props.state.playbackOn){
+        let selectedElement = this.props.songs.splice(savedInfo.target.id, 1)[0]
+
+        this.props.startPlayback(savedInfo.target.name, this.props.state.deviceID, this.props.state.token)
+          this.props.songs.forEach(function (song) {
+            song.open = false;
+          })
+        selectedElement.open = true;
+       this.props.songs.splice(savedInfo.target.id, 0, selectedElement)   
+       this.setState({songs: this.props.songs, selectedElement: selectedElement})
+        }
+
       else if(!this.props.state.playbackPaused){
          this.props.pauseTrack(this.props.state.deviceID, this.props.state.token)
          this.props.songs.forEach(function (song) {
           song.open = false;
         })
-     this.setState({songs: this.props.songs, currentSong: savedInfo.target.id})  
     }
+    this.setState({songs: this.props.songs, currentSong: savedInfo.target.id})  
+
    }
 
    callPlaybackOnSameSong = (savedInfo) => {

@@ -26,6 +26,9 @@ class SongResultExtended extends Component {
 
     callPlayback = (event) => {
       let savedInfo = event
+      console.log(savedInfo.target.id !== this.state.currentSong)
+      console.log(savedInfo.target.id)
+      console.log(this.state.currentSong)
         if (savedInfo.target.id !== this.state.currentSong){
           this.callPlaybackOnNewSong(savedInfo)
         }
@@ -46,13 +49,25 @@ class SongResultExtended extends Component {
       this.props.songs.splice(savedInfo.target.id, 0, selectedElement)   
       this.setState({songs: this.props.songs, selectedElement: selectedElement})
        }
+       else if (this.props.state.playbackOn){
+        let selectedElement = this.props.songs.splice(savedInfo.target.id, 1)[0]
+
+        this.props.startPlayback(savedInfo.target.name, this.props.state.deviceID, this.props.state.token)
+          this.props.songs.forEach(function (songplaylist) {
+            songplaylist.song.open = false;
+          })
+        selectedElement.song.open = true;
+       this.props.songs.splice(savedInfo.target.id, 0, selectedElement)   
+       this.setState({songs: this.props.songs, selectedElement: selectedElement})
+        }
        else if(!this.props.state.playbackPaused){
           this.props.pauseTrack(this.props.state.deviceID, this.props.state.token)
          this.props.songs.forEach(function (songplaylist) {
           songplaylist.song.open = false;
         })
-     this.setState({songs: this.props.songs, currentSong: savedInfo.target.id})  
     }
+    this.setState({songs: this.props.songs, currentSong: savedInfo.target.id})  
+
    }
 
    callPlaybackOnSameSong = (savedInfo) => {
