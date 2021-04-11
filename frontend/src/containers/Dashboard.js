@@ -29,7 +29,7 @@ class Dashboard extends Component {
             <UserHomepageContainer/>
             <Route exact path='/search' render={routerProps => <SearchDashboard/> } />
             <Route exact path='/SeeMoreSongs' render={routerProps =>  <SeeMoreSongsView searchTerm={this.props.state.searchTerm}/>}/>
-            <Route exact path='/SeeMoreSongs/Recent' render={routerProps =>  <SeeMoreSongsView searchTerm={"Recently Played Songs"} songs={this.props.state.recSongs}/>}/>
+            <Route exact path='/SeeMoreSongs/Recent' render={routerProps =>  <SeeMoreSongsView searchTerm={"Recommended Songs"} songs={this.props.state.recSongs}/>}/>
             <Route path='/' render={routerProps => <NavBar {...routerProps} user={this.props.state.user} />} />
             <Route path='/search' render={routerProps => <SearchPage {...routerProps} />} />
             <Route  path="/users/:id" render={() => <UserPage user={this.props.state.user} />}/>
