@@ -29,7 +29,7 @@ class NavBar extends Component {
       </NavLink>
       </div>
           <div className="sidebarOption">
-          <img className="sideBarIcon" src="https://lh3.googleusercontent.com/proxy/EaDqNBbcHJ5nENwZ_1RF0rrE-AJVgNTv0L5lhNt8X2H9mJ8qJKn_ETPIlmZrCTBAFdAbZp5glVTzAriZyP20v-sF29w0YGKZNx9MXNk69y9_0HAP8ON-YXnDx6HX01-63hMYG8ULVVA" alt="Search"></img>
+          <img className="sideBarIcon" src="https://images.vexels.com/media/users/3/132068/isolated/preview/f9bb81e576c1a361c61a8c08945b2c48-search-icon-by-vexels.png" alt="Search"></img>
       <NavLink className="sidebarOption" 
         to="/search"
       >

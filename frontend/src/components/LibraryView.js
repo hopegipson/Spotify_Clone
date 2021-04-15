@@ -23,7 +23,7 @@ class LibraryView extends Component {
       }
       }
       
-      componentWillMount() {
+      componentDidMount() {
         getPlaylist(this.props.state.user.playlists[0].id).then((playlist) => {
           this.props.addSelectedPlaylist(playlist)}) 
 

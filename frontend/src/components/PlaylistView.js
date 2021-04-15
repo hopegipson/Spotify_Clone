@@ -36,7 +36,7 @@ class PlaylistView extends Component {
       }
       }
       
-      componentWillMount() {
+      componentDidMount() {
         if(this.props.match){
         getPlaylist(this.props.match.params.id).then((playlist) => {
           this.props.addSelectedPlaylist(playlist)}) }
