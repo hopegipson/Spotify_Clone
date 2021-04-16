@@ -78,12 +78,6 @@ class MusicPlayerContainer extends Component {
             this.props.addDeviceID(this.state.spotifyDeviceId)
         }
 
-        isSetUp = () => {
-            if(this.props.state.deviceID && this.props.state.player){
-                return true
-            }
-        }
-    
     render(
     ){
         return(  
