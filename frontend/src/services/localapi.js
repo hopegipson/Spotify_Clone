@@ -17,6 +17,7 @@ const parseJSON = response => {
     }
   }
 
+ 
 export function getUsers() {return fetch(usersURL).then(parseJSON)}
 export function getPlaylists() {return fetch(playlistsURL).then(parseJSON)}
 export function getSongs() {return fetch(songsURL).then(parseJSON)}

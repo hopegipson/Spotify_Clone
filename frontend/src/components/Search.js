@@ -39,7 +39,7 @@ import { fetchSpotifyData, addSearchTerm } from '../actions/musicPlayerActions';
    
           <br></br>
             <form onSubmit={this.handleSubmit} className="form-inline my-2 my-lg-0">
-              <input className="SearchBar"  type="text" placeholder="Search" onChange={(event) => this.handleChange(event)} value={this.state.text}/>
+              <input className="SearchBar"  type="text" placeholder="Search" onChange={event => this.handleChange(event)} value={this.state.text}/>
               <input  className="btn2" type="submit" value="X" />
            </form>
 

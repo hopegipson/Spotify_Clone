@@ -25,6 +25,7 @@ class Dashboard extends Component {
   {
     return (<div className="FooterCont">
       <div className="Dashboard">
+
           <Router>
             <UserHomepageContainer/>
             <Route exact path='/search' render={routerProps => <SearchDashboard/> } />

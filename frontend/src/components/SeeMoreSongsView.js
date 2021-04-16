@@ -1,8 +1,6 @@
 import React, { Component} from 'react';
-import { addSelectedPlaylist, getPlaylist, updatePlaylist, getUser, addUserToState} from '../services/localapi';
+import { addSelectedPlaylist, getUser, addUserToState} from '../services/localapi';
 import { connect } from 'react-redux'
-import PlaylistEditPopUp from './PlaylistEditPopUp'
-import SongResultExtended from './SongResultExtended'
 import SongResultSeeMore from './SongResultSeeMore'
 
 class SeeMoreSongsView extends Component {
@@ -25,7 +23,7 @@ class SeeMoreSongsView extends Component {
       if (this.props.songs){
         return this.props.songs
       }
-      else if (this.props.state.songs.length != 0){
+      else if (this.props.state.songs.length !== 0){
         return this.props.state.songs
       }
     }
