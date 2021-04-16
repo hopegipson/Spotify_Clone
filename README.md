@@ -2,7 +2,7 @@
 
 This Javascript React Redux and Rails Application is an online music player and playlist creation application built to simulate the most popular online music player, Spotify. This application is powered by the Spotify SDK and API. 
  
-To watch a demo of the Rails Application in action you can visit: https://www.youtube.com/watch?v=1jlqX92_vgQ
+To watch a demo of the Rails Application in action you can visit:
 
 <a href="https://www.youtube.com/watch?v=1jlqX92_vgQ&t=23s
 " target="_blank"><img src="http://img.youtube.com/vi/1jlqX92_vgQ/0.jpg" 
