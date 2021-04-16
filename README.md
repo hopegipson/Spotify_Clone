@@ -8,6 +8,9 @@ To watch a demo of the Rails Application in action you can visit:
 " target="_blank"><img src="http://img.youtube.com/vi/1jlqX92_vgQ/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
+Blog Post with Further Explanation on Playback:
+https://www.linkedin.com/pulse/creating-spotify-from-scratch-using-redux-playback-react-gipson/
+
 ## Installation and Usage
 
 To use this app:
