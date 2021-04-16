@@ -9,7 +9,7 @@ To watch a demo of the Rails Application in action you can visit:
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 Blog Post with Further Explanation on Playback:
-https://www.linkedin.com/pulse/creating-spotify-from-scratch-using-redux-playback-react-gipson/
+<a href="https://www.linkedin.com/pulse/creating-spotify-from-scratch-using-redux-playback-react-gipson/"/> Here</a>
 
 ## Installation and Usage
 
