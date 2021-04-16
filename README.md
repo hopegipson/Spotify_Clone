@@ -6,7 +6,7 @@ To watch a demo of the Rails Application in action you can visit:
 
 <a href="https://www.youtube.com/watch?v=1jlqX92_vgQ&t=23s
 " target="_blank"><img src="http://img.youtube.com/vi/1jlqX92_vgQ/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="Demo of Spotify app" width="240" height="180" border="10" /></a>
 
 Blog Post with Further Explanation on Playback:
 <a href="https://www.linkedin.com/pulse/creating-spotify-from-scratch-using-redux-playback-react-gipson/"/> Here</a>
