@@ -27,7 +27,7 @@ To use this app:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/hopegipson/Music_Player_Application"/> Here.</a>This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/Music_Player_Application/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub  <a href="https://github.com/hopegipson/Music_Player_Application"/> here.</a>This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/Music_Player_Application/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
