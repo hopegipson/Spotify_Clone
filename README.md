@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/pQPcesD.png" width="100%" /> </img>
+<img src="https://i.imgur.com/oy2wPDf.png" width="100%" /> </img>
 
 # Spotify_Clone
 
