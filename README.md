@@ -12,6 +12,8 @@
 ![GitHub forks](https://img.shields.io/github/forks/hopegipson/Spotify_Clone?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/hopegipson/Spotify_Clone?style=social) 
 ![YouTube Video Views](https://img.shields.io/youtube/views/1jlqX92_vgQ?style=social)
+![YouTube Video Likes](https://img.shields.io/youtube/likes/1jlqX92_vgQ?style=social)
+
 
 
 This Javascript React Redux and Rails Application is an online music player and playlist creation application built to simulate the most popular online music player, Spotify. This application is powered by the Spotify SDK and API. 
