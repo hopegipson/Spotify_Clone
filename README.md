@@ -4,6 +4,8 @@
 # Spotify_Clone
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hopegipson/Spotify_Clone) 
+![GitHub language count](https://img.shields.io/github/languages/count/hopegipson/Spotify_Clone) 
+![GitHub top language](https://img.shields.io/github/languages/top/hopegipson/Spotify_Clone)
 ![GitHub contributors](https://img.shields.io/github/contributors/hopegipson/Spotify_Clone)
 ![GitHub issues](https://img.shields.io/github/issues-raw/hopegipson/Spotify_Clone)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hopegipson/Spotify_Clone)
