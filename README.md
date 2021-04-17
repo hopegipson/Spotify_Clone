@@ -33,7 +33,7 @@ Blog Post with Further Explanation on Playback:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub  <a href="https://github.com/hopegipson/Music_Player_Application"/> here.</a>This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/Music_Player_Application/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub  <a href="https://github.com/hopegipson/Spotify_Clone"/> here.</a>This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/hopegipson/Spotify_Clone/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -42,4 +42,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Music Player Application project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hopegipson/Music_Player_Application/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Spotify Clone project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hopegipson/Spotify_Clone/blob/master/CODE_OF_CONDUCT.md).
