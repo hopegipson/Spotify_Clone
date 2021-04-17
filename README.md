@@ -11,19 +11,23 @@ alt="Demo of Spotify app" width="240" height="180" border="10" /></a>
 Blog Post with Further Explanation on Playback:
 <a href="https://www.linkedin.com/pulse/creating-spotify-from-scratch-using-redux-playback-react-gipson/"/> Here</a>
 
-## Installation and Usage
+## Prerequisites
 
-To use this app:
+    -You will need a Spotify Premium Account login
+    -You have installed Ruby 2.6.1
 
+## Installation 
+
+
+    -Clone this repo
     -The app will be using localhost:3000 for the backend server by default.
-    -The front end should be run on localhost: 3001
-    -cd into backend
-    -Migrate the database tables with 'rails db:migrate'
-    -Start the server with 'rails s'
-    -cd into the frontend
-    -start the redux project with npm install, npm start
-    -Users are required to have a Spotify premium account to use this app, Spotify will collect your credentials upon login
+    -The front end is required to be run on localhost: 3001
 
+
+## Usage
+
+    -cd into backend, migrate the database tables with 'rails db:migrate' and start the server with 'rails s'
+    -cd into the frontend, start the redux project with npm install, npm start
 
 ## Contributing
 
