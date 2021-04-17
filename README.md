@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/pQPcesD.png" width="100%" /> </img>
 
-# spotify-clone
+# Spotify_Clone
 
 This Javascript React Redux and Rails Application is an online music player and playlist creation application built to simulate the most popular online music player, Spotify. This application is powered by the Spotify SDK and API. 
  
