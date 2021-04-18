@@ -82,12 +82,10 @@ class SongSeeMore extends Component {
        };
 
        toggleMessage = (name) => {
-         console.log(name)
         this.setState({
          message: !this.state.message,
          messageContent: `${this.state.song.name} has been successfully added to ${name}`
         });
-       // setTimeout(this.toggleMessageClosed, 5000)
        };
 
        toggleMessageLibrary = () => {
@@ -95,7 +93,6 @@ class SongSeeMore extends Component {
         message: !this.state.message,
         messageContent: `${this.state.song.name} is already in your Library`
        });
-      // setTimeout(this.toggleMessageClosed, 3000)
       };
 
        toggleMessageClosed = () => {

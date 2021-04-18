@@ -41,9 +41,6 @@ class MusicPlayerContainer extends Component {
                     duration,
                     track_window: { current_track }
                   }) => {
-                    console.log('Currently Playing', current_track);
-                    console.log('Position in Song', position);
-                    console.log('Duration of Song', duration);
                     this.props.changeTrackerSong(current_track)
                   });
                 this.setState({

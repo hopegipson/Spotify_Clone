@@ -1,3 +1,3 @@
-export const clientId = "e86bf186fef44cbeb8dcd5da32e0bcfc";
-export const redirectUri = "http://localhost:3001/";
+export const clientId = "4be251d5da32477497c39a0549820648";
+export const redirectUri = "https://stormy-crag-71257.herokuapp.com/";
 

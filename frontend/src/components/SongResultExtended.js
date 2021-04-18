@@ -92,7 +92,8 @@ class SongResultExtended extends Component {
         return(<div>
         <div className="SongResultExtended">
             <div className="InsideSongResultExtended">
-                {this.renderSongs()}
+            {this.props.songs ? 
+                (this.renderSongs()) : (<br></br>)}
             </div>
         </div>            
       </div>)

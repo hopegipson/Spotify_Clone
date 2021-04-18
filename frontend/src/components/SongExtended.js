@@ -81,7 +81,6 @@ class SongExtended extends Component {
        };
 
        toggleMessage = (name) => {
-         console.log(name)
         this.setState({
          message: !this.state.message,
          messageContent: `${this.state.song.name} has been successfully added to ${name}`
@@ -94,7 +93,6 @@ class SongExtended extends Component {
         message: !this.state.message,
         messageContent: `${this.state.song.name} is already in your Library`
        });
-      // setTimeout(this.toggleMessageClosed, 3000)
       };
 
        toggleMessageClosed = () => {
@@ -105,7 +103,6 @@ class SongExtended extends Component {
        }
 
        removePlaylistFromSong = () => {
-         console.log(this.props)
         deletePlaylistSong(this.props.songplaylist.id).then((song) => {
           this.props.getUser(this.props.state.user.id)
            })

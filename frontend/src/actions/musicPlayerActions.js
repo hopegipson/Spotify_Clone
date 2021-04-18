@@ -74,8 +74,7 @@ const PAUSEURL = "https://api.spotify.com/v1/me/player/pause?"
               })}}
 
   export const startPlayback = (spotify_uri, deviceID, token) => {
-    console.log(spotify_uri)
-    console.log(deviceID)
+
     return (dispatch) => {
     return fetch(STARTPLAYBACKURL +
           "device_id=" + deviceID, {

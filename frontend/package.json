@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "@types/spotify-web-playback-sdk": "^0.1.8",
     "bootstrap": "^4.6.0",
+    "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^17.0.2",
@@ -19,6 +20,7 @@
     "redux": "^4.0.5",
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.32.10",
     "sinon": "^10.0.0",
     "spotify-playback-sdk-node": "^1.0.2",
     "uuid": "^3.4.0",
@@ -26,7 +28,7 @@
     "webpack": "^4.44.2"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

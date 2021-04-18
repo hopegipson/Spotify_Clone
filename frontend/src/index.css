@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'RubikLight';
-  src: url('/Users/hopegipson/Flatiron/code SORTED/PROJECTS/Spotify_Clone/frontend/src/assets/fonts/Rubik-Light.ttf');
+  src: url('https://fontsspotify.s3-us-west-1.amazonaws.com/Rubik-Light.ttf');
   
   }
 
@@ -8,7 +8,7 @@
 
   @font-face {
     font-family: 'RubikRegular';
-    src: url('/Users/hopegipson/Flatiron/code SORTED/PROJECTS/Spotify_Clone/frontend/src/assets/fonts/Rubik-Regular.ttf');
+    src: url('https://fontsspotify.s3-us-west-1.amazonaws.com/Rubik-Regular.ttf');
     }
 
 

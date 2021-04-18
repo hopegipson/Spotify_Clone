@@ -11,7 +11,6 @@ function  MessagePopUp(props) {
             <span className="close" onClick={handleClick}>
               &times;
              </span>
-             {console.log(props.messageContent)}
              <div>{props.messageContent}</div>
             
                 </div>

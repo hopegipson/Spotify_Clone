@@ -52,3 +52,7 @@ test:
   username: hopegipson
   password:
   timeout: 5000
+
+production:
+  url: <%= ENV["SOME_OTHER_URL"] %>
+  pool: 15

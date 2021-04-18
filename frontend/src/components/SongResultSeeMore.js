@@ -95,7 +95,6 @@ class SongResultSeeMore extends Component {
     render(){
 
         return( <div className="SongResultExtended">
-            {console.log(this.props.songs)}
         <div className="InsideSongResultExtended">
             {this.renderSongs()}
         </div>

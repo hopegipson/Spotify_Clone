@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3000/'
+const URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3000/'
 const usersURL = URL + 'users'
 const playlistsURL = URL + 'playlists'
 const PlaylistSongsURL = URL + "playlist_songs"
