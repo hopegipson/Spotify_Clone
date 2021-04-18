@@ -28,6 +28,9 @@ alt="Demo of Spotify app" width="240" height="180" border="10" /></a>
 Blog Post with Further Explanation on Playback:
 <a href="https://www.linkedin.com/pulse/creating-spotify-from-scratch-using-redux-playback-react-gipson/"/> Here</a>
 
+Heroku Demo: <a href="https://stormy-crag-71257.herokuapp.com/"/> Here</a> 
+
+
 ## Prerequisites
 
     -You will need a Spotify Premium Account login
