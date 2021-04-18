@@ -33,5 +33,5 @@ Heroku Demo: <a href="https://stormy-crag-71257.herokuapp.com/"/> Here</a>
 
 ## Usage
 
-This branch is the modified code used to deploy the application to Heroku rather than the local environment. To use, please navigate to the heroku demo link, and have fun simulating Spotify in React!
+This branch is the modified code used to deploy the application to Heroku rather than the local environment. To use, please navigate to the heroku demo link, and have fun simulating Spotify in React! You will need a Spotify Premium account to login and access premium content based on your listening preferences.
 
