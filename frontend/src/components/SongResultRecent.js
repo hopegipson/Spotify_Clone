@@ -26,7 +26,6 @@ class SongResultRecent extends Component {
       let savedInfo = event
         if (savedInfo.target.id !== this.state.currentSong){
           this.callPlaybackOnNewSong(savedInfo)
-          console.log("new song")
         }
         else if (savedInfo.target.id === this.state.currentSong){
          this.callPlaybackOnSameSong(savedInfo)
@@ -69,7 +68,6 @@ class SongResultRecent extends Component {
 
    callPlaybackOnSameSong = (savedInfo) => {
     if(!this.props.state.playbackOn && this.props.state.playbackPaused){
-      console.log("Resume Playback")
       let selectedElement = this.props.songs.splice(savedInfo.target.id, 1)[0]
 
        this.props.resumePlayback(this.props.state.deviceID, this.props.state.token)

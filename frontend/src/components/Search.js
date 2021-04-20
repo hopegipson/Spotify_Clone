@@ -20,9 +20,7 @@ import { fetchSpotifyData, addSearchTerm } from '../actions/musicPlayerActions';
        this.setState({text: ''})
       }) 
       }
-      else{
-        console.log("Cannot submit nothing")
-      }
+
       }
 
       handleChange(event) {

@@ -23,7 +23,7 @@ export function getPlaylists() {return fetch(playlistsURL).then(parseJSON)}
 export function getSongs() {return fetch(songsURL).then(parseJSON)}
 
 
-//export function getUser(userID) {return fetch(usersURL + `/${userID}`).then(parseJSON)}
+export function getUser(userID) {return fetch(usersURL + `/${userID}`).then(parseJSON)}
 export function getPlaylist(playlistID) {return fetch(playlistsURL + `/${playlistID}`).then(parseJSON)}
 export function getSong(songID) {return fetch(songsURL + `/${songID}`).then(parseJSON)}
 

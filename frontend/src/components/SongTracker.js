@@ -16,7 +16,6 @@ class SongTracker extends Component {
 
        toggleImage = () => {
          if (!this.props.state.playbackOn && !this.props.state.playbackPaused){
-           console.log("no song yet")
            this.props.startPlayback(this.props.state.recPlayedSongs[0].track.uri, this.props.state.deviceID, this.props.state.token)
          }
          else if (this.props.state.playbackPaused && !this.props.state.playbackOn){

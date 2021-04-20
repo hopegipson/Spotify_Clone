@@ -11,7 +11,6 @@ export default class PlaylistPopUp extends Component {
         event.preventDefault();
         let number = parseInt(this.state.text)
         let name = this.state.name
-        console.log(name)
         this.props.addSongToPlaylist(number, name)
         this.setState({
             text: this.props.user.playlists[1].id
