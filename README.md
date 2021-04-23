@@ -26,7 +26,7 @@ To watch a demo of the Rails Application in action you can visit:
 alt="Demo of Spotify app" width="240" height="180" border="10" /></a>
 
 Blog Post with Further Explanation on Playback:
-<a href="https://www.linkedin.com/pulse/creating-spotify-from-scratch-using-redux-playback-react-gipson/"/> Here</a>
+<a href="https://thehopegipson.medium.com/creating-spotify-from-scratch-using-redux-an-explanation-of-playback-capability-in-react-redux-7f6653ea2ce8"/> Here</a>
 
 Heroku Demo: <a href="https://stormy-crag-71257.herokuapp.com/"/> Here</a> 
 
